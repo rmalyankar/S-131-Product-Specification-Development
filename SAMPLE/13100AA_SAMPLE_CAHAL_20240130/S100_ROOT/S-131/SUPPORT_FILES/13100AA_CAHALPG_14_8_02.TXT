@@ -1,0 +1,11 @@
+Anchorages cannot be reserved.
+If an anchorage is deemed unavailable, the HPA will advise upon request.
+ 
+Note: Pilots and Masters Guidelines: Taking into consideration draft and scope requirements, vessels should be 
+anchored in the first available anchorage closest to the top of the following list:
+  (a) Number 6: 44º39.46’N 63º33.827’W
+  (b) Number 5: 44º39.303’N 63º33.724’W
+  (c) Number 4: 44º39.172’N 63º33.614’W
+  (d) Number 2: 44º37.857’N 63º32.363’W
+  (e) Number 3: 44º39.005’N 63º33.528’W
+  (f) Number 1: 44º38.116’N 63º32.909’W

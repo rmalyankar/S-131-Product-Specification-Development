@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://schemas.s100dev.net/schemas/S100/5.0.0/S100Catalog/20230105/S100_XC.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<XC:S100_ExchangeCatalogue xmlns:XC="http://www.iho.int/s100/xc/5.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+  xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+  xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+  xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+  xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+  xmlns:S100SE="http://www.iho.int/s100/se/5.0"
+  xsi:schemaLocation="http://www.iho.int/s100/xc/5.0 https://schemas.s100dev.net/schemas/S100/5.0.0/S100Catalog/20230105/S100_ExchangeCatalogue.xsd">
+  <XC:identifier>
+    <XC:identifier>2e5154cb-1661-42fb-b1f1-52cf6439a9be</XC:identifier>
+    <XC:dateTime>2023-09-18T00:00:00Z</XC:dateTime>
+  </XC:identifier>
+  <XC:contact>
+    <XC:organization><gco:CharacterString>IHO</gco:CharacterString></XC:organization>
+  </XC:contact>
+  <XC:productSpecification>
+    <XC:name>Marine Harbour Infrastructure</XC:name>
+    <XC:version>1.0</XC:version>
+    <XC:date>2023-03-31</XC:date>
+    <XC:productIdentifier>S-131</XC:productIdentifier>
+    <XC:number>193</XC:number>
+    <XC:compliancyCategory>category4</XC:compliancyCategory>
+  </XC:productSpecification>
+
+  <XC:exchangeCatalogueDescription xsi:type="lan:PT_FreeText_PropertyType">
+    <gco:CharacterString>Sample exchange catalogue for S-131 1.0.0. Signatures and certificates are placeholders.</gco:CharacterString>
+  </XC:exchangeCatalogueDescription>
+  
+  <XC:certificates>
+    <S100SE:schemeAdministrator id="root"/>
+    <S100SE:certificate id="00AA" issuer="root">
+      ZGVmYXVsdA==
+    </S100SE:certificate>
+  </XC:certificates>
+  
+  <XC:dataServerIdentifier>IHO</XC:dataServerIdentifier>
+
+  <XC:datasetDiscoveryMetadata>
+    <XC:S100_DatasetDiscoveryMetadata>
+      <XC:fileName>file:/S-131/00AA/DATASET_FILES/13100AA_SAMPLE_CAHAL.GML</XC:fileName>
+      <XC:description><gco:CharacterString>Edition 3 of sample dataset for S-131 Edition 1.0.0.</gco:CharacterString></XC:description>
+      <XC:datasetID>urn:mrn:iho:prod:s131:1:0:0:00aa:sample_cahal:2:0</XC:datasetID>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:dataProtection>false</XC:dataProtection>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue>
+        <S100SE:S100_SE_SignatureOnData id="sig1" certificateRef="00AA" dataStatus="unencrypted">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_SignatureOnData></XC:digitalSignatureValue>
+      <XC:copyright>true</XC:copyright>
+      <XC:classification gco:isoType="mco:MD_ClassificationCode">
+        <mco:MD_ClassificationCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ClassificationCode" codeListValue="unclassified">unclassified</mco:MD_ClassificationCode>
+      </XC:classification>
+      <XC:purpose>newEdition</XC:purpose>
+      <XC:notForNavigation>true</XC:notForNavigation>
+      <XC:specificUsage>
+        <mri:MD_Usage>
+          <mri:specificUsage>
+            <gco:CharacterString>Port Information</gco:CharacterString>
+          </mri:specificUsage>
+        </mri:MD_Usage>
+      </XC:specificUsage>
+      <XC:editionNumber>3</XC:editionNumber>
+      <XC:updateNumber>0</XC:updateNumber>
+      <XC:issueDate>2023-09-18</XC:issueDate>
+      
+      <XC:boundingBox>
+        <gex:westBoundLongitude><gco:Decimal>-63.69</gco:Decimal></gex:westBoundLongitude>
+        <gex:eastBoundLongitude><gco:Decimal>-63.42</gco:Decimal></gex:eastBoundLongitude>
+        <gex:southBoundLatitude><gco:Decimal>44.47</gco:Decimal></gex:southBoundLatitude>
+        <gex:northBoundLatitude><gco:Decimal>44.74</gco:Decimal></gex:northBoundLatitude>
+      </XC:boundingBox>
+      
+      <XC:productSpecification>
+        <XC:productIdentifier>S-131</XC:productIdentifier>
+        <XC:number>193</XC:number>
+        <XC:compliancyCategory>category4</XC:compliancyCategory>
+      </XC:productSpecification>
+      
+      <XC:producingAgency>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="owner">owner</cit:CI_RoleCode>
+          </cit:role>
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>IHO</gco:CharacterString>
+              </cit:name>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </XC:producingAgency>
+      
+      <XC:producerCode>00AA</XC:producerCode>
+      
+      <XC:encodingFormat>GML</XC:encodingFormat>
+      
+      <XC:dataCoverage>
+        <XC:boundingPolygon>
+          <gex:polygon>
+            <gml:Polygon gml:id="p1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>44.4736122 -63.6849136 44.7395111 -63.6849136 44.7395111 -63.4249994 44.4736122 -63.4249994 44.4736122 -63.6849136</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </gex:polygon>
+        </XC:boundingPolygon>
+        <XC:maximumDisplayScale>100</XC:maximumDisplayScale>
+        <XC:minimumDisplayScale>90000</XC:minimumDisplayScale>
+      </XC:dataCoverage>
+      
+      <XC:comment>
+        <gco:CharacterString>Structure of dataset ID MRN is not normative. Signature and certificate values are dummies. Structure of file URI for fileName elements is tentative pending S-100 clarification. The encoding of support file references in the dataset compared to the catalog and exchange sets is not normative and may be revised.</gco:CharacterString>
+      </XC:comment>
+      
+      <XC:defaultLocale>
+        <lan:PT_Locale>
+          <lan:language>
+            <lan:LanguageCode codeList="http://www.iho.int/S100/5.0.0/resources/Codelists/cat/codelists.xml#S100_MD_LanguageCode" codeListValue="eng">English</lan:LanguageCode>
+          </lan:language>
+          <lan:characterEncoding>
+            <lan:MD_CharacterSetCode codeList="http://www.iho.int/S100/5.0.0/resources/Codelists/cat/codelists.xml#S100_MD_CharacterSetCode" codeListValue="UTF-8">UTF-8</lan:MD_CharacterSetCode>
+          </lan:characterEncoding>
+        </lan:PT_Locale>
+      </XC:defaultLocale>
+      
+      <XC:metadataPointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="publisher">Publisher</cit:CI_RoleCode>
+          </cit:role>
+          <cit:party>
+            <cit:CI_Individual>
+              <cit:name>
+                <gco:CharacterString>Raphael Malyankar</gco:CharacterString>
+              </cit:name>
+            </cit:CI_Individual>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </XC:metadataPointOfContact>
+      <XC:metadataDateStamp>2024-01-30</XC:metadataDateStamp>
+      
+      <XC:navigationPurpose>port</XC:navigationPurpose>
+      
+    </XC:S100_DatasetDiscoveryMetadata>
+  </XC:datasetDiscoveryMetadata>
+
+  <XC:supportFileDiscoveryMetadata>
+
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_CAHAL_UKC01.TXT</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-01-15</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>UTF-8</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>ASCII</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig3" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_CAHALPG_APPA.HTM</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-01-15</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>UTF-8</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>HTML</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig4" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_CAHAL_GENERAL_ENCODING_NOTES.TXT</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>UTF-8</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>ASCII</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig5" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_CAHALPG_14_8_02.TXT</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>UTF-8</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>ASCII</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig6" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_TUGS.HTM</XC:fileName>
+      <XC:revisionStatus>replacement</XC:revisionStatus>
+      <XC:editionNumber>2</XC:editionNumber>
+      <XC:issueDate>2024-01-30</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>UTF-8</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>HTML</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig7" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_PortLimits.TIF</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>TIFF</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>TIFF</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig8" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_FairviewCoveContainerTerminal.TIF</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>TIFF</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>TIFF</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig9" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_RichmondTerminals.TIF</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>TIFF</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>TIFF</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig10" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_HalifaxGrainElevator.TIF</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>TIFF</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>TIFF</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig11" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_HalifaxSeaport.TIF</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>TIFF</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>TIFF</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig12" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_OceanTerminals.TIF</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>TIFF</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>TIFF</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig13" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+    <XC:S100_SupportFileDiscoveryMetadata>
+      <XC:fileName>file:/S-131/SUPPORT_FILES/13100AA_SouthEndContainerTerminal.TIF</XC:fileName>
+      <XC:revisionStatus>new</XC:revisionStatus>
+      <XC:editionNumber>1</XC:editionNumber>
+      <XC:issueDate>2023-05-01</XC:issueDate>
+      <XC:supportFileSpecification>
+        <XC:name>TIFF</XC:name>
+      </XC:supportFileSpecification>
+      <XC:dataType>TIFF</XC:dataType>
+      <XC:compressionFlag>false</XC:compressionFlag>
+      <XC:digitalSignatureReference>DSA</XC:digitalSignatureReference>
+      <XC:digitalSignatureValue><S100SE:S100_SE_DigitalSignature id="sig3" certificateRef="00AA">302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100SE:S100_SE_DigitalSignature></XC:digitalSignatureValue>
+      <XC:supportedResource>13100AA_SAMPLE_CAHAL</XC:supportedResource>
+      <XC:resourcePurpose>supportFile</XC:resourcePurpose>
+    </XC:S100_SupportFileDiscoveryMetadata>
+    
+  </XC:supportFileDiscoveryMetadata>
+
+  <XC:catalogueDiscoveryMetadata/>
+</XC:S100_ExchangeCatalogue>
