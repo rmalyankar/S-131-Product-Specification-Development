@@ -1,0 +1,53 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2025-09-16</fetched>
+  <title format="text/plain" language="en" script="Latn">Digital Signature Standard (DSS)</title>
+  <uri type="src">https://csrc.nist.gov/pubs/fips/186/final</uri>
+  <uri type="doi">https://doi.org/10.6028/NIST.FIPS.186</uri>
+  <docidentifier type="NIST" primary="true">NIST FIPS 186 fpd</docidentifier>
+  <docidentifier type="DOI">NIST.FIPS.186</docidentifier>
+  <date type="published">
+    <on>1994-05</on>
+  </date>
+  <date type="obsoleted">
+    <on>1996-12</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name>National Institute of Standards and Technology</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>final</stage>
+    <substage>withdrawn</substage>
+    <iteration>final</iteration>
+  </status>
+  <copyright>
+    <from>1994</from>
+    <owner>
+      <organization>
+        <name>National Institute of Standards and Technology</name>
+        <abbreviation>NIST</abbreviation>
+        <uri>www.nist.gov</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="updates">
+    <bibitem>
+      <formattedref format="text/plain" language="en" script="Latn">NIST FIPS 186 fpd</formattedref>
+      <uri type="src">https://csrc.nist.gov/pubs/fips/186/upd1/final</uri>
+      <docidentifier type="NIST" primary="true">NIST FIPS 186 fpd</docidentifier>
+    </bibitem>
+  </relation>
+  <place>Gaithersburg, MD</place>
+  <keyword>ADP security</keyword>
+  <keyword>computer security</keyword>
+  <keyword>digital signatures</keyword>
+  <keyword>public-key cryptography</keyword>
+  <keyword>Federal Information Processing Standard</keyword>
+  <ext schema-version="v1.0.0">
+    <doctype>standard</doctype>
+  </ext>
+</bibdata>

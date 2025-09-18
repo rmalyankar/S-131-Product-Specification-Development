@@ -1,0 +1,31 @@
+
+[.preface]
+== Document History
+
+Changes to this Specification are coordinated by the Nautical Information
+Provision Working Group, an IHO working group under HSSC. New editions
+will be made available via the IHO web site. Maintenance of the Specification
+shall conform to IHO Resolution 2/2007 (as amended).
+
+[cols="69,99,71,345",options="unnumbered"]
+|===
+h| Version Number h| Date h| Approved By h| Purpose
+
+| 1.0.0 | 2022-08-18 | | Draft 1
+| 1.0.0 | 2022-08-22 | | Revised Draft 1
+| 1.0.0 | 2022-11-25 | RM
+| Daft 2. Applied feedback from NIPWG after NIPWG9; added guidelines
+for portrayal of schedules and applicability; miscellaneous editorial
+revisions.
+| 1.0.0 | 2023-01-10 | RM
+| Added HarbourFacility to Figure 4.14; clarifications for ISO metadata
+and file naming; version date updated to sync. with other artefacts.
+
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+|===

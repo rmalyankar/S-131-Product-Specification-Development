@@ -1,0 +1,138 @@
+
+[[sec_7]]
+== Datasets
+
+[[sec_7.1]]
+=== Introduction
+
+A dataset is a grouping of features, attributes, geometry and metadata
+which comprises a specific coverage.
+
+[[sec_7.1.1]]
+==== Dataset rules
+
+In order to facilitate the efficient processing of MHI data the geographic
+coverage of a given *maximum display scale* may be split into multiple
+datasets.
+
+The discovery metadata of a dataset must list all the *Data Coverage*
+features contained within that dataset and their assigned scale attributions.
+
+An MHI update dataset must not change the limit of a *Data Coverage*
+feature for the base MHI dataset. Where the limit of a *Data Coverage*
+feature for a base MHI dataset is to be changed, this must be done
+by issuing a New Edition of the dataset.
+
+Datasets must not cross the 180° meridian; this includes both the
+*Data Coverage* features and the bounding box for the dataset.
+
+[[sec_7.1.2]]
+==== Data Coverage rules
+
+* All base datasets (new dataset, new edition and re-issue) must contain
+at least one *Data Coverage* feature.
+* The data boundary of the base dataset is defined by the extent of
+the *Data Coverage* features and must be contained within the bounding
+box.
+* The *Data Coverage* features within a dataset must not overlap,
+however *Data Coverage* features from different datasets may overlap
+if they have differing maximum display scales.
+* Datasets may overlap, however there must be no overlapping
+*Data Coverage* features of the same *maximum display scale*, except
+at the agreed adjoining national data limits, where, if it is difficult
+to achieve a perfect join, a 5 metre overlapping buffer zone may be
+used; and for this situation, there must be no gaps in data.
+* When a dataset has multiple *Data Coverage* features, then the
+*minimum display scale* must be the same for all *Data Coverage* features
+within the dataset. The *maximum display scale* for multiple
+*Data Coverage* features within a dataset may be different.
+* When a dataset has multiple *Data Coverage* features then the
+*maximum display scale* of the dataset must be equal to the largest
+*maximum display scale* of the *Data Coverage* features.
+* The *maximum display scale* is considered to be the equivalent of
+the compilation scale of the data.
+
+[[sec_7.2]]
+=== Display scale range
+
+A scale range of a dataset is used to indicate a range of scales between
+which a producer considers the data is intended for use. The smallest
+scale is defined by the *minimum display scale* and the largest scale
+by the *maximum display scale*. These scales must be set at one of
+the scales specified elsewhere in this product specification.
+
+When the system's viewing scale is smaller than the value indicated
+by **minimum display scale**, features within the *Data Coverage*
+feature are not displayed, except where the System Database does not
+contain a dataset covering the area at a smaller scale, in which case
+the dataset will be displayed at all smaller scales. When the viewing
+scale is larger than the value indicated by *maximum display scale*,
+an overscale indication must be shown.
+
+[[sec_7.3]]
+=== Geometry
+
+[[sec_7.3.1]]
+==== S-131 geometry
+
+Marine Harbour Infrastructure (MHI) features are encoded as vector
+entities which conform to S-100 geometry configuration level 3a
+(S-100 clause 7-4.3).
+
+Level 3a is described by the following constraints:
+
+* Each curve must reference a start and end point
+(they may be the same).
+* Curves must not self intersect. See S-100 Figure 7-5.
+* Areas are represented by a closed loop of curves beginning and ending
+at a common point.
+* In the case of areas with holes, all internal boundaries must be
+completely contained within the external boundary and the internal
+boundaries must not intersect each other or the external boundary.
+Internal boundaries may touch other internal boundaries or the external
+boundary tangentially (that is at one point) as shown in S-100
+Figure 7-6.
+* The outer boundary of a surface must be in a clockwise direction
+(surface to the right of the curve) and the curve orientation positive.
+The inner boundary of a surface must be in a counter-clockwise direction
+(surface to the right of the curve) and the curve orientation negative.
+See S-100 Figure 7-7.
+
+S-131 further constrains Level 3a with the following:
+
+* Coincident linear geometry must be avoided when there is a dependency
+between features.
+* The interpolation of _GM_CurveSegment_ must be loxodromic.
+* Linear geometry is defined by curves which are made of curve segments.
+Each curve segment contains the geographic coordinates as control
+points and defines an interpolation method between them. Coordinate
+density can have a significant impact on file size and system performance.
+A rule of thumb is to limit the coordinate density to 0.3 mm at maximum
+permitted display scale.
+* For a scale-less product, the producer should keep in mind the expected
+scale range for typical use and the density of coordinates needed
+to suit the needs of the product.
+
+The following exception applies to S-131:
+
+* The use of coordinates is restricted to two dimensions
+(_DirectPosition_ is restricted to two coordinates).
+
+[[sec_7.3.2]]
+==== Masking
+
+In certain circumstances, the symbolisation of a curve may need to
+be suppressed. This is done using the _maskReference_ XML tag described
+in S-100 10b-10.1.7.
+
+[[sec_7.3.3]]
+==== Coordinate encoding in spatial primitives
+
+Geometry may be encoded either inline or by reference to a spatial
+primitives located elsewhere in the dataset that encodes the actual
+coordinate values. The GML conventions for references and axis order
+must be followed.
+
+The CRS shall be identified using the URI convention for SRS specified
+by OGC, which is http://www.opengis.net/def/crs/EPSG/0/4326"
+(Quote S-100 Ed.5.0.0 10b-11.7. ). The axis order is latitude/longitude.

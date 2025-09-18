@@ -1,0 +1,42 @@
+
+[[sec_10]]
+== Maintenance
+
+[[sec_10.1]]
+=== Introduction
+
+This clause describes the requirement to adequately maintain datasets;
+use of newly acquired source data; maintenance requirements within
+the overall production process; and how Feature and Portrayal Catalogues
+are to be managed within an S-100 based marine navigation system.
+
+[[sec_10.2]]
+=== Maintenance and update frequency
+
+Datasets must be maintained as needed; and the overall production
+process must include mechanisms for updating designed to meet the
+needs of the mariner regarding safety of navigation.
+
+[[sec_10.3]]
+=== Data Source
+
+Data Producers must use all available and applicable sources, as evaluated
+against a robust data assessment process, to maintain and update datasets
+as required.
+
+[[sec_10.4]]
+=== Production Process
+
+Data Producers should follow their established production processes
+for maintaining and updating datasets. Data must be maintained against
+S-131 Annex A -- _Data Classification and Encoding Guide_, checked
+against S-131 Annex D -- _Validation Checks_, and encapsulated in
+GML conforming to the S-131 GML schema.
+
+[[sec_10.5]]
+=== Feature and Portrayal Catalogue management
+
+For each new version of the S-131 Product Specification a new Feature
+and Portrayal Catalogue will be released. The end user system must
+be able to manage datasets and their corresponding Catalogues that
+are created using different versions of the S-131 Product Specification.

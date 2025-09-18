@@ -1,0 +1,66 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2025-09-16</fetched>
+  <title type="main" format="text/plain" language="en">ENC Validation Checks</title>
+  <title type="main" format="text/plain" language="fr">Vérifications pour la validation des ENC</title>
+  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/s-58/S-58%20Ed%207.0.0_Final.pdf</uri>
+  <docidentifier type="IHO" primary="true">S-58</docidentifier>
+  <docnumber>58</docnumber>
+  <date type="published">
+    <from>2022-10-01</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Hydrographic Organization</name>
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <edition>7.0.0</edition>
+  <version>
+    <revision-date>2022-10-01</revision-date>
+  </version>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2022</from>
+    <owner>
+      <organization>
+        <name>International Hydrographic Organization</name>
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    <title type="original" format="text/plain">
+      <variant language="en" script="Latn">Standards and Specifications</variant>
+      <variant language="fr" script="Latn">Normes et Spécifications</variant>
+    </title>
+    <place>Monaco</place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>Monaco</place>
+  <validity>
+    <validityBegins>2022-10-01 00:00</validityBegins>
+  </validity>
+  <ext schema-version="v1.0.0">
+    <editorialgroup>
+      <committee>
+        <name>Maritime Safety Committee</name>
+        <abbreviation>IMO MSC</abbreviation>
+      </committee>
+    </editorialgroup>
+    <editorialgroup>
+      <committee>
+        <name>Sub-Committee on Navigation, Communications and Search and Rescue</name>
+        <abbreviation>NCSR</abbreviation>
+      </committee>
+    </editorialgroup>
+  </ext>
+</bibdata>

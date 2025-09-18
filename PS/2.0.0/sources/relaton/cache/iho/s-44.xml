@@ -1,0 +1,69 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2025-09-16</fetched>
+  <title type="main" format="text/plain" language="en">IHO Standards for Hydrographic Surveys</title>
+  <title type="main" format="text/plain" language="fr">Normes OHI pour les levés hydrographiques</title>
+  <title type="main" format="text/plain" language="es">Normas de la OHI para los Levantamientos Hidrográficos</title>
+  <title type="main" format="text/plain" language="pt">Especificações da OHI para Levantamentos Hidrográficos</title>
+  <title type="main" format="text/plain" language="zh">海道测量标准</title>
+  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/s-44/S-44_Edition_6.2.0_adopted.pdf</uri>
+  <docidentifier type="IHO" primary="true">S-44</docidentifier>
+  <docnumber>44</docnumber>
+  <date type="published">
+    <from>2024-10-01</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Hydrographic Organization</name>
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <edition>6.2.0</edition>
+  <version>
+    <revision-date>2024-10-01</revision-date>
+  </version>
+  <language>en</language>
+  <language>fr</language>
+  <language>es</language>
+  <language>pt</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2024</from>
+    <owner>
+      <organization>
+        <name>International Hydrographic Organization</name>
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    <title type="original" format="text/plain">
+      <variant language="en" script="Latn">Standards and Specifications</variant>
+      <variant language="fr" script="Latn">Normes et Spécifications</variant>
+    </title>
+    <place>Monaco</place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>Monaco</place>
+  <validity>
+    <validityBegins>2024-10-01 00:00</validityBegins>
+  </validity>
+  <ext schema-version="v1.0.0">
+    <editorialgroup>
+      <committee>
+        <name>Hydrographic Services and Standards Committee</name>
+        <abbreviation>HSSC</abbreviation>
+        <workgroup>
+          <name>Project Team on Standards for Hydrographic Surveys</name>
+          <abbreviation>HSPT</abbreviation>
+        </workgroup>
+      </committee>
+    </editorialgroup>
+  </ext>
+</bibdata>

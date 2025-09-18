@@ -1,0 +1,53 @@
+
+[[sec_6]]
+== Coordinate Reference Systems (CRS)
+
+[[sec_6.1]]
+=== Introduction
+
+An MHI dataset must define one geodetic CRS and one vertical CRS each
+for depths and elevations.
+
+[[sec_6.2]]
+=== Horizontal Coordinate Reference System
+
+The horizontal CRS must be EPSG:4326 (WGS84). The full reference to
+EPSG: 4326 can be found at http://www.epsg-registry.org/[www.epsg-registry.org].
+
+*Horizontal Coordinate Reference System:*:: EPSG:4326 (WGS84)
+
+*Projection:*:: None
+
+*Temporal reference system:*:: Gregorian calendar
+
+*Coordinate Reference System registry:*:: http://www.epsg-registry.org/[EPSG Geodetic Parameter Registry]
+
+*Date type (according to ISO 19115):*:: 002- publication
+
+*Responsible party:*:: International Organisation of Oil and Gas Producers (IOGP)
+
+*URL:*:: http://www.iogp.org/[http://www.iogp.org]
+
+[[sec_6.3]]
+=== Vertical CRS for Depths and Elevations
+
+The vertical CRS must be in metres. Depths are represented by positive
+values, while negative values indicate intertidal (drying) soundings
+(for depths).
+
+Depths and elevations may be referenced to different vertical datums.
+The vertical datum for each must be encoded in a meta-feature
+(*SoundingDatum* for depths and *VerticalDatum* for elevations).
+There should be only one vertical datum for all depths and only one
+for all elevations.
+
+[[sec_6.4]]
+=== Projections
+
+MHI datasets are un-projected.
+
+[[sec_6.5]]
+=== Temporal reference system
+
+Time is measured by reference to Calendar dates and Clock time in
+accordance with <<ISO_19108_2002>> Temporal Schema clause 5.4.4

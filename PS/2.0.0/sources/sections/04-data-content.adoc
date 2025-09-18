@@ -1,0 +1,600 @@
+
+[[sec_4]]
+== Data Content and Structure
+
+[[sec_4.1]]
+=== Introduction
+
+The S-131 product is based on the S-100 General Feature Model (GFM),
+and is a feature-based vector product. <<fig_4.1>> shows how the S-131
+application schema is realized from the S-100 GFM. All S-131 features
+and information classes are derived from one of the abstract classes
+*FeatureType* and *InformationType* defined in the S-131 application
+schema, which realize the GFM meta-classes S100_GF_FeatureType and
+S100_GF_InformationType respectively.
+
+[[fig_4.1]]
+.Realizations from the S-100 General Feature Model
+image::figure-1.png[]
+
+[[sec_4.2]]
+=== Application Schema
+
+S-131 conforms to the General Feature Model (GFM) from S-100
+Part 3. This document describes the Application Schema expressed in
+UML. This document contains only an overview of the S-131 application
+schema. The S-131 Application Schema types are realised in the Feature
+Catalogue. The Feature Catalogue is included as a separate Annex
+(Annex C), and provides a full specification of all types including
+feature and information types, their attributes, allowed values, and
+relationships between types in the data product.
+
+The following conventions are used in the UML diagrams depicting the
+application schema:
+
+* Standard UML conventions for classes, associations, inheritance,
+roles, and multiplicities apply. These conventions are described in
+Part 1 of S-100.
+* Italic font for a class name indicates an abstract class.
+* Feature classes are depicted with green background; the dark shade
+for abstract feature classes and the light shade for ordinary (non-abstract)
+feature classes.
+* Information type classes are depicted with blue background; the
+dark shade for abstract information type classes and the light shade
+for ordinary information types.
+* Association classes are depicted with a white background.
+* Complex attributes are depicted with a pink background.
+* Enumeration lists and codelists are depicted with a tan background.
+The numeric code corresponding to each listed value is shown to its
+right following an '=' sign.
+* No significance attaches to the colour of associations.
+(Complex diagrams may use different colours to distinguish associations
+that cross one another.)
+* Where the association role or name is not explicitly shown, the
+default rules for roles and names apply:
+
+** The role name is 'the<CLASSNAME>' where <CLASSNAME> is the name
+of the class to which that association end is linked.
+** The association name is '<CLASSNAME1>_<CLASSNAME2>' where <CLASSNAME1>
+is the source and <CLASSNAME2> the target. In case of a feature/information
+association the feature is the source. For feature/feature or
+information/information associations without explicit names the source/target
+are indicated by an arrowhead.
+* Subclasses inherit the attributes and associations of their superclasses
+at all levels, unless such inheritance is explicitly overridden in
+the subclass.
+
+[[sec_4.2.1]]
+==== Domain model
+
+The S-131 domain model has two base classes ('root classes') from
+which all the domain-specific geographic features and information
+type classes are derived. The base classes are shown in <<fig_4.2>>
+below. The base class for geographic features is *FeatureType* and
+the base class for information types is *InformationType*. Each of
+the two base classes has a set of attributes which are therefore inherited
+by all domain-specific features. The approximate area features in
+S-131 are also derived from the geographic feature root class. Both
+base classes are abstract classes and do not have direct instances
+in S-131 data -- instead, S-131 feature and information type data
+objects are instantiations of a non-abstract class derived from one
+of these base classes.
+
+S-131 meta- and cartographic features are not derived from these base
+classes -- S-131 instead incorporates meta- and cartographic feature
+definitions originally prepared for S-101 in the interests of harmonization
+and interoperability with other S-100-based data products, especially
+S-101 ENCs.
+
+[[fig_4.2]]
+.Base classes in S-131
+image::figure-2.png[]
+
+[[sec_4.2.1.1]]
+===== Overview of domain features and information types
+
+Marine Harbour Infrastructure data products include harbour facilities,
+port services and specially designated areas related to ship operations
+in ports. It does not include protected areas, obstructions and other
+physical features, or natural conditions. The broad categories of
+geographic features and non-geographic information included in the
+S-131 domain are:
+
+* Harbour layout, including the locations of terminals and berths,
+and contact information for terminal operators.
+* Port services and related features such as waste reception facilities,
+supplies, fuel, and repair facilities.
+* Supporting infrastructure such as the nature of nearby transportation.
+* The locations of infrastructure such as dry docks and syncrolifts.
+* Specially designated locations relating to manoeuvres, such as fairways
+and turning basins.
+
+The geographic features are divided into "layout" and "physical infrastructure"
+classes, which are used as abstract generalizations of the domain
+feature classes. In addition, the *OrganizationContactArea/SupervisedArea*
+hierarchy used in other domain models for nautical publications are
+used as upper-level generalizations. <<fig_4.3>> depicts the hierarchy
+of domain feature classes.
+
+Geographic features use spatial types defined in the geometry package
+for spatial attributes. Datasets comprised of S-131 features are described
+by metadata as defined in the S-131 metadata package.
+
+[[fig_4.3]]
+.Overview of S-131 domain feature classes
+image::figure-3.png[]
+
+Information types model chunks of information associated to feature
+types. Information types may be associated to other information types
+or referenced by associations from feature types. The information
+types used in S-131 are depicted in <<fig_4.4>>.
+
+[[fig_4.4]]
+.Information types
+image::figure-4.png[]
+
+The abstract class *FeatureType* is an abstract class from which the
+geographic feature classes in the application schema are derived.
+(Meta- and cartographic feature classes do not derive from it.) *FeatureType*
+has attributes for fixed and periodic date ranges indicating the effective
+dates of the feature, name of the feature, source information, types
+of regulations, and a *textContent* attribute that allows text notes
+or references to be provided for individual feature instances where
+appropriate. The attributes defined in *FeatureType* are inherited
+by all S-131 geographic feature types. All the attributes in *FeatureType*
+are optional. A derived class may impose additional constraints, which
+will be described in the definition of the derived class or the S-131
+DCEG. <<fig_4.5>> depicts *FeatureType* and its attributes.
+
+[[fig_4.5]]
+.The root class FeatureType
+image::figure-5.png[]
+
+The abstract class *InformationType* is an abstract class from which
+all the information type classes in the S-131 domain model
+(except *SpatialQuality*) are derived. *InformationType* has attributes
+for fixed and periodic date ranges, name associated with the individual
+information object if any, source information, and a *textContent*
+attribute that allows text notes or references to be provided for
+individual instances where appropriate. The attributes defined in
+*InformationType* are inherited by all S-131 information type classes.
+All the attributes of *InformationType* are optional. A derived class
+may impose additional constraints, which will be described in the
+definition of the derived class or in the S-131 DCEG. <<fig_4.6>>
+depicts *InformationType* and its attributes.
+
+[[fig_4.6]]
+.The root class InformationType
+image::figure-6.png[]
+
+[[sec_4.2.1.2]]
+===== Layout
+
+Layout features describe the layout of the harbour area. They include
+terminal, mooring facilities, special areas within the harbour, berths,
+designation of the positioning of specific berths along a wharf or
+quay, dock areas, and a *HarbourAreaSection* feature for subdividing
+harbour areas into sub-sections.
+
+Note that the current model includes some features which would ideally
+be merged into "categoryOfPortSection" attributes of other features,
+due to GI Registry conceptual limitations on re-use of concepts.
+
+[[fig_4.7]]
+.Layout features
+image::figure-7.png[]
+
+[[sec_4.2.1.3]]
+===== Physical Infrastructure
+
+Physical infrastructure features include drydock and floating dock
+facilities, ship lifts, gridirons, and straddle carriers. The features
+are depicted in <<fig_4.8>>. Note that "ship lift" and "straddle carrier"
+are modelled as *HarbourFacility* features with a category attribute,
+due to current GI Registry conceptual limitations on the use of these
+concepts.
+
+[[fig_4.8]]
+.Physical Infrastructure features
+image::figure-8.png[]
+
+[[sec_4.2.1.4]]
+===== Services
+
+Information about the services available in specific areas is modelled
+by means of an information association from the feature to the
+*AvailablePortServices* information type. This relationship is depicted
+in <<fig_4.9>>. This type contains attributes for encoding various
+types of services. Examples of the service enumerations are depicted
+in <<fig_4.10>>
+
+[[fig_4.9]]
+.Port Services
+image::figure-9.png[]
+
+[[fig_4.10]]
+.Service Enumerations and Codelists
+image::figure-10.png[]
+
+[[sec_4.2.1.5]]
+===== Regulations
+
+There are three main information types which represent regulations,
+restrictions, and recommendations, respectively, and a fourth information
+type for general or unclassifiable information.
+
+* The *Regulations* class represents information derived from port
+regulations, rules made by terminal operators, laws, national shipping
+regulations, navigation rules, etc.
+
+* Class *Restrictions* is intended for restrictions that are not derived
+from regulatory sources.
+
+* Class *Recommendations* is intended for information that is recommendatory
+in nature; in S-131 this may be recommendations for the orientation
+of vessels relative to the wharf while docking and similar pieces
+of information that are either voluntary or have not been issued as
+formal rules by the port authority or terminal operator.
+
+The fourth class, **NauticalInformation**, is intended for general
+notes or other information that cannot be categorized as one of the
+other three classes.
+
+These information types all inherit the attributes of their immediate
+abstract superclass **AbstractRxN**, which provides attributes *textContent*
+and *graphic* for textual and pictorial material respectively.
+The sub-attributes of its complex attribute *rxnCode* allow optional
+classification of the material encoded in *textContent*/*graphic*
+according to the type of material and the kind of nautical activity
+affected by it. They also inherit the attributes of abstract superclass
+**InformationType**, which allows encoding of the effective and expiry
+dates, if any, and the source of information
+footnote:[Source information is currently broken out into three attributes:
+source, sourceType, and reportedDate, due to GI Registry issues with
+the complex attribute sourceIndication.],
+if it is necessary to encode that data.
+
+These classes are intended primarily for encoding textual information,
+such as that which derives from textual source material such as port
+handbooks, national or local laws or official publications.
+
+The use of these information types to associate regulatory and other
+information to individual features is described elsewhere (<<sec_4.2.1.8>>).
+<<fig_4.11>> depicts the *Regulations*, *Restrictions*, *Recommendations*,
+and *NauticalInformation* classes, their class hierarchy, and the
+attributes of their generalizations *AbstractRxN* and *InformationType*
+(which are inherited by the classes).
+
+[[fig_4.11]]
+.Regulations and other information types for primarily textual information
+image::figure-11.png[]
+
+[[sec_4.2.1.6]]
+===== Contact information
+
+The detailed model of contact information is shown in <<fig_4.12>>
+below.
+
+[[fig_4.12]]
+.Contact information
+image::figure-12.png[]
+
+Contact information can be associated to an instance of an *Authority*
+information type as well as to any feature that is a subtype of
+*OrganizationContactArea*, which means any S-131 geographic feature
+(meta and cartographic features do not allow this association). <<fig_4.13>>
+shows the associations to *ContactInformation*.
+
+[[fig_4.13]]
+.Associations to contact information
+image::figure-13.png[]
+
+[[sec_4.2.1.7]]
+===== Supervising organizations and their service hours
+
+The *SupervisedArea* class models areas which may have an associated
+organization (government or private) that exercises some kind of control
+or supervision over the area.
+
+Operating schedules and business hours of organizations are modelled
+by associating the *ServiceHours* class to an *Authority*. The *ServiceHours*
+class is a container for the complex attribute describing daily schedules
+for different weekdays (*scheduleByDayOfWeek*). This complex attribute
+contains another complex attribute for time intervals and the days
+to which they apply, and category sub-attribute to model whether the
+schedule describes opening hours, closures, etc. Exceptions to the
+schedule such as fixed or movable holidays are modelled by a
+*NonStandardWorkingDay* class with attributes allowing indication
+of the dates or days which are holidays or exceptions.
+
+Working times and schedules for particular features are modelled by
+an analogous association from the feature object (association *LocationHours*).
+When a *ServiceHours* is thus linked to a service feature, the service
+hour information applies to the feature as a whole (e.g., all services
+for a *Terminal*). Note that since working hours do not apply to all
+features in the model, the associations are to individual features
+instead of abstract supertypes.
+
+Working times of 24 hours/day may be explicitly encoded
+(from 00:00:00 to 24:00:00 hrs., in accordance with ISO 8601 conventions
+for midnight at the beginning and end of a day).
+
+The model for both kinds of schedules is shown in <<fig_4.13>>.
+
+[[fig_4.14]]
+.Working times and schedules
+image::figure-14.png[]
+
+The authority should be encoded only if its presence in the dataset
+conveys information that is useful to the end user. In S-131 this
+is expected to be the general case, but there may be exceptions, such
+as when the authority is open for business but a particular location
+under its jurisdiction is closed at certain times of day.
+
+Since *Authority* also has an information association to *ContactDetails*
+(<<fig_4.13>>), it is in principle possible to link a location to
+both an *Authority* and *ContactDetails* as well as linking the location
+to the same *ContactDetails*. Such linking is permissible but will
+generally be redundant and should, if possible, be avoided as unnecessary
+duplication. It may be done in situations where contact details for
+an operating authority are different from contact details for the
+service it operates.
+
+<<fig_4.13>> also shows associations between service features and
+*Authority*. *Authority*-*ContactDetails* associations are omitted
+to reduce clutter.
+
+[[sec_4.2.1.8]]
+===== Regulations applying in specific locations
+
+The *AssociatedRxN* association between a feature type and a *Regulations*,
+*Restrictions*, *Recommendations*, or *NauticalInformation* object
+(see <<fig_4.14>>) indicates that the Regulation, etc., is applicable
+within the associated feature. If it is necessary to identify an authority
+or organization related to a particular regulation (restriction, etc.)
+object, this may be done using the *RelatedOrganisation* association
+between *Regulations*, etc., and an *Authority* object. This should
+be included only when the connection to the *Authority* conveys useful
+information to the end user -- it is not intended to encode the issuing
+or controlling authority for every regulation. Note also that while
+*Authority* can be associated to geographic features as well as *Regulations*,
+etc., encoding both associations is not mandatory even when the same
+*Authority* is associated to a service area as well as a *Regulations*
+object (or *NauticalInformation*, etc.).
+
+[[fig_4.15]]
+.Regulations, etc., applying to specific features
+image::figure-15.png[]
+
+[[sec_4.2.1.9]]
+===== Regulations applying only to vessels with specific characteristics or cargoes
+
+Certain regulations apply only to vessels of specified dimensions,
+types, or carrying specified cargo, etc.
+
+This is modelled by first defining the relevant subset of vessels
+according to the dimension, type, cargo, etc., and then associating
+that subset to the appropriate feature or information type.
+The subset of vessels is modelled using the *Applicability* class,
+which contains attributes for the most common vessel characteristics
+used in nautical publications. These include measurements
+(length, beam, draught), type of cargo, displacement, etc. Constraints
+which cannot be modelled using the attributes of *Applicability* can
+be described in plain text in its *information* attribute.
+
+Conditions relating to vessel dimensions are modelled by the complex
+attribute **vesselsMeasurements**, which has sub-attributes for naming
+the dimension and indicating the limit (whether the condition applies
+to a vessel which exceeds or falls below the limit). For example,
+the combinations below describe the condition
+"length overall > 50 m" (Condition 1) and "length overall < 90 m"
+(Condition 2):
+
+[[table_4.1]]
+.Conditions relating to vessel dimensions
+[cols="181,118,118,117"]
+|===
+| h| Condition 1 h| Condition 2 h| Condition 3
+
+| *vesselsCharacteristics*      | length overall | length overall | breadth
+| *comparisonOperator*          | greater than   | less than      | greater than
+| *vesselsCharacteristicsValue* | 50             | 90             | 20
+| *vesselsCharacteristicsUnit*  | metre          | metre          | metre
+|===
+
+The *logicalConnectives* attribute is used to indicate how to interpret
+the case where multiple conditions are encoded using attributes of
+measurements - whether the conditions described by condition attributes
+are cumulative (conjunctive, AND) or alternatives (disjunctive, OR).
+A *logicalConnectives*=AND combined with Conditions 1 and 2 above
+describes a vessel of length between 50 and 90 metres; *logicalConnectives*=OR
+combined with conditions 1 and 3 describes a vessel of length greater
+than 50 metres or beam greater than 20 metres.
+
+This modelling cannot represent subsets defined by both AND and OR
+combinations of conditions, but it is always possible to convert such
+complex conditions into multiple combinations each using only AND
+('conjunctive normal form') or OR ('disjunctive normal form'), and
+model the subset using more than one *Applicability* object. Multiple
+instances of Applicability associated to the same feature or information
+type are interpreted as alternatives (inclusive OR).
+
+<<fig_4.15>> depicts the classes and attributes that can be used to
+define subsets of vessels according to specified characteristics.
+
+[[fig_4.16]]
+.Vessel subsets characterised by cargo, dimensions and capabilities
+image::figure-16.png[]
+
+Given the relevant subset of vessels, it can be associated to the
+appropriate feature, regulation, or report by a *PermissionType*,
+or *InclusionType* association. These are association classes, whose
+single attribute models the nature of the relationship between the
+vessel subset and feature or information type. <<fig_4.16>> depicts
+the use of vessel subsets in *PermissionType* or *InclusionType* associations.
+
+The association classes *PermissionType* and *InclusionType* basically
+characterize the relationship. For example:
+
+. A specified set of vessels is COVERED by a regulation and another
+set of vessels is EXEMPT from the regulation.
+. Vessels with specified cargo and dimensions MUST use a specified
+berth, vessels of smaller dimensions are RECOMMENDED to use the berth,
+and naval transports are EXEMPT from using the berth.
+
+"COVERED" and "EXEMPT" are different kinds of relationship between
+different subsets of vessels characterized by different dimensional
+limits, etc., and a given regulation.
+
+"MUST use", "RECOMMENDED to use", and "EXEMPT from use" are relationships
+between different subsets of vessels characterized by different dimensional
+limits, etc., and a given feature or service.
+
+[[fig_4.17]]
+.Applicability of rules, etc., to vessel categories
+image::figure-17.png[]
+
+*PermissionType* links a feature to an *Applicability*, and models
+a requirement, recommendation or prohibition on entry into a feature,
+by the specified subset of vessels.
+
+*Inclusion* links a *Regulation*, *Recommendation*, *Restriction*,
+or *NauticalInformation* instance to a subset defined by an Applicability
+object, and indicates whether the content of the *Regulation*, etc.,
+applies to the vessels (membership=included), or whether it explicitly
+does not apply (membership=excluded).
+
+Informally:
+
+. *Applicability* describes the set of vessels: i.e., who
+
+. *Regulations* provides the text of the regulation: i.e., what
+
+. The association class *InclusionType* describes the relationship
+between who and what. That is, who "must (or can)" / "need not" do
+what.
+
+And:-
+
+[start=4]
+. A geographic feature defines a location or physical facility: i.e.,
+where
+
+. The association class PermissionType describes the relationship
+between who and where. That is, who can / must / should / need not
+use (or sail) where.
+
+[[sec_4.2.1.10]]
+===== Other uncategorized supplementary information
+
+The domain model also provides a method for attaching to any feature
+or information type data in the form of a text note, graphic, or Internet
+reference which cannot be categorized using an appropriate feature
+or information type. This consists of defining a *NauticalInformation*
+object and referencing it from the feature or information type using
+the *AdditionalInformation* association. This method is intended to
+be a last resort and every effort should be made to use a more specific
+feature or information type to encode the information to be attached,
+including splitting the information in question across more than one
+type of feature or information object as needed and/or using the
+*AssociatedRxN* association instead of *AdditionalInformation*, wherever
+the nature of the content allows it. See <<fig_4.17>>.
+
+[[fig_4.18]]
+.Attachment of uncategorizable information to any feature or information type
+image::figure-18.png[]
+
+[[sec_4.2.1.11]]
+===== "Wrapper" complex attributes
+
+S-131 provides a general method for encoding some kinds of information
+using "wrapper" attributes that are basically a named type of text
+content. The information is encoded in narrative form in a *textContent*
+sub-attribute, which provides a general way to encode textual information.
+<<fig_4.18>> depicts the wrapper attributes.
+
+[[fig_4.19]]
+.Wrapper Attributes
+image::figure-19.png[]
+
+[[sec_4.2.1.12]]
+===== Feature relationships
+
+Feature relationships in S-131 are depicted in <<fig_4.19>>. The feature
+relationships can be generally characterized as follows:
+
+*HarbourAreaAdministrative* is the main feature that covers the whole
+port area. It is subdivided into zero or more sections modelled by
+*HarbourAreaSection* features (the *LayoutDivision*) aggregation.
+*HarbourAreaSection* can be further subdivided into *WaterwayArea*,
+*Terminal*, *Berth*, *AnchorageArea*, *DockArea*, etc. The *Terminal*
+feature can also be subdivided into *Berth* features using the same
+association.
+
+*HarbourAreaSection* can also be subdivided into further features
+of the same class (the *SubUnit* self-association).
+
+Nominal positions of berths can be indicated by associating a *BerthPosition*
+feature to *Berth* using the *Demarcation* association.
+
+Berth positions and Anchor berths can be linked to a mooring facility
+using the *PrimaryAuxiliaryFacility* association.
+
+Physical infrastructure features in a Terminal or *HarbourAreaSection*
+feature should be linked to its container *Terminal* or *HarbourAreaSection*
+by an *Infrastructure* association. If there is an hierarchy of features
+containing the infrastructure only the feature at the lowest level
+of the hierarchy should be linked to the infrastructure feature.
+
+The outer limit of the whole harbour area can be associated to
+*HarbourAreaAdministrative* feature using a *JurisdictionalLimit*
+association.
+
+[[fig_4.20]]
+.Relationships between geographic features
+image::figure-20.png[]
+
+[[sec_4.2.2]]
+==== Meta Features
+
+S-131 provides four meta-features:
+
+* *DataCoverage* for describing areas in the cell that are populated
+with data. If the cell must include distant areas that are not part
+of the port area, such areas will generally be excluded from the *DataCoverage*
+feature(s).
+* *QualityOfNonbathymetricData* for encoding quality information.
+* *SoundingDatum* and *VerticalDatum* for encoding information about
+the datums for depths and elevations respectively.
+
+<<fig_4.21>> depicts the meta-features and their attributes.
+
+[[fig_4.21]]
+.Meta-feature classes
+image::figure-21.png[]
+
+[[sec_4.2.3]]
+==== Spatial Quality Information Type
+
+S-131 spatial quality of spatial primitives is encoded in the SpatialQuality
+information type, which is associated to spatial objects. The modelling
+is the same as in S-101. The attributes describe qualitative and quantitative
+horizontal quality. See <<fig_4.22>>.
+
+[[fig_4.22]]
+.Spatial Quality
+image::figure-22.png[]
+
+[[sec_4.2.4]]
+==== Cartographic Features
+
+S-131 utilizes a single cartographic feature called TextPlacement
+that is to optimise text positioning, such as at smaller scales to
+prevent cluttering. This feature can be associated to any geographic
+feature and gives the location of a text string relative to the location
+of the feature. The modelling and use are the same as in S-101.
+See <<fig_4.23>>.
+
+[[fig_4.23]]
+.Text Placement
+image::figure-23.png[]

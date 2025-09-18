@@ -1,0 +1,61 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2025-09-16</fetched>
+  <title type="main" format="text/plain" language="en">Data Product Interoperability in S-100 Navigation Systems</title>
+  <uri type="pdf">http://registry.iho.int/beta/guidance/list.do</uri>
+  <docidentifier type="IHO" primary="true">S-98</docidentifier>
+  <docnumber>98</docnumber>
+  <date type="published">
+    <from>2022-05-23</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Hydrographic Organization</name>
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <edition>1.0.0</edition>
+  <version>
+    <revision-date>2022-05-23</revision-date>
+  </version>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2022</from>
+    <owner>
+      <organization>
+        <name>International Hydrographic Organization</name>
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    <title type="original" format="text/plain">
+      <variant language="en" script="Latn">Standards and Specifications</variant>
+    </title>
+    <place>Monaco</place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>Monaco</place>
+  <validity>
+    <validityBegins>2022-05-23 00:00</validityBegins>
+  </validity>
+  <ext schema-version="v1.0.0">
+    <editorialgroup>
+      <committee>
+        <name>Hydrographic Services and Standards Committee</name>
+        <abbreviation>HSSC</abbreviation>
+        <workgroup>
+          <name>S-100 Working Group</name>
+          <abbreviation>S-100WG</abbreviation>
+        </workgroup>
+      </committee>
+    </editorialgroup>
+  </ext>
+</bibdata>

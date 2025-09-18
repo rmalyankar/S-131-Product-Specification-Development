@@ -1,0 +1,57 @@
+
+[[sec_3]]
+== Dataset Identification
+
+A dataset that conforms to this Product Specification may be identified
+by its discovery metadata as defined in <<sec_14>>.
+
+*Title:*:: Marine Harbour Infrastructure
+
+*Alternate Title:*:: MHI
+
+*Abstract:*:: S-131 datasets must be produced in accordance with the
+rules defined in the S-131 Product Specification. The S-131 Product
+Specification contains all the information necessary to enable producers
+to produce a consistent MHI dataset; and manufacturers to use that
+data efficiently within navigation systems.
+
+*Topic Category:*:: Transportation (<<ISO_19115_1>> MD_TopicCategoryCode
+018)
+
+*Geographic Description:*:: Ports and harbours in areas specific to
+marine navigation
+
+*Spatial Resolution:*:: An MHI dataset must indicate a value for maximum
+display scale. Each *Data Coverage* feature must also carry a value
+for minimum display scale. Recommended values for scales can be found
+in the S-101 ENC Product Specification. Producers should note that
+at the smaller scales, geographic details within ports will have no
+perceptible visual separation on a graphic display, and are therefore
+encouraged to determine display scales taking into account the content
+and intended navigation purpose of the dataset.
+
+*Purpose:*::  Information about ports and harbours for use in Electronic
+Chart Display and Information Systems
+
+*Language:*:: English (Mandatory), other (Optional)
+
+*Classification:*:: Data may be classified as one of the following:
++
+--
+. Unclassified;
+. Restricted;
+. Confidential;
+. Secret;
+. Top Secret;
+. Sensitive but Unclassified;
+. For Official Use Only;
+. Protected; or
+. Limited Distribution.
+--
+
+*Spatial Representation Type:*:: Vector
+
+*Point of Contact:*:: Producing Agency
+
+*Use Limitation:*:: Not for sole use in navigation; must be used with
+an ENC.
