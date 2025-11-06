@@ -6852,7 +6852,7 @@
 					<S100Base:lower>0</S100Base:lower>
 					<S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
 				</S100FC:multiplicity>
-				<S100FC:attribute ref="text"/>
+				<S100FC:attribute ref="sourceType"/>
 			</S100FC:subAttributeBinding>
 			<S100FC:subAttributeBinding>
 				<S100FC:multiplicity>
@@ -8723,35 +8723,9 @@
 			<S100FC:attributeBinding sequential="false">
 				<S100FC:multiplicity>
 					<S100Base:lower>0</S100Base:lower>
-					<S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+					<S100Base:upper xsi:nil="true" infinite="true"/>
 				</S100FC:multiplicity>
-				<S100FC:attribute ref="source"/>
-			</S100FC:attributeBinding>
-			<S100FC:attributeBinding sequential="false">
-				<S100FC:multiplicity>
-					<S100Base:lower>0</S100Base:lower>
-					<S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
-				</S100FC:multiplicity>
-				<S100FC:permittedValues>
-					<S100FC:value>1</S100FC:value>
-					<S100FC:value>2</S100FC:value>
-					<S100FC:value>7</S100FC:value>
-					<S100FC:value>8</S100FC:value>
-					<S100FC:value>9</S100FC:value>
-					<S100FC:value>10</S100FC:value>
-					<S100FC:value>11</S100FC:value>
-					<S100FC:value>12</S100FC:value>
-					<S100FC:value>13</S100FC:value>
-					<S100FC:value>14</S100FC:value>
-				</S100FC:permittedValues>
-				<S100FC:attribute ref="sourceType"/>
-			</S100FC:attributeBinding>
-			<S100FC:attributeBinding sequential="false">
-				<S100FC:multiplicity>
-					<S100Base:lower>0</S100Base:lower>
-					<S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
-				</S100FC:multiplicity>
-				<S100FC:attribute ref="reportedDate"/>
+				<S100FC:attribute ref="sourceIndication"/>
 			</S100FC:attributeBinding>
 			<S100FC:attributeBinding sequential="false">
 				<S100FC:multiplicity>
@@ -10073,6 +10047,30 @@
 				<S100FC:role ref="componentOf"/>
 				<S100FC:featureType ref="HarbourAreaSection"/>
 			</S100FC:featureBinding>
+			<S100FC:permittedPrimitives>surface</S100FC:permittedPrimitives>
+		</S100FC:S100_FC_FeatureType>
+		<S100FC:S100_FC_FeatureType isAbstract="false">
+			<S100FC:name>Harbour Facility</S100FC:name>
+			<S100FC:definition>A harbour installation with a service or commercial operation of public interest.</S100FC:definition>
+			<S100FC:code>HarbourFacility</S100FC:code>
+			<S100FC:alias>HRBFAC</S100FC:alias>
+			<S100FC:definitionReference>
+				<S100FC:sourceIdentifier>367</S100FC:sourceIdentifier>
+				<S100FC:definitionSource ref="IHOREG"/>
+			</S100FC:definitionReference>
+			<S100FC:informationBinding roleType="association">
+				<S100FC:multiplicity>
+					<S100Base:lower>0</S100Base:lower>
+					<S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+				</S100FC:multiplicity>
+				<S100FC:association ref="LocationHours"/>
+				<S100FC:role ref="facilityOperatingHours"/>
+				<S100FC:informationType ref="ServiceHours"/>
+			</S100FC:informationBinding>
+			<S100FC:superType>HarbourPhysicalInfrastructure</S100FC:superType>
+			<S100FC:featureUseType>geographic</S100FC:featureUseType>
+			<S100FC:permittedPrimitives>point</S100FC:permittedPrimitives>
+			<S100FC:permittedPrimitives>curve</S100FC:permittedPrimitives>
 			<S100FC:permittedPrimitives>surface</S100FC:permittedPrimitives>
 		</S100FC:S100_FC_FeatureType>
 		<S100FC:S100_FC_FeatureType isAbstract="false">
