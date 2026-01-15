@@ -4,6 +4,9 @@ This folder is for work-in-progress feature catalogues and accompanying document
 
 FC files for work in progress are named 131_FC_2.0.0.YYYYMMDD.xml where YYYYMMDD is the date of the draft, to be more consistent with apparent IHO Secretariat practice (which will probably replace "FC" with "Feature_Catalogue"...).
 
+## January 14, 2026
+* FC updated to apply feedback received as of 14 January
+
 ## December 24, 2025
 * Edition 2.0.0 FC updated to add missing permitted values for Berth.categoryOfFrequency (FC version 20251221)
 * No review PDF of FC (see DCEG instead; review PDF can be generated if requested)
