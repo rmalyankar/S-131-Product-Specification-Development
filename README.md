@@ -1,6 +1,11 @@
 # S-131-Product-Specification-Development
 Collaboration space for IHO Nautical Information Provision Working Group for the development of S-131 Product Specification with its artifacts
 
+## January 2026
+* Inital 2.0.0 PC (Last update: 2026-01-08)
+* PS, GML schema, PS and DCEG updated with feedback received as of 14 January (Last update: 2026-01-14)
+* Initial draft of S-158:131 (Last update: 2026-01-14)
+
 ## 2025-12-24
 * Latest drafts PS and DCEG added in PS/2.0.0 and DCEG/2.0.0 folders
 * Miscellaneous cleanup
