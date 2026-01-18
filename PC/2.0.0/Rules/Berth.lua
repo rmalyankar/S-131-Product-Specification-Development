@@ -144,6 +144,8 @@ function Berth(feature, featurePortrayal, contextParameters)
 		viewingGroup = 32440
 		featurePortrayal:AddInstructions('ViewingGroup:32440;DrawingPriority:9;DisplayPlane:UnderRADAR')
 		featurePortrayal:AddInstructions('PointInstruction:131INFRM')
+		featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
+        featurePortrayal:AddInstructions('LineInstruction:_simple_')
 		if (feature.bollardNumber) then
   		featurePortrayal:AddInstructions('LocalOffset:0,0;TextAlignHorizontal:Center;TextAlignVertical:Center;FontSize:10')
       nameOffset = yOffsetValue
