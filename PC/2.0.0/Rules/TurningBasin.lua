@@ -7,17 +7,16 @@ function TurningBasin(feature, featurePortrayal, contextParameters)
 
 	if feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
-		viewingGroup = 32410
+		viewingGroup = 36020
     if contextParameters.RadarOverlay then
-    	featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:12;DisplayPlane:OverRADAR')
+    	featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:12;DisplayPlane:OverRADAR')
     else
-    	featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:12;DisplayPlane:UnderRADAR')
+    	featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:12;DisplayPlane:UnderRADAR')
     end
-		featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:3;DisplayPlane:UnderRADAR')
---    featurePortrayal:AddInstructions('ColorFill:DEPVS')
---		featurePortrayal:AddInstructions('AreaFillReference:TRNBSN91')
+		featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:3;DisplayPlane:UnderRADAR')
 		featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
 		featurePortrayal:AddInstructions('LineInstruction:_simple_')
+		featurePortrayal:AddInstructions('PointInstruction:131INFRM')
 	else
 		error('Invalid primitive type or mariner settings passed to portrayal')
 	end

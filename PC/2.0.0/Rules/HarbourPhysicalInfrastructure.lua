@@ -5,23 +5,19 @@
 function HarbourPhysicalInfrastructure(feature, featurePortrayal, contextParameters)
 	local viewingGroup
 
-	if feature.PrimitiveType == PrimitiveType.Surface and contextParameters.PlainBoundaries then
-		viewingGroup = 36020
-		featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
-		featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
-		featurePortrayal:AddInstructions('LineInstruction:_simple_')
-	elseif feature.PrimitiveType == PrimitiveType.Surface then
-		viewingGroup = 36020
-		featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
-		featurePortrayal:AddInstructions('LineInstruction:ADMARE01')
-  elseif feature.PrimitiveType == PrimitiveType.Point and contextParameters.SimplifiedPoints then
-    viewingGroup = 36020
-		featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
-    featurePortrayal.AddInstructions('PointInstruction:131SYMBL3S')
+	if feature.PrimitiveType == PrimitiveType.Surface then
+        viewingGroup = 32410
+        featurePortrayal:AddInstructions(
+            'ViewingGroup:32410;DrawingPriority:6;DisplayPlane:UnderRADAR'
+        )
+        featurePortrayal:AddInstructions('PointInstruction:131INFRM')
+        featurePortrayal:SimpleLineStyle('dash', 0.64, 'CHGRD')
+        featurePortrayal:AddInstructions('LineInstruction:_simple_')
+		
   elseif feature.PrimitiveType == PrimitiveType.Point then
-    viewingGroup = 36020
-		featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
-    featurePortrayal.AddInstructions('PointInstruction:131SYMBL3S')
+    viewingGroup = 32410
+		featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:6;DisplayPlane:UnderRADAR')
+    featurePortrayal.AddInstructions('PointInstruction:131SYMBL3L')
 	else
 		error('Invalid primitive type or mariner settings passed to portrayal')
 	end

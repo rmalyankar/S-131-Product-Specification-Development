@@ -7,25 +7,25 @@ function AnchorBerth(feature, featurePortrayal, contextParameters)
 
 	if feature.PrimitiveType == PrimitiveType.Point then
 		-- Simplified and paper chart points use the same symbolization
-		viewingGroup = 26220
+		viewingGroup = 32440
 		if contextParameters.RadarOverlay then
-			featurePortrayal:AddInstructions('ViewingGroup:26220;DrawingPriority:15;DisplayPlane:OverRADAR')
+			featurePortrayal:AddInstructions('ViewingGroup:32440;DrawingPriority:15;DisplayPlane:OverRADAR')
 		else
-			featurePortrayal:AddInstructions('ViewingGroup:26220;DrawingPriority:15;DisplayPlane:UnderRADAR')
+			featurePortrayal:AddInstructions('ViewingGroup:32440;DrawingPriority:15;DisplayPlane:UnderRADAR')
 		end
 		featurePortrayal:AddInstructions('PointInstruction:131SYMBL3S')
 		if feature.featureName[1] and feature.featureName[1].name then
 			featurePortrayal:AddInstructions('LocalOffset:3.51,0;FontSize:10')
-			featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters), 'Nr %s'), 29, 24, 26220, 15)
+			featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters), 'Nr %s'), 29, 24, 32440, 15)
 		end
 	elseif feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
-		viewingGroup = 26220
-		featurePortrayal:AddInstructions('ViewingGroup:26220;DrawingPriority:15;DisplayPlane:UnderRADAR')
+		viewingGroup = 32440
+		featurePortrayal:AddInstructions('ViewingGroup:32440;DrawingPriority:15;DisplayPlane:UnderRADAR')
 		featurePortrayal:AddInstructions('PointInstruction:131INFRM')
 		if feature.featureName[1] and feature.featureName[1].name then
 			featurePortrayal:AddInstructions('LocalOffset:3.51,0;FontSize:10')
-			featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters), 'Nr %s'), 29, 24, 26220, 15)
+			featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters), 'Nr %s'), 29, 24, 32440, 15)
 		end
 		featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
 		featurePortrayal:AddInstructions('LineInstruction:_simple_')

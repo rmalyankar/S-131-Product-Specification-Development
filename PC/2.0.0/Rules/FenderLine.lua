@@ -4,7 +4,7 @@
 -- main entry point.
 
 function FenderLine(feature, featurePortrayal, contextParameters)
-    local viewingGroup = 36020
+    local viewingGroup = 32440
 
     if feature.PrimitiveType == PrimitiveType.Curve then
         featurePortrayal:AddInstructions(

@@ -6,8 +6,8 @@ function LockBasin(feature, featurePortrayal, contextParameters)
 
 	if feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
-		viewingGroup = 22010
-		featurePortrayal:AddInstructions('ViewingGroup:22010;DrawingPriority:9;DisplayPlane:UnderRadar;ColorFill:DEPVS')
+		viewingGroup = 31020
+		featurePortrayal:AddInstructions('ViewingGroup:31020;DrawingPriority:9;DisplayPlane:UnderRadar;ColorFill:DEPVS')
 		featurePortrayal:SimpleLineStyle('solid',0.32,'CHGRD')
 		featurePortrayal:AddInstructions('LineInstruction:_simple_')
 	else

@@ -7,8 +7,8 @@ function SoundingDatum(feature, featurePortrayal, contextParameters)
 
 	if feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
-		viewingGroup = 31010
-		featurePortrayal:AddInstructions('ViewingGroup:31010;DrawingPriority:0;DisplayPlane:UnderRADAR;NullInstruction')
+		viewingGroup = 31040
+		featurePortrayal:AddInstructions('ViewingGroup:31040;DrawingPriority:0;DisplayPlane:UnderRADAR;NullInstruction')
 	else
 		error('Invalid primitive type or mariner settings passed to portrayal')
 	end

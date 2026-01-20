@@ -8,18 +8,18 @@ function FloatingDock(feature, featurePortrayal, contextParameters)
 --	featurePortrayal:AddInstructions('AlertReference:SafetyContour,101,101')
 
 	if feature.PrimitiveType == PrimitiveType.Curve then
-		viewingGroup = 12410
+		viewingGroup = 32410
 		if contextParameters.RadarOverlay then
-			featurePortrayal:AddInstructions('ViewingGroup:12410;DrawingPriority:15;DisplayPlane:OverRADAR')
+			featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:15;DisplayPlane:OverRADAR')
 		else
-			featurePortrayal:AddInstructions('ViewingGroup:12410;DrawingPriority:15;DisplayPlane:UnderRADAR')
+			featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:15;DisplayPlane:UnderRADAR')
 		end
 		featurePortrayal:SimpleLineStyle('solid',0.64,'CHGRD')
 		featurePortrayal:AddInstructions('LineInstruction:_simple_')
 	elseif feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
-		viewingGroup = 12410
-		featurePortrayal:AddInstructions('ViewingGroup:12410;DrawingPriority:6;DisplayPlane:UnderRADAR')
+		viewingGroup = 32410
+		featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:6;DisplayPlane:UnderRADAR')
 --		featurePortrayal:AddInstructions('ColorFill:CHMGF')
 		featurePortrayal:SimpleLineStyle('solid',0.64,'CHGRD')
 		featurePortrayal:AddInstructions('LineInstruction:_simple_')

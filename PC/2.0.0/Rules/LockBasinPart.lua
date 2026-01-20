@@ -4,7 +4,7 @@
 -- LockBasinPart main entry point.
 
 function LockBasinPart(feature, featurePortrayal, contextParameters)
-	local viewingGroup = 12410
+	local viewingGroup = 36020
 
 	featurePortrayal:AddInstructions('ViewingGroup:' .. viewingGroup .. ';DrawingPriority:18')
 	
@@ -16,7 +16,7 @@ function LockBasinPart(feature, featurePortrayal, contextParameters)
 			featurePortrayal:AddInstructions('DisplayPlane:UnderRadar')
 		end
 		
-			featurePortrayal:AddInstructions('PointInstruction:MORFAC03')
+			featurePortrayal:AddInstructions('PointInstruction:131SYMBL3S')
 		end
 		
 

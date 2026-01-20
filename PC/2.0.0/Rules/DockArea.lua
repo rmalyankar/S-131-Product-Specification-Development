@@ -7,44 +7,44 @@ function DockArea(feature, featurePortrayal, contextParameters)
 
 	if feature.PrimitiveType == PrimitiveType.Surface and contextParameters.PlainBoundaries then
 		if feature.condition then
-			viewingGroup = 12420
-			featurePortrayal:AddInstructions('ViewingGroup:12420;DrawingPriority:6;DisplayPlane:UnderRADAR')
+			viewingGroup = 36020
+			featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
 			featurePortrayal:AddInstructions('ColorFill:DEPVS')
 			if feature.featureName[1] and feature.featureName[1].name then
 				featurePortrayal:AddInstructions('LocalOffset:0,0;TextAlignHorizontal:Center;TextAlignVertical:Center;FontSize:10')
-				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 12420, 6)
+				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 36020, 6)
 			end
 			featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
 			featurePortrayal:AddInstructions('LineInstruction:_simple_')
 		else
-			viewingGroup = 12420
-			featurePortrayal:AddInstructions('ViewingGroup:12420;DrawingPriority:6;DisplayPlane:UnderRADAR')
+			viewingGroup = 36020
+			featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
 			featurePortrayal:AddInstructions('ColorFill:DEPVS')
 			if feature.featureName[1] and feature.featureName[1].name then
 				featurePortrayal:AddInstructions('LocalOffset:0,0;TextAlignHorizontal:Center;TextAlignVertical:Center;FontSize:10')
-				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 12420, 6)
+				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 36020, 6)
 			end
 			featurePortrayal:SimpleLineStyle('solid',0.64,'CHGRD')
 			featurePortrayal:AddInstructions('LineInstruction:_simple_')
 		end
 	elseif feature.PrimitiveType == PrimitiveType.Surface then
 		if feature.condition then
-			viewingGroup = 12420
-			featurePortrayal:AddInstructions('ViewingGroup:12420;DrawingPriority:6;DisplayPlane:UnderRADAR')
+			viewingGroup = 36020
+			featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
 			featurePortrayal:AddInstructions('ColorFill:DEPVS')
 			if feature.featureName[1] and feature.featureName[1].name then
 				featurePortrayal:AddInstructions('LocalOffset:0,0;TextAlignHorizontal:Center;TextAlignVertical:Center;FontSize:10')
-				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 12420, 6)
+				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 36020, 6)
 			end
 			featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
 			featurePortrayal:AddInstructions('LineInstruction:_simple_')
 		else
-			viewingGroup = 12420
-			featurePortrayal:AddInstructions('ViewingGroup:12420;DrawingPriority:6;DisplayPlane:UnderRADAR')
+			viewingGroup = 36020
+			featurePortrayal:AddInstructions('ViewingGroup:36020;DrawingPriority:6;DisplayPlane:UnderRADAR')
 			featurePortrayal:AddInstructions('ColorFill:DEPVS')
 			if feature.featureName[1] and feature.featureName[1].name then
 				featurePortrayal:AddInstructions('LocalOffset:0,0;TextAlignHorizontal:Center;TextAlignVertical:Center;FontSize:10')
-				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 12420, 6)
+				featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters)), 26, 24, 36020, 6)
 			end
 			featurePortrayal:SimpleLineStyle('solid',0.64,'CHGRD')
 			featurePortrayal:AddInstructions('LineInstruction:_simple_')

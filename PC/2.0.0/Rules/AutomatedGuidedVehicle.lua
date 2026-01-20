@@ -4,7 +4,7 @@
 -- Automated Guided Vehicle main entry point.
 
 function AutomatedGuidedVehicle(feature, featurePortrayal, contextParameters)
-    local viewingGroup = 36020
+    local viewingGroup = 32400
 
     if feature.PrimitiveType == PrimitiveType.Surface then
         featurePortrayal:AddInstructions(

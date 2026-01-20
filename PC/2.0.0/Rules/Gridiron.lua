@@ -7,8 +7,8 @@ function Gridiron(feature, featurePortrayal, contextParameters)
 
 	if feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
-		viewingGroup = 27060
-		featurePortrayal:AddInstructions('ViewingGroup:27060;DrawingPriority:15;DisplayPlane:UnderRADAR')
+		viewingGroup = 32410
+		featurePortrayal:AddInstructions('ViewingGroup:32410;DrawingPriority:15;DisplayPlane:UnderRADAR')
 		featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
 		featurePortrayal:AddInstructions('LineInstruction:_simple_')
   elseif feature.PrimitiveType == PrimitiveType.Point then

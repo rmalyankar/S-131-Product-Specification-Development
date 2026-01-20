@@ -3,7 +3,7 @@
 
 -- Mooring/Warping facility main entry point.
 function MooringWarpingFacility(feature, featurePortrayal, contextParameters)
-    local viewingGroup = 12410
+    local viewingGroup = 32440
     local displayPlane = contextParameters.RadarOverlay and 'OverRADAR' or 'UnderRADAR'
 
     if feature.PrimitiveType == PrimitiveType.Point then

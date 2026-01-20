@@ -3,7 +3,7 @@
 
 -- OnshorePowerFacility main entry point.
 function OnshorePowerFacility(feature, featurePortrayal, contextParameters)
-	local viewingGroup = 32440
+	local viewingGroup = 32400
 
 	if feature.PrimitiveType == PrimitiveType.Point then
 		-- Simplified and paper chart uses same symbolization

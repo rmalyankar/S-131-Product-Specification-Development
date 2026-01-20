@@ -7,25 +7,21 @@ function DumpingGround(feature, featurePortrayal, contextParameters)
 
 	if feature.PrimitiveType == PrimitiveType.Point then
 		-- Simplified and paper chart points use the same symbolization
-		viewingGroup = 26240
+		viewingGroup = 32400
 		if contextParameters.RadarOverlay then
-			featurePortrayal:AddInstructions('ViewingGroup:26240;DrawingPriority:12;DisplayPlane:OverRADAR')
+			featurePortrayal:AddInstructions('ViewingGroup:32400;DrawingPriority:12;DisplayPlane:OverRADAR')
 		else
-			featurePortrayal:AddInstructions('ViewingGroup:26240;DrawingPriority:12;DisplayPlane:UnderRADAR')
+			featurePortrayal:AddInstructions('ViewingGroup:32400;DrawingPriority:12;DisplayPlane:UnderRADAR')
 		end
 		featurePortrayal:AddInstructions('PointInstruction:131SYMBL3S')
-	elseif feature.PrimitiveType == PrimitiveType.Surface and contextParameters.PlainBoundaries then
-		viewingGroup = 26240
-		featurePortrayal:AddInstructions('ViewingGroup:26240;DrawingPriority:9;DisplayPlane:UnderRADAR')
-		featurePortrayal:AddInstructions('PointInstruction:131INFRM')
-		featurePortrayal:SimpleLineStyle('dash',0.64,'CHGRD')
-		featurePortrayal:AddInstructions('LineInstruction:_simple_')
-
 	elseif feature.PrimitiveType == PrimitiveType.Surface then
-		viewingGroup = 26240
-		featurePortrayal:AddInstructions('ViewingGroup:26240;DrawingPriority:9;DisplayPlane:UnderRADAR')
-		featurePortrayal:AddInstructions('PointInstruction:131INFRM')
-		featurePortrayal:AddInstructions('LineInstruction:CTYARE51')
+        viewingGroup = 32400
+        featurePortrayal:AddInstructions(
+            'ViewingGroup:32400;DrawingPriority:9;DisplayPlane:UnderRADAR'
+        )
+        featurePortrayal:AddInstructions('PointInstruction:131INFRM')
+        featurePortrayal:SimpleLineStyle('dash', 0.64, 'CHGRD')
+        featurePortrayal:AddInstructions('LineInstruction:_simple_')
 
 	else
 		error('Invalid primitive type or mariner settings passed to portrayal')

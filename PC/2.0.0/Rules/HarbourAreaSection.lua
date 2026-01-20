@@ -3,36 +3,22 @@
 
 -- Harbour area section main entry point.
 function HarbourAreaSection(feature, featurePortrayal, contextParameters)
-    local viewingGroup = 32410
+    local viewingGroup = 36020
 
-    -- =====================
-    -- POINT
-    -- =====================
     if feature.PrimitiveType == PrimitiveType.Point then
        featurePortrayal:AddInstructions(
-                    'ViewingGroup:32410;DrawingPriority:12;DisplayPlane:UnderRADAR'
+                    'ViewingGroup:36020;DrawingPriority:12;DisplayPlane:UnderRADAR'
                 )
             featurePortrayal:AddInstructions('PointInstruction:131SYMBL3S')
 
-    -- =====================
-    -- SURFACE
-    -- =====================
     elseif feature.PrimitiveType == PrimitiveType.Surface then
-
+        viewingGroup = 36020
         featurePortrayal:AddInstructions(
-            'ViewingGroup:32410;DrawingPriority:6;DisplayPlane:UnderRADAR'
+            'ViewingGroup:36020;DrawingPriority:9;DisplayPlane:UnderRADAR'
         )
-
-        -- boundary portrayal
-        if contextParameters.PlainBoundaries then
-            featurePortrayal:SimpleLineStyle('dash', 0.64, 'CHGRD')
-            featurePortrayal:AddInstructions('LineInstruction:_simple_')
-        else
-            featurePortrayal:AddInstructions('LineInstruction:HRBSEC01')
-        end
-
-        -- optional centroid symbol for area
         featurePortrayal:AddInstructions('PointInstruction:131INFRM')
+        featurePortrayal:SimpleLineStyle('dash', 0.64, 'CHGRD')
+        featurePortrayal:AddInstructions('LineInstruction:_simple_')
 
     else
         error('Invalid primitive type or mariner settings passed to portrayal')

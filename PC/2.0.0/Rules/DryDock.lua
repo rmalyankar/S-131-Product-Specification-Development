@@ -6,14 +6,14 @@ function DryDock(feature, featurePortrayal, contextParameters)
 	local viewingGroup
 
 	if feature.PrimitiveType == PrimitiveType.Point then
-		viewingGroup = 32440
-		featurePortrayal:AddInstructions('ViewingGroup:32440;DrawingPriority:12;DisplayPlane:UnderRADAR')
+		viewingGroup = 32400
+		featurePortrayal:AddInstructions('ViewingGroup:32400;DrawingPriority:12;DisplayPlane:UnderRADAR')
 		featurePortrayal:AddInstructions('PointInstruction:131SYMBL3S')
 		
 	elseif feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
-		viewingGroup = 32440
-		featurePortrayal:AddInstructions('ViewingGroup:32440;DrawingPriority:12;DisplayPlane:UnderRADAR')
+		viewingGroup = 32400
+		featurePortrayal:AddInstructions('ViewingGroup:32400;DrawingPriority:12;DisplayPlane:UnderRADAR')
     featurePortrayal:SimpleLineStyle('solid',0.64,'CHGRD')
 		featurePortrayal:AddInstructions('LineInstruction:_simple_')
 	else

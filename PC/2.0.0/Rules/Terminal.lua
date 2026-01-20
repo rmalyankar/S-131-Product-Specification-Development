@@ -3,7 +3,7 @@
 
 -- Terminal main entry point.
 function Terminal(feature, featurePortrayal, contextParameters)
-    local viewingGroup = 32410
+    local viewingGroup = 32220
     local displayPlane = contextParameters.RadarOverlay and 'OverRADAR' or 'UnderRADAR'
 
     -- =====================
@@ -11,7 +11,7 @@ function Terminal(feature, featurePortrayal, contextParameters)
     -- =====================
     if feature.PrimitiveType == PrimitiveType.Point then
         featurePortrayal:AddInstructions(
-            'ViewingGroup:32410;DrawingPriority:12;DisplayPlane:' .. displayPlane
+            'ViewingGroup:32220;DrawingPriority:12;DisplayPlane:' .. displayPlane
         )
         featurePortrayal:AddInstructions('PointInstruction:131SYMBL3')
 
@@ -20,7 +20,7 @@ function Terminal(feature, featurePortrayal, contextParameters)
     -- =====================
     elseif feature.PrimitiveType == PrimitiveType.Surface then
         featurePortrayal:AddInstructions(
-            'ViewingGroup:32410;DrawingPriority:12;DisplayPlane:' .. displayPlane
+            'ViewingGroup:32220;DrawingPriority:12;DisplayPlane:' .. displayPlane
         )
 
         -- centroid symbol for terminal area (S-131 informational symbol)
