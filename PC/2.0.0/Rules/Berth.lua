@@ -49,10 +49,10 @@ function Berth(feature, featurePortrayal, contextParameters)
   		featurePortrayal:AddTextInstruction(EncodeString(feature.rampNumber[1], 'Rp %s'), 29, 24, 32440, 15)
     end
 		if feature.featureName then
-		  featurePortrayal:AddInstructions('LocalOffset:3.51,' .. nameOffset .. ';FontSize:10')   -- include offset value for name 
+		  featurePortrayal:AddInstructions('LocalOffset:3.51,' .. nameOffset .. ';FontSize:10')   -- include offset value for name
 		  featurePortrayal:AddTextInstruction(EncodeString(GetFeatureName(feature, contextParameters), 'Nr %s'), 29, 24, 32440, 15)
     end
-	
+
     elseif feature.PrimitiveType == PrimitiveType.Curve then
     viewingGroup = 32440
 
@@ -123,7 +123,6 @@ function Berth(feature, featurePortrayal, contextParameters)
     -- =====================
     if label and label ~= '' then
         featurePortrayal:AddInstructions(
-            'TextInstruction:_simple_;' ..
             'TextAlignHorizontal:Center;' ..
             'TextAlignVertical:Center;' ..
             'FontSize:10'
@@ -138,7 +137,7 @@ function Berth(feature, featurePortrayal, contextParameters)
         )
     end
 
-		
+
 	elseif feature.PrimitiveType == PrimitiveType.Surface then
 		-- Plain and symbolized boundaries use the same symbolization
 		viewingGroup = 32440

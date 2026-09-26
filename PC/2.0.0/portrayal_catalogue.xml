@@ -311,7 +311,7 @@
           <description>Standard: M - Traffic routes</description>
           <language>eng</language>
         </description>
-      </viewingGroup>	   
+      </viewingGroup>
     <viewingGroup id="25030">
       <description>
         <name>Ferry routes</name>
@@ -581,7 +581,7 @@
         </description>
       </viewingGroup>
       <!-- 22 na -->
-      
+
       <viewingGroup id="24">
         <description>
           <name>Text: Supplementary information</name>
@@ -589,7 +589,7 @@
           <language>eng</language>
         </description>
       </viewingGroup>
-      
+
       <viewingGroup id="26">
         <description>
           <name>Text: Geographic Names</name>
@@ -858,7 +858,7 @@
 		 <!--<viewingGroup>114</viewingGroup>-->
 		 <!--<viewingGroup>115</viewingGroup>-->
       </viewingGroupLayer>
-	  <viewingGroupLayer id="10a">       
+	  <viewingGroupLayer id="10a">
          <description>
             <name>Chart (Standard)</name>
             <description>Miscellaneous chart Standard Display elements</description>
@@ -1006,7 +1006,7 @@
          <viewingGroup>36020</viewingGroup>
          <!--<viewingGroup>36040</viewingGroup>-->
          <!--<viewingGroup>36050</viewingGroup>-->
-         <!--<viewingGroup>36060</viewingGroup>-->		  
+         <!--<viewingGroup>36060</viewingGroup>-->
          <viewingGroup>38000</viewingGroup>
          <!--<viewingGroup>38010</viewingGroup>-->
          <!--<viewingGroup>38030</viewingGroup>-->
@@ -1270,21 +1270,21 @@
       <type>Boolean</type>
       <default>false</default>
     </parameter>
-    <parameter id="NationalLanguage">
-      <description>
-        <name>National language</name>
-        <description>Selects which language to use for text (ISO 639-3)</description>
-        <language>eng</language>
-      </description>
-      <type>String</type>
-      <default>eng</default>
-      <validate>
-        <regex>^[a-z]{3}$</regex>
-        <errorMessage>
-          <text>Must be three lower-case characters</text>
-        </errorMessage>
-      </validate>
-    </parameter>
+	  <parameter id="PreferredLanguage">
+       <description>
+         <name>Preferred language</name>
+         <description>3-letter language code. Selects preferred language for chart text.</description>
+         <language>eng</language>
+       </description>
+       <type>String</type>
+       <default>eng</default>
+	   <validate>
+      <regex>^[a-z]{3}(?:\s*,\s*[a-z]{3})*$</regex>
+      <errorMessage>
+        <text>Must be three lower-case characters</text>
+      </errorMessage>
+	   </validate>
+     </parameter>
   </context>
   <rules>
     <ruleFile id="main">
@@ -1473,7 +1473,7 @@
       <fileType>Rule</fileType>
       <fileFormat>LUA</fileFormat>
       <ruleType>SubTemplate</ruleType>
-    </ruleFile> 
+    </ruleFile>
     <ruleFile id="FloatingDock">
       <description>
         <name>FloatingDock</name>
@@ -1484,7 +1484,7 @@
       <fileType>Rule</fileType>
       <fileFormat>LUA</fileFormat>
       <ruleType>SubTemplate</ruleType>
-    </ruleFile>  
+    </ruleFile>
     <ruleFile id="Gridiron">
       <description>
         <name>Gridiron</name>
@@ -1605,7 +1605,7 @@
       <fileType>Rule</fileType>
       <fileFormat>LUA</fileFormat>
       <ruleType>SubTemplate</ruleType>
-    </ruleFile>	
+    </ruleFile>
     <ruleFile id="OuterLimit">
       <description>
         <name>OuterLimit</name>
@@ -1649,7 +1649,7 @@
       <fileType>Rule</fileType>
       <fileFormat>LUA</fileFormat>
       <ruleType>SubTemplate</ruleType>
-    </ruleFile>  
+    </ruleFile>
     <ruleFile id="SeaplaneLandingArea">
       <description>
         <name>SeaplaneLandingArea</name>
