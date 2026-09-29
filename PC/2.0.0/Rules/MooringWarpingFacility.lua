@@ -8,7 +8,7 @@ function MooringWarpingFacility(feature, featurePortrayal, contextParameters)
 
     if feature.PrimitiveType == PrimitiveType.Point then
         featurePortrayal:AddInstructions(
-            'ViewingGroup:12410;DrawingPriority:12;DisplayPlane:' .. displayPlane
+            'ViewingGroup:32440;DrawingPriority:12;DisplayPlane:' .. displayPlane
         )
         featurePortrayal:AddInstructions('PointInstruction:131SYMBL3')
 
