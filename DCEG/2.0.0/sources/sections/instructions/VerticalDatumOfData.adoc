@@ -1,0 +1,8 @@
+==== General
+
+There must be only one *VerticalDatumOfData* feature in an S-131 dataset, providing the datum for all elevation values encoded in any feature. Given the
+relatively small extent of S-131 datasets and the importance of uniform datums in the same port, it is not anticipated that elevations in different features
+will be referred to different datums; however, if this is the case in the sources, values must be converted to the same datum before encoding in the dataset.
+
+==== Remarks
+

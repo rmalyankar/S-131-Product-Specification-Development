@@ -1,0 +1,10 @@
+==== General
+
+This feature type is the immediate supertype for all physical infrastructure features and defines a single optional attribute for the clearance value.
+
+The *Infrastructure* association to the *Terminal* feature type is intended for encoding the infrastructure (represented by the sub-types
+of *HarbourPhysicalInfrastructure*) available in a *Terminal*. For example, if it is necessary to indicate that a particular terminal has dry dock
+facilities, it should be done by encoding a *DryDock* feature and associating it to the *Terminal* feature by the *Infrastructure* association.
+
+==== Remarks
+

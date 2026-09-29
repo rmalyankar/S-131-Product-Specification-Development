@@ -1,34 +1,58 @@
-
-
-[[sec_12]]
+[data2text,PROD=config/product.json]
+----
+[[sec_DataProductFormat]]
 == Data Product format (encoding)
 
-[[sec_12.1]]
+[[sec_FormatSpec]]
 === Format specification
 
-The format for datasets must conform to the S-131 GML schema specified
-below. See S-100 Part 10b and the S-131 GML schema documentation for
+The format for datasets must conform to the {{PROD.id}} GML schema specified
+below. See S-100 Part 10b and the {{PROD.id}} GML schema documentation for
 a complete description of the data records, fields and subfields defined
 in the encoding.
 
-[[table_.1]]
+[[table_FormatSpecInfo]]
 .Format specification information
-[cols="82,305,194"]
+[cols="25,45,30"]
 |===
 h| Name h| ISO 19131 Elements h| Value
 
-| Format name | DPS_DeliveryInformation.deliveryFormat > DPS_DeliveryFormat.formatName | GML
-| Version     | DPS_DeliveryInformation.deliveryFormat > DPS_DeliveryFormat.version    | 3.2.1
-| Specification description | DPS_DeliveryInformation.deliveryFormat > DPS_DeliveryFormat.specification
+| Format name | DPS_DeliveryInformation.deliveryFormat > +
+DPS_DeliveryFormat.formatName | GML
+| Version     | DPS_DeliveryInformation.deliveryFormat > +
+DPS_DeliveryFormat.version    | 3.2.1
+| Specification description | DPS_DeliveryInformation.deliveryFormat > +
+DPS_DeliveryFormat.specification
 | S-100 profile of GML (S-100 Part 10b)
-| Language | DPS_DeliveryInformation.deliveryFormat > DPS_DeliveryFormat.language | English
-| Character set | DPS_DeliveryInformation.deliveryFormat > DPS_DeliveryFormat.characterSet > MD_CharacterSetCode | 004 -- utf8
-| Additional Information | DPS_DeliveryInformation.additionalInformation > DPS.AdditionalInformation.additionalInformation
-| GML schema for S-131 Edition 2.0.0 (https://schemas.s100dev.net)
+| Language | DPS_DeliveryInformation.deliveryFormat > +
+DPS_DeliveryFormat.language | English
+| Character set | DPS_DeliveryInformation.deliveryFormat > +
+DPS_DeliveryFormat.characterSet > +
+MD_CharacterSetCode | 004 -- utf8
+| Additional Information | DPS_DeliveryInformation.additionalInformation > +
+DPS.AdditionalInformation.additionalInformation
+| GML schema for {{PROD.id}} Edition 2.0.0 (https://schemas.s100dev.net)
 
 |===
 
-[[sec_12.2]]
+[[sec_schemaLocation]]
+==== Specification of schema location
+
+It is strongly recommended that all {{PROD.abbrev}} datasets include the XML Schema _schemaLocation_ attribute on the root element giving
+the physical location of the {{PROD.id}} GML schema XSD file. This file will be placed on the schema server \https://schemas.s100dev.net after
+approval of {{PROD.id}} edition 2.0.0.
+
+The nominal URL of the GML schema is expected to be +
+`https://schemas.s100dev.net/schemas/S131/2.0.0/_<YYYYMMDD>_/131_2.0.0.xsd` +
+where _<YYYYMMDD>_ represents the build date. The precise URL can be obtained via the schema server or GI Registry after publication of {{PROD.id}} edition 2.0.0.
+
+Implementations should provide for local redirections of the nominal location of the GML schema using an implementation capable of using
+OASIS XML catalogs or another means of resolving the schema server URL to reference a different physical file location.
+
+Note that the physical location specified in _schemaLocation_ provides "*hints* as to the physical location of schema documents" according
+to the XML Schema specification. The location(s) provided in _schemaLocation_ may therefore be overridden by schema-aware validators or applications.
+
+[[sec_LatLonEncoding]]
 === Encoding of latitude and longitude
 
 Values of latitude and longitude must be accurate to 7 decimal places.
@@ -43,14 +67,14 @@ if appropriate) may be omitted at producer discretion, but the accuracy
 must still be as indicated (e.g., stem:[10^{-7}] degrees for coordinates
 of default accuracy).
 
-[[sec_12.3]]
+[[sec_DepthsEncoding]]
 === Encoding of depths
 
 Depths are encoded in the format and precision specified in the feature
 catalogue for the corresponding attribute. Positive values indicate
 distances below the applicable datum reference.
 
-[[sec_12.4]]
+[[sec_NumericAttrEncoding]]
 === Numeric attribute encoding
 
 Integer attribute values must not contain leading zeros.
@@ -62,13 +86,13 @@ Floating point attribute values must not contain non-significant trailing
 zeros exceeding the attribute's precision as specified in the feature
 catalogue.
 
-[[sec_12.5]]
+[[sec_TextAttrValues]]
 === Text attribute values
 
 Character strings must be encoded using the character set defined
-in <<ISO_10646_1>>, in Unicode Transformation Format-8 (UTF-8).
+in <<ISO_10646>>, in Unicode Transformation Format-8 (UTF-8).
 
-[[sec_12.6]]
+[[sec_MandatoryAttrValues]]
 === Mandatory attribute values
 
 There are four reasons why attribute values may be considered mandatory:
@@ -85,14 +109,14 @@ displayed,
 All mandatory attributes are identified in the Feature Catalogue and
 summarised in the Data Classification and Encoding Guide.
 
-[[sec_12.7]]
+[[sec_UnknownAttrValues]]
 === Unknown attribute values
 
-When an attribute code is present but the attribute value is missing,
+When an attribute XML element is present but the attribute value is missing,
 it means that the producer wishes to indicate that this attribute
 value is unknown.
 
-[[sec_12.8]]
+[[sec_ObjectIdentifiers]]
 === Object identifiers
 
 Feature records must have a unique world-wide identifier. When an
@@ -110,34 +134,12 @@ have a gml:id attribute with a value that is unique within the dataset.
 The gml:id values must be used as the reference for the object from
 another object in the same dataset or another dataset.
 
-[[sec_12.9]]
-=== Data coverage
-
-All areas of a dataset must be covered by a *DataCoverage* meta feature.
-
-An update dataset must not change the limit of a *DataCoverage* feature
-for the base dataset. Where the limit of a *DataCoverage* feature
-for a base dataset is to be changed, this must be done by issuing
-a new edition of the dataset.
-
-[[sec_12.10]]
-=== Data overlap
-
-S-131 datasets must not overlap other S-131 datasets of the same scale
-range.
-
-[[sec_12.11]]
+[[sec_DataQualityMetaFeatures]]
 === Data quality meta-features
 
-One or more *QualityOfNonBathymetricData* features must cover the
-dataset.
+One or more *QualityOfNonBathymetricData* features must cover the dataset.
 
-[[sec_12.12]]
-=== Data extent
-
-Datasets must not cross the 180° meridian of longitude.
-
-[[sec_12.13]]
+[[sec_SequenceObjects]]
 === Sequence of objects
 
 The following sequence of objects is recommended:
@@ -153,18 +155,21 @@ Spatial records for by-reference geometries
 Information objects
 Feature objects
     Meta features
+    Cartographic Features
     Geo features
 ====
 
-[[sec_12.14]]
-=== Content of update datasets
+[[sec_FormatUpdateDatasets]]
+=== Data format for update datasets
 
-Update datasets can only contain replacements, deletions, and additions
-of whole feature instances or information instances. This means that
-when a feature or information instance is updated, the new version
-must contain all the attributes of the old instance, including any
-inline spatial attributes (i.e., inline geometry), except those attributes
-that are being removed.
+The data format for update datasets is the same as that for base datasets (clause <<sec_FormatSpec,droploc%>>).
+
+==== Attributes
+
+Instances of feature or information types in update datasets must contain all the attributes of the old instance, including any
+inline spatial attributes (i.e., inline geometry), except those attributes that are being removed.
+
+==== Associations
 
 An association to an instance of a feature or information type is
 treated as an attribute of the referring instance, and therefore adding
@@ -173,24 +178,35 @@ be replaced with a new version. The instance at the other end of the
 association needs to be replaced if and only if it contains a reference
 to the first instance.
 
-Spatial objects that are not inline (i.e., geometry that is encoded
-as an independent spatial object in the dataset) is treated like any
-other object, i.e., it needs to be updated if and only if the primitive
-has changed (e.g., a coordinate is updated).
+==== Spatial primitives
 
-Feature and information type instances are deleted without replacement
-by setting the *fixedDateRange*.*dateEnd* attribute of the instance
-to the date of deletion, which will usually be the issue date of the
-update.
+Spatial primitives that are not inline (that is, geometry that is encoded
+as an independent spatial object in the dataset) are treated like any
+other object, that is, it needs to be updated if and only if the primitive
+has changed (for example, a coordinate is updated).
 
-[[sec_12.15]]
+Spatial primitives are also updated (for example, to update coordinates) as whole objects.
+
+* For inline spatial primitives, this entails updating the entire feature instances.
+* Non-inline spatial primitives are updated by encoding the replacement in its entirety in the update dataset. The replacment
+must have the same _gml:id_ as the object it replaces.
+
+==== Deletion
+
+Feature and information type instances are deleted without replacement by setting the _fixedDateRange.dateEnd_ attribute of the instance
+to the date of deletion, which will usually be the issue date of the update.
+
+Spatial objects that are not inline can be deleted without replacement only by releasing a new edition of the dataset omitting the spatial
+object to be removed.
+
+[[sec_DatumCoverage]]
 === Datum coverage
 
 All features in a dataset with depth or elevation attributes must
 be covered by *SoundingDatum* and *VerticalDatumOfData* meta-features
 respectively.
 
-[[sec_12.16]]
+[[sec_AttributeMultiplicity]]
 === Attribute multiplicity
 
 In general, if all the sub-attributes of a complex attribute are optional,
@@ -204,6 +220,4 @@ at least one of them must be present and have a non-empty value.
 Note that there is no such general rule for features, though the DCEG
 may require it for specific features.
 
-EDITOR: These requirements were phrased as recommendations in Edition 1.0 in
-order to facilitate the phased development of datasets. Future editions
-may strengthen them as appropriate. (Done in 2.0.0)
+----

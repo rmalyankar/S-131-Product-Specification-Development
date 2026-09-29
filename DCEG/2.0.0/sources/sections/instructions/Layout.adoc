@@ -1,0 +1,6 @@
+==== General
+
+*Layout* features describe the layout of the harbour area. The *Layout* abstract type serves as the supertype for all the layout features in S-131.
+
+==== Remarks
+

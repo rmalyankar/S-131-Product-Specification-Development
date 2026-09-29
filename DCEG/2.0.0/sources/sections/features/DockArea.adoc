@@ -1,0 +1,86 @@
+[[ftable_DockArea]]
+=== Dock Area
+
+[cols="a,a,a,a,a,a,a,a",options="headers,unnumbered"]
+|===
+8+| [underline]#IHO Definition:# An artificially enclosed area within which ships may moor and which may have gates to regulate water level.
+8+h| [underline]#S-131 Geo Feature:# DockArea
+8+h| [underline]#Super Type:# Layout
+8+h| [underline]#Primitives:# surface
+3+| _Real World_ 2+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+3+h|S-131 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+3+| Depths Description | 2+| |  C | 0,1
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Category of Depths Description |
+2+|1: Shoal +
+2: General Depth +
+3: Controlling Depth +
+ |(S) EN | 1,1
+
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Text Content | 2+| | (S)  C | 1,*
+3+| Location by Text |
+2+| |TE | 0,1
+
+3+| Marked By | 2+| |  C | 0,1
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Text Content | 2+| | (S)  C | 1,*
+3+| ISPS Level |
+2+|1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3 +
+ |EN | 0,1
+
+8+h| Inherited Attributes
+
+3+h|S-131Attribute 3+h| Inherited From h| Type h| Multiplicity
+
+3+| Location Maritime Resource Name 3+| FeatureType | URN | 0,1
+3+| Global Location Number 3+| FeatureType | TE | 0,1
+3+| Interoperability Identifier 3+| FeatureType | URN | 0,*
+3+| Feature Name 3+| FeatureType | C | 0,*
+3+| Fixed Date Range 3+| FeatureType | C | 0,1
+3+| Periodic Date Range 3+| FeatureType | C | 0,*
+3+| RxN Code 3+| FeatureType | C | 0,*
+3+| Graphic 3+| FeatureType | C | 0,*
+3+| Source Indication 3+| FeatureType | C | 0,*
+3+| Text Content 3+| FeatureType | C | 0,*
+3+| Scale Minimum 3+| FeatureType | IN | 0,1
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+5+h| *Information associations*
+
+h|S-131 Role	h|S-131 Association Name h| Associated to h| Type	h| Mult.
+
+|serviceDescriptionReference|ServiceAvailability|AvailablePortServices|association|0,1
+|facilityOperatingHours|LocationHours|ServiceHours|association|0,1
+|controlAuthority|ServiceControl + 
+(inherited from SupervisedArea) |Authority|association|0,1
+|theContactDetails|ServiceContact + 
+(inherited from OrganizationContactArea) |ContactDetails|association|0,*
+|permission|PermissionType + 
+(inherited from FeatureType) |Applicability|association|0,*
+|theRxN|AssociatedRxN + 
+(inherited from FeatureType) |AbstractRxN|association|0,*
+|theInformation|AdditionalInformation + 
+(inherited from FeatureType) |NauticalInformation|association|0,*
+|===
+
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+5+h| *Feature associations*
+
+h|S-131 Role	h|S-131 Association Name h| Associated to h| Type	h| Mult.
+|componentOf|LayoutDivision|HarbourAreaSection|aggregation|1,1
+|theCartographicText|TextAssociation + 
+(inherited from FeatureType) |TextPlacement|association|0,1
+|===
+
+
+include::../instructions/DockArea.adoc[]
+* If the complex attribute _fixedDateRange_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _rxNCode_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _sourceIndication_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _textContent_ is present at least one of its sub-attributes must be populated.
+** If the _textContent_ sub-attribute _information_ is present at least one of its sub-attributes must be populated.
+

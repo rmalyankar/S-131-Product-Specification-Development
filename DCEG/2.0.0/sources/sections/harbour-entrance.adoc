@@ -1,0 +1,7 @@
+<<<
+[[sec_HarbourEntrance]]
+== Harbour Entrance
+// === Introduction
+
+include::features/Entrance.adoc[]
+

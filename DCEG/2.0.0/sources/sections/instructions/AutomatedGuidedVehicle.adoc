@@ -1,0 +1,10 @@
+==== General
+
+Both Automated Guided Vehicles (AGVs) and straddle carriers are common equipment for horizontal transportation between the wharf and the yard. Compared to
+straddle carriers, AGVs have superior performance in terms of automation in path design, flexibility in adapting to harbour layout, and adaptability of load
+platforms to various types of cargo. With the advancement and application of intelligent systems, sensor positioning, and fast-charging technologies, AGVs are
+increasingly being used in automated terminals.
+
+==== Remarks
+
+

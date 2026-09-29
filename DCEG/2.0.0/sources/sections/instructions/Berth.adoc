@@ -1,0 +1,45 @@
+==== General
+
+The berth encodes the named place where a vessel can be moored adjacent to a shoreline construction.
+
+==== Spatial primitives
+
+The spatial primitive for a *Berth* feature are, in order of preference:
+
+. A surface feature whose boundaries include the berth pocket as well as land-side extents of facilities for the berth.
+. If the surface extents cannot be determined to the necessary precision, a curve feature may be encoded at the shoreline (wharf, quay, shoreline
+construction, etc.) as discerned from the largest scale ENC available or information vouched for by the port authority.
+. If neither surface not curve coordinates are available to a level of precision considered to be sufficient, a point spatial primitive may be used at a
+nominal position. Such nominal positions may be available in the relevant ENCs, noting that the ENC may encode the nominal position as being on land and might
+displace it slightly for cartographic reasons.
+
+==== Safe working load of vessel attachment points
+
+The attribute _safeWorkingLoad_ should be used to encode the safe working load (SWL) of the attachment points (e.g., bollards) for vessels at the berth, as
+supplied by the port. If all attachment points have the same SWL that value should be encoded, if there are known to be variations, the lowest SWL should be
+encoded as the value of _safeWorkingLoad_ and a note about variations added in _textContent_.
+
+////
+EDITOR: More detail needed. What does SWL mean at a berth, as opposed to SWL for a single bollard? At a berth, is it the lowest SWL of all available
+attachment points (e.g. bollards)? Can one assume that attachment points at a berth have the same SWL? Note that the model allows at most 1 value.
+////
+
+==== Berth usage
+
+If a berth is designated or reserved for a particular type of cargo, the cargo should be encoded using the _categoryOfCargo_ attribute.
+
+==== Shore power availability
+
+If shore power is available at a berth, its availability and known characteristics should be indicated using the optional attributes _shorePowerDescription_,
+_categoryOfFrequency_, _categoryOfVoltage_ and _categoryOfPlug_.
+
+==== Remarks
+
+* The complex attribute _featureName_ is used to encode the name or number of the berth.
+* Population of more than one of the attributes bollard number, metre mark number, manifold number, and ramp number is allowed but should be reviewed
+to ensure that it reflects the reality of what is used at the berth.
+* The attribute _safeWorkingLoad_ must not be used to encode the berth loading limit (the maximum weight for wharves or other onshore berth structures).
+If providing this information is considered necessary, the berth loading limit may be given in attribute _textContent_ or associated *NauticalInformation*
+information type accompanied by text distinguishing it from the safe load for vessel attachment points.
+* If a berth is designated or reserved for a particular type of cargo, the cargo should be encoded using the _categoryOfCargo_ attribute. 
+

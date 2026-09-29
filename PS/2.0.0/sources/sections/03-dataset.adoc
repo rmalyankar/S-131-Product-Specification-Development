@@ -3,7 +3,7 @@
 == Dataset Identification
 
 A dataset that conforms to this Product Specification may be identified
-by its discovery metadata as defined in <<sec_14>>.
+by its discovery metadata as defined in clause <<sec_14,droploc%>>.
 
 *Title:*:: Marine Harbour Infrastructure
 
@@ -21,7 +21,8 @@ data efficiently within navigation systems.
 *Geographic Description:*:: Ports and harbours in areas specific to
 marine navigation
 
-*Spatial Resolution:*:: An MHI dataset must indicate a value for maximum
+*Spatial Resolution:*:: MD_Resolution>equivalentScale.denominator (integer) or MD_Resolution>levelOfDetail (CharacterString). E.g.: “All scales” +
+An MHI dataset must indicate a value for maximum
 display scale. Each *Data Coverage* feature must also carry a value
 for minimum display scale. Recommended values for scales can be found
 in the S-101 ENC Product Specification. Producers should note that
@@ -53,5 +54,4 @@ Chart Display and Information Systems
 
 *Point of Contact:*:: Producing Agency
 
-*Use Limitation:*:: Not for sole use in navigation; must be used with
-an ENC.
+*Use Limitation:*:: Not for sole use in navigation; must be used with an ENC.

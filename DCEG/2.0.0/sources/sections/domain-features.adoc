@@ -1,0 +1,173 @@
+<<<
+[[sec_HarbourLayout]]
+== Harbour layout
+
+[[sec_HarbourLayoutIntro]]
+=== Introduction
+
+Layout features describe the layout of the harbour area. They include terminal, mooring facilities, special areas within the harbour, berths, designation of the positioning of specific berths along a wharf or quay, dock areas, and a *HarbourAreaSection* feature for subdividing harbour areas into sub-sections.
+
+Note that the current model includes some features which would ideally be merged into _categoryOfPortSection_ attributes of other features, due to GI Registry conceptual limitations on re-use of concepts.
+
+Port sections in S-131 include both water and land sections.
+
+The most common water sections in ports are:
+
+* Anchorage: An area in which vessels anchor or may anchor (NP100)
+* Fairway: The main navigable channel in the approaches to, or within, a river or harbour. Sometimes called the Ship Channel (NP100)
+* Turning basin: An area of water or enlargement of a channel in a port, where vessels are enabled to turn, and which is kept clear of obstructions such as buoys for that purpose (NP100)
+* Basin: A sheltered body of water available for port operations connecting either with the sea, with an outer port or with another basin. Generally an almost land locked area leading off an in inlet, firth or sound. Also, an area of water limited in extent and nearly enclosed by structures alongside which vessels can lie (IHO S-32)
+* Berth Pocket: Body of water at the berth or anchor berth with sufficient footprint to allow the vessel to make fast to the shore or mooring buoys or to anchor (NP100).
+
+Land or mixed land/water sections include:
+
+* Terminals: A number of berths grouped together and provided with facilities for handling cargo (IHO S-32)
+* Berths, quays, wharfs, and mooring facilities: Places where vessels may make fast for the purpose of loading or unloading cargo, embarking or disembarking passengers, etc.
+* Service locations: Dock areas, locations for removal of pollutants, fueling, repairs, etc.
+
+Different sections may be under the immediate control of different organizations or served by different operators. Terminal facilities are often owned and/or operated by private companies. The overall harbour area is therefore generally divisible into different sections, each of which may be further divided into sub-sections or contain specific types or areas or facilities.
+
+<<fig_layout_features>> depicts the logical hierarchy of layout feature types in S-131, showing what attributes are bound to each type along with their supertypes, from which they inherit attributes and associations.
+
+[[fig_layout_features]]
+.Layout Features and attributes
+image::../../../../EAP/UML-images/s-131&#32;Layout.png[]
+
+[[sec_layout_containment]]
+=== Layout container associations
+
+<<fig_layout_container_associations>> depicts the containment (spatial) hierarchy, with containment relationships between layout feature types indicating which features are spatially contained within and part of a larger feature.
+*HarbourAreaAdministrative* is the main feature that covers the whole port area. It is subdivided into zero or more sections modelled by *HarbourAreaSection* features (the *LayoutDivision*) aggregation. *HarbourAreaSection* can be further subdivided into *WaterwayArea*, *Terminal*, *Berth*, *AnchorageArea*, *DockArea*,  etc. The *Terminal* feature can also be subdivided into *Berth* features using the same association.
+*HarbourAreaSection* can also be subdivided into further features of the same class (the _subUnit_ self-association role).
+Note that *HarbourAreaSection* features can contain other *HarbourAreaSection* features. Note also that a *Terminal* can contain any number of *Berth* features
+
+[[fig_layout_container_associations]]
+.Containment hierarchy of layout features
+image::../../../../EAP/UML-images/s-131&#32;Layout&#32;Containment&#32;Hierarchy.png[]
+
+[[sec_PosInBerths]]
+=== Positioning in berths
+
+Positions in a berth can be indicated by means of the *BerthPosition* feature. Mooring facilities for anchor berths or at particular positions can be linked with either *AnchorBerth* or *BerthPosition* features with the *PrimaryAuxiliaryFacility* association. These relationships are depicted in <<fig_PositionInBerth>>.
+
+[[fig_PositionInBerth]]
+.Positions within berths and mooring facilities
+image::PositionInBerth.png[]
+
+[[sec_LayoutAssociations]]
+=== Associations for layout features
+
+<<fig_LayoutAssociations>> depicts all associations between layout features.
+
+Nominal positions of berths can be indicated by associating a *BerthPosition* feature to *Berth* using the *Demarcation* association.
+
+Berth positions and Anchor berths can be linked to a mooring facility using the *PrimaryAuxiliaryFacility* association.
+
+The outer limit of the whole harbour area can be associated to *HarbourAreaAdministrative* feature using a *JurisdictionalLimit* association.
+
+[[fig_LayoutAssociations]]
+.Feature associations for non-abstract layout features
+image::../../../../EAP/UML-images/S-131&#32;Layout&#32;Feature&#32;Associations.png[]
+
+[[sec_AssociationsLayoutPhysInfra]]
+=== Associations between layout and physical infrastructure features
+
+Physical infrastructure features in a *Terminal* or *HarbourAreaSection* feature should be linked to a containing *Terminal* or *HarbourAreaSection* by
+an *Infrastructure* association (<<fig_InfrastructureAssociations>>). If there is an hierarchy of features containing the infrastructure only the feature at
+the lowest level of the hierarchy should be linked to the infrastructure feature.
+
+[[fig_InfrastructureAssociations]]
+.Feature associations for infrastructure
+image::../../../../EAP/UML-images/S-131&#32;Layout&#32;and&#32;PhysInfra&#32;Associations.png[]
+
+[[sec_InheritanceOfTextAssociation]]
+=== Inheritance of TextAssociation by all layout and physical infrastructure features
+
+In addition, all layout and physical infrastructure features inherit a *TextAssociation* to the cartographic feature *TextPlacement* (<<fig_InheritedTextAssociation>>).
+
+[[fig_InheritedTextAssociation]]
+.Inherited TextAssociation
+image::../../../../EAP/UML-images/S-131&#32;Inherited&#32;feature&#32;associations.png[]
+
+[[sec_GeneralLocations]]
+=== General locations
+
+The *HarbourAreaSection* feature type can be used to define locations which must be distinguished from their surroundings but which do not fit the description of a more
+specific feature type. It can also be used to indicate a portion of an area, for example when it is necessary to indicate that certain information applies only to
+part of an area feature.
+
+include::features/AnchorBerth.adoc[]
+
+include::features/AnchorageArea.adoc[]
+
+include::features/Berth.adoc[]
+
+include::features/BerthPosition.adoc[]
+
+include::features/DockArea.adoc[]
+
+include::features/DumpingGround.adoc[]
+
+include::features/FenderLine.adoc[]
+
+include::features/HarbourAreaAdministrative.adoc[]
+
+include::features/HarbourAreaSection.adoc[]
+
+include::features/HarbourBasin.adoc[]
+
+include::features/MooringWarpingFacility.adoc[]
+
+include::features/OuterLimit.adoc[]
+
+include::features/PilotBoardingPlace.adoc[]
+
+include::features/SeaplaneLandingArea.adoc[]
+
+include::features/Terminal.adoc[]
+
+include::features/TurningBasin.adoc[]
+
+include::features/WaterwayArea.adoc[]
+
+<<<
+[[sec_PhysicalInfrastructure]]
+== Physical infrastructure
+
+[[sec_PhysicalInfrastructureIntro]]
+=== Introduction
+
+Physical infrastructure features describe the infrastructural facilities of the harbour area. They include floating and dry docks, gridirons, ship lifts, straddle carriers, bollards, dolphins, power facilities and locks.
+
+The features are depicted in <<fig_PhysicalInfrastructureFeatures>> below. In addition, they inherit the attributes and associations of higher-level supertypes *FeatureType*, *OrganizationContactArea*, and *SupervisedArea*.
+
+[[fig_PhysicalInfrastructureFeatures]]
+.Physical infrastructure features
+image::../../../../EAP/UML-images/S-131&#32;Physical&#32;Infrastructure.png[]
+
+include::features/AutomatedGuidedVehicle.adoc[]
+
+include::features/Bollard.adoc[]
+
+include::features/Dolphin.adoc[]
+
+include::features/DryDock.adoc[]
+
+include::features/FloatingDock.adoc[]
+
+include::features/Gridiron.adoc[]
+
+include::features/HarbourFacility.adoc[]
+
+include::features/LockBasin.adoc[]
+
+include::features/LockBasinPart.adoc[]
+
+include::features/MooringBuoy.adoc[]
+
+include::features/OnshorePowerFacility.adoc[]
+
+include::features/ShipLift.adoc[]
+
+include::features/StraddleCarrier.adoc[]
+

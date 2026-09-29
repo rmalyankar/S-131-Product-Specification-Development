@@ -1,0 +1,22 @@
+==== General
+
+Mooring buoys must be shown in order to facilitate mooring operations.
+
+If the underlying harbour ENC does not show disused mooring buoys or moored vessels, such of these as may be within the extent of the MHI dataset
+should be included as possible hazards to navigation.
+
+* For disused moorings, a *Restriction* indicating that the buoy is disused and not available for mooring must be attached to the *MooringBuoy*.
+* For permanently moored vessels, a *Restriction* indicating that the buoy is in permanent use and not available for mooring must be attached  to the *MooringBuoy*.
+
+Limitations on maximum vessel draft and length may be encoded using the attributes _maximumPermittedDraught_ and _maximumPermittedlength_. Other restrictions on
+use by particular types of vessels or limitations on vessel dimensions should be encoded using an associated *Applicability*.
+
+For disused moorings or permanent mooring buoys, attributes _maximumPermittedDraught_, _maximumPermittedlength_, _verticalLength_ and _visitorsMooring_ are prohibited.
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to related S-101 features if any.
+ 
+==== Remarks
+
+* If it is required to encode the total vertical length, including any equipment features (for example light), of the buoy above the water level,
+it must be done using the attribute _verticalLength_.
+* If it is required to encode a visitors mooring, it must be done by populating the attribute _visitorsMooring_ = true. 

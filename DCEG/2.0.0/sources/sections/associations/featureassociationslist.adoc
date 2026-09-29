@@ -1,0 +1,77 @@
+
+[[fa_TextAssociation]]
+=== Text Association
+
+*Definition* : A feature association for the binding between a geo feature and the cartographically positioned location for text.
+
+*CamelCase* : TextAssociation
+
+*Remarks* : 
+
+*Roles* : thePositionProvider theCartographicText
+
+[[fa_Subsection]]
+=== Subsection
+
+*Definition* : A division of a feature into parts of the same type as the whole.
+
+*CamelCase* : Subsection
+
+*Remarks* : 
+
+*Roles* : subUnit constitute
+
+[[fa_Infrastructure]]
+=== Infrastructure
+
+*Definition* : The infrastructure facilities in an area.
+
+*CamelCase* : Infrastructure
+
+*Remarks* : 
+
+*Roles* : infrastructureLocation hasInfrastructure
+
+[[fa_PrimaryAuxiliaryFacility]]
+=== Primary/Auxiliary Facility
+
+*Definition* : Describes the relationship between a primary feature and a feature that plays a supporting role in the use of the primary facility by a vessel.
+
+*CamelCase* : PrimaryAuxiliaryFacility
+
+*Remarks* : 
+
+*Roles* : primaryFacility auxiliaryFacility
+
+[[fa_Demarcation]]
+=== Demarcation
+
+*Definition* : Demarcation of location(s) within a feature by relation to another feature or features
+
+*CamelCase* : Demarcation
+
+*Remarks* : 
+
+*Roles* : demarcationIndicator demarcatedFeature
+
+[[fa_JurisdictionalLimit]]
+=== Jurisdictional Limit
+
+*Definition* : The limit(s) of a jurisdiction claimed by a coastal State.
+
+*CamelCase* : JurisdictionalLimit
+
+*Remarks* : 
+
+*Roles* : limitReference limitExtent
+
+[[fa_LayoutDivision]]
+=== Layout Division
+
+*Definition* : A division of a feature into parts of type(s) different from the type of the whole.
+
+*CamelCase* : LayoutDivision
+
+*Remarks* : 
+
+*Roles* : layoutUnit componentOf

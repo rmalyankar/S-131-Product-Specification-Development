@@ -1,0 +1,31 @@
+==== General
+
+Dock areas in S-101 ENCs that are not navigable at the optimum display scale of the ENC data, are encoded in S-101 ENCs using the S-101
+feature *DockArea*. Except for Gate, the boundaries of the dock are not encoded as separate features in S-101.
+
+Dock areas in S-101 ENCs that are navigable at the optimum display scale of the ENC data may be encoded as the S-101 features Depth Area, Dredged Area or Unsurveyed Area (see the S-101 DCEG), with
+the geo features making up the dock limits encoded using appropriate features such as Coastline, Shoreline Construction or Gate.
+
+S-131 datasets may encode both types of S-101 ENC dock features according to their primary use as a dock areas, using the S-131 feature type *DockArea*. The
+_depthsDescription_ attribute must be used for textual descriptions of the depths in the area.
+
+The variety of features used in S-101 ENCs to encode different types of dock areaa and their adjuncts may be converted to S-101 *DockArea* features for 
+S-131 purposes. If so converted, the optional attribute _interoperabilityIdentifier_ should be used to encode the provenance of such S-131 *DockArea* features
+in relation to the source S-101 ENC features by setting its value to the same as the _interoperabilityIdentifier_ value for the ENC source feature.
+
+If an encoded *DockArea* has a date dependency, this should be indicated using the complex attributes _fixedDateRange_ or _periodicDateRange_.
+
+* The complex attribute horizontal clearance fixed is used to encode the size of the entrance to the dock area, where required. This attribute is not included
+in S-131, but should be in the underlying ENC. If not, it may be encoded as text information in a _textContent_ attribute. 
+* The attributes horizontal clearance length and horizontal clearance width are used to encode the regulatory length and width of the navigable part of the
+dock area as declared by a competent authority, where known. These attributes are not included in S-131, but should be in the underlying ENC. If not,
+it may be encoded as text information in a _textContent_ attribute
+* S-101 guidance is that “[in] a non-tidal basin (wet dock), depths may refer to a sounding datum different from that in open waters.  If this area is navigable
+at the maximum display scale of the ENC data, the value of this datum must be encoded using the meta feature *SoundingDatum*, with
+attribute vertical datum = 24 (local datum), co-incident with the area covered by the dock.” For S-131, depths must be converted to the single sounding
+datum meta-feature and a note regarding the conversion must be included in the _depthsDescription_ complex attribute.
+
+==== Remarks
+
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of the
+boundaries of an area. 

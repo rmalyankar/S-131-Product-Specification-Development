@@ -1,58 +1,125 @@
-
-[[sec_7]]
+[data2text,PROD=config/product.json]
+----
+[[sec_Datasets]]
 == Datasets
 
-[[sec_7.1]]
+[[sec_DatasetsIntro]]
 === Introduction
 
 A dataset is a grouping of features, attributes, geometry and metadata
 which comprises a specific coverage.
 
-[[sec_7.1.1]]
-==== Dataset rules
+[[sec_DatasetRules]]
+=== Dataset rules
 
-In order to facilitate the efficient processing of MHI data the geographic
-coverage of a given *maximum display scale* may be split into multiple
-datasets.
+In order to facilitate the efficient processing of {{PROD.abbrev}} data the geographic
+coverage of a given _maximumDisplayScale_ may be split into multiple datasets.
 
-The discovery metadata of a dataset must list all the *Data Coverage*
+The discovery metadata of a dataset must list all the *DataCoverage*
 features contained within that dataset and their assigned scale attributions.
 
-An MHI update dataset must not change the limit of a *Data Coverage*
-feature for the base MHI dataset. Where the limit of a *Data Coverage*
-feature for a base MHI dataset is to be changed, this must be done
-by issuing a New Edition of the dataset.
+[[sec_DataCoverageRules]]
+=== Data coverages
 
-Datasets must not cross the 180° meridian; this includes both the
-*Data Coverage* features and the bounding box for the dataset.
+Datasets and data coverage meta-features must conform to the following requirements:
 
-[[sec_7.1.2]]
-==== Data Coverage rules
+. All geographic features in a dataset must be covered by a *DataCoverage* meta feature.
+. An update dataset must not change the limit of a *DataCoverage* feature for the base dataset. Where the limit of
+a *DataCoverage* feature for a base dataset is to be changed, this must be done by issuing a new edition of the dataset.
+. All base datasets (new dataset, new edition and re-issue) must contain at least one *DataCoverage* feature.
+. The data boundary of the base dataset is defined by the extent of the *DataCoverage* features and must be contained within
+the bounding box. (It is not a requirement that the entire extent of the dataset bounding box be covered by *DataCoverage* feature(s).)
+. *DataCoverage* features from different datasets covering the same geographical area must have non-overlapping display scale ranges.
+.. At areas of agreed national data limits an overlapping buffer zone of up to 5 metres may be used. For this situation, there must be
+no gaps in data between the adjoining datasets.
+. When a dataset has multiple *DataCoverage* features:
+.. The minimum display scales must all be the same
+.. The optimum display scales may be different; and
+.. The maximum display scales may be different.
+. When a dataset has multiple *DataCoverage* features then the optimum display scale of the dataset (as defined in the “dataCoverage” field of
+the “S100_DatasetDiscoveryMetadata” must be equal to the largest optimum display scale of the *DataCoverage* features. When a dataset has
+multiple DataCoverage features then the maximum display scale of the dataset as defined in the “S100_DatasetDiscoveryMetadata” must be set to
+an empty (null) value.
 
-* All base datasets (new dataset, new edition and re-issue) must contain
-at least one *Data Coverage* feature.
-* The data boundary of the base dataset is defined by the extent of
-the *Data Coverage* features and must be contained within the bounding
-box.
-* The *Data Coverage* features within a dataset must not overlap,
-however *Data Coverage* features from different datasets may overlap
+
+////
+. All geographic features in a dataset must be covered by a *DataCoverage* meta feature.
+. An update dataset must not change the limit of a *DataCoverage* feature for the base dataset. Where the limit of
+a *DataCoverage* feature for a base dataset is to be changed, this must be done by issuing a new edition of the dataset.
+. All base datasets (new dataset, new edition and re-issue) must contain at least one *DataCoverage* feature.
+. The data boundary of the base dataset is defined by the extent of the *DataCoverage* features and must be contained within
+the bounding box. (It is not a requirement that the entire extent of the dataset bounding box be covered by *DataCoverage* feature(s).)
+. The *DataCoverage* features within a dataset must not overlap, however *DataCoverage* features from different datasets may overlap
 if they have differing maximum display scales.
-* Datasets may overlap, however there must be no overlapping
-*Data Coverage* features of the same *maximum display scale*, except
-at the agreed adjoining national data limits, where, if it is difficult
-to achieve a perfect join, a 5 metre overlapping buffer zone may be
+. Datasets may overlap, however there must be no overlapping *DataCoverage* features of the same _maximumDisplayScale_, except
+at the agreed adjoining national data limits, where, if it is difficult to achieve a perfect join, a 5 metre overlapping buffer zone may be
 used; and for this situation, there must be no gaps in data.
-* When a dataset has multiple *Data Coverage* features, then the
-*minimum display scale* must be the same for all *Data Coverage* features
-within the dataset. The *maximum display scale* for multiple
-*Data Coverage* features within a dataset may be different.
-* When a dataset has multiple *Data Coverage* features then the
-*maximum display scale* of the dataset must be equal to the largest
-*maximum display scale* of the *Data Coverage* features.
-* The *maximum display scale* is considered to be the equivalent of
-the compilation scale of the data.
+. When a dataset has multiple *DataCoverage* features, then the _minimumDisplayScale_ must be the same for all *DataCoverage* features
+within the dataset. The *maximumDisplayScale* for multiple *DataCoverage* features within a dataset may be different.
+. When a dataset has multiple *DataCoverage* features then the _maximumDisplayScale_ of the dataset must be equal to the largest
+_maximumDisplayScale_ of the *DataCoverage* features.
+////
 
-[[sec_7.2]]
+////
+NOTE&#58; The _maximumDisplayScale_ is considered to be the equivalent of the compilation scale of the data.
+////
+
+[[sec_DatasetExtent]]
+=== Data extent
+
+Datasets must not cross the 180° meridian of longitude; this includes both the
+*DataCoverage* features and the bounding box for the dataset.
+
+[[sec_TypesOfDatasets]]
+=== Types of datasets
+
+<<table_DatasetTypes>> lists the types of {{PROD.abbrev}} datasets which may be produced and contained within an exchange set:
+
+[[table_DatasetTypes]]
+.MHI dataset types
+[cols="21,44"]
+|===
+h| Dataset h| Explanations
+
+| New dataset (base dataset)
+| Data for an area different (in coverage and/or extent) to existing
+datasets.
+
+| New Edition of a dataset
+| A re-issue plus new information which has not been previously distributed
+by Updates. Each New Edition of a dataset must have the same name
+as the dataset that it replaces and should have the same spatial extents.
+The edition number in the dataset discovery metadata must increment
+up by one from the previous edition.
+
+| Update dataset
+| A delta change of the latest edition of a dataset. If there is more
+than one update dataset, the subsequent update will be a delta of
+the base dataset + earlier update datasets.
+
+| Re-issue
+| Includes all the updates applied to the original dataset up to the
+date of the reissue. A Re-issue is intended to avoid unnecessary loading
+of the Base cell and all applicable updates individually for new users
+of the dataset, and therefore does not contain any new information
+additional to that previously distributed by updates. A reissue dataset
+can be issued at any time.
+
+| Cancellation | Cancels a dataset and any related update datasets. The dataset is cancelled and is deleted from the system. +
+Datasets are cancelled using the file-less cancellation method described in S-100 17-4.4.1. +
+Fileless cancellation may be achieved by using a dataset metadata entry with the filename and original digital signature specifying the resource
+to be cancelled and with all other mandatory metadata fields also set to the same values as the original, with the exception of the issueDate,
+which must be set to the issue date of the fileless cancellation itself. +
+Since {{PROD.id}} uses file-less cancellation, there is no cancellation data file. Cancellation is only by means of discovery metadata.
+
+|===
+
+[[sec_ContentOfUpdateDataseets]]
+=== Content of update datasets
+
+Update datasets can only contain replacements, deletions, and additions of whole feature instances or information instances.
+
+[[sec_DisplayScaleRange]]
 === Display scale range
 
 A scale range of a dataset is used to indicate a range of scales between
@@ -69,10 +136,15 @@ the dataset will be displayed at all smaller scales. When the viewing
 scale is larger than the value indicated by *maximum display scale*,
 an overscale indication must be shown.
 
-[[sec_7.3]]
+[[sec_DatasetOverlap]]
+=== Data overlap
+
+{{PROD.id}} datasets must not overlap other {{PROD.id}} datasets of the same scale range.
+
+[[sec_Geometry]]
 === Geometry
 
-[[sec_7.3.1]]
+[[sec_DataProductGeometry]]
 ==== S-131 geometry
 
 Marine Harbour Infrastructure (MHI) features are encoded as vector
@@ -81,17 +153,14 @@ entities which conform to S-100 geometry configuration level 3a
 
 Level 3a is described by the following constraints:
 
-* Each curve must reference a start and end point
-(they may be the same).
+* Each curve must reference a start and end point (they may be the same).
 * Curves must not self intersect. See S-100 Figure 7-5.
-* Areas are represented by a closed loop of curves beginning and ending
-at a common point.
+* Areas are represented by a closed loop of curves beginning and ending at a common point.
 * In the case of areas with holes, all internal boundaries must be
 completely contained within the external boundary and the internal
 boundaries must not intersect each other or the external boundary.
 Internal boundaries may touch other internal boundaries or the external
-boundary tangentially (that is at one point) as shown in S-100
-Figure 7-6.
+boundary tangentially (that is at one point) as shown in S-100 Figure 7-6.
 * The outer boundary of a surface must be in a clockwise direction
 (surface to the right of the curve) and the curve orientation positive.
 The inner boundary of a surface must be in a counter-clockwise direction
@@ -100,8 +169,7 @@ See S-100 Figure 7-7.
 
 S-131 further constrains Level 3a with the following:
 
-* Coincident linear geometry must be avoided when there is a dependency
-between features.
+* Coincident linear geometry must be avoided when there is a dependency between features.
 * The interpolation of _GM_CurveSegment_ must be loxodromic.
 * Linear geometry is defined by curves which are made of curve segments.
 Each curve segment contains the geographic coordinates as control
@@ -113,19 +181,18 @@ permitted display scale.
 scale range for typical use and the density of coordinates needed
 to suit the needs of the product.
 
-The following exception applies to S-131:
+The following exception applies to {series}-{docnumber}:
 
-* The use of coordinates is restricted to two dimensions
-(_DirectPosition_ is restricted to two coordinates).
+* The use of coordinates is restricted to two dimensions (_DirectPosition_ is restricted to two coordinates).
 
-[[sec_7.3.2]]
+[[sec_Masking]]
 ==== Masking
 
 In certain circumstances, the symbolisation of a curve may need to
 be suppressed. This is done using the _maskReference_ XML tag described
 in S-100 10b-10.1.7.
 
-[[sec_7.3.3]]
+[[sec_CoordinateEncodingAndCRS]]
 ==== Coordinate encoding in spatial primitives
 
 Geometry may be encoded either inline or by reference to a spatial
@@ -134,5 +201,14 @@ coordinate values. The GML conventions for references and axis order
 must be followed.
 
 The CRS shall be identified using the URI convention for SRS specified
-by OGC, which is http://www.opengis.net/def/crs/EPSG/0/4326"
-(Quote S-100 Ed.5.0.0 10b-11.7. ). The axis order is latitude/longitude.
+by OGC, which is \http://www.opengis.net/def/crs/EPSG/0/4326 
+(S-100 10b-11.7). The axis order is latitude/longitude.
+
+[[sec_DatasetSize]]
+=== Dataset size
+
+{{PROD.abbrev}} datasets must not exceed 20 MiB.
+
+Update datasets must not exceed 500 KiB.
+
+----

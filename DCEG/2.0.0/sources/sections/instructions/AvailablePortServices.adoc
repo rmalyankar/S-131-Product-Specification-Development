@@ -1,0 +1,7 @@
+==== General
+
+*AvailablePortServices* may be used to either describe port services at specific kinds of locations in harbours (see <<fig_PortServices>>).
+
+==== Remarks
+
+* At least one of the attributes of *AvailablePortServices* must be populated.

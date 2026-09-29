@@ -1,0 +1,8 @@
+==== General
+
+This feature may be used to encode the legally or officially designated limits of the harbour area for purposes of navigation. Land-side boundaries of jurisdiction need not be encoded as *OuterLimit* features. 
+
+==== Remarks
+
+* Aids to navigation should not be encoded in the attribute _landmarkDescription_. Instead, they should be encoded in the appropriate attribute for describing marks (_offshoreMarkDescription_, _majorLightDescription_, or _usefulMarkDescription_).
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of the boundaries of an area. 

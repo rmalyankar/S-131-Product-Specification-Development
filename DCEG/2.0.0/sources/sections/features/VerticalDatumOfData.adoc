@@ -1,0 +1,72 @@
+[[ftable_VerticalDatumOfData]]
+=== Vertical Datum of Data
+
+[cols="a,a,a,a,a,a,a,a",options="headers,unnumbered"]
+|===
+8+| [underline]#IHO Definition:# Any level surface (for example Mean Sea Level) taken as a surface of reference to which the elevations within a data set are reduced. Also called datum level, reference level, reference plane, levelling datum, datum for heights.
+8+h| [underline]#S-131 Geo Feature:# VerticalDatumOfData
+8+h| [underline]#Super Type:# 
+8+h| [underline]#Primitives:# surface
+3+| _Real World_ 2+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+3+h|S-131 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+3+| Vertical Datum |
+2+|3: Mean Sea Level +
+13: Low Water +
+16: Mean High Water +
+17: Mean High Water Springs +
+18: High Water +
+19: Approximate Mean Sea Level +
+20: High Water Springs +
+21: Mean Higher High Water +
+24: Local Datum +
+25: International Great Lakes Datum 1985 +
+26: Mean Water Level +
+28: Higher High Water Large Tide +
+29: Nearly Highest High Water +
+30: Highest Astronomical Tide +
+44: Baltic Sea Chart Datum 2000 +
+ |EN | 1,1
+
+3+| Information | 2+| |  C | 0,*
+3+| &nbsp;&nbsp;&nbsp;&nbsp;File Locator |
+2+| |(S) TE | 0,1
+
+3+| &nbsp;&nbsp;&nbsp;&nbsp;File Reference |
+2+| |(S) TE | 0,1
+
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Headline |
+2+| |(S) TE | 0,* (ordered)
+
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Language |
+2+| |(S) TE | 0,1
+
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Text |
+2+| |(S) TE | 0,1
+
+8+h| Inherited Attributes
+
+3+h|S-131Attribute 3+h| Inherited From h| Type h| Multiplicity
+
+8+h| No inherited attributes
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+5+h| *Information associations*
+
+h|S-131 Role	h|S-131 Association Name h| Associated to h| Type	h| Mult.
+
+|===
+
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+5+h| *Feature associations*
+
+h|S-131 Role	h|S-131 Association Name h| Associated to h| Type	h| Mult.
+|===
+
+
+include::../instructions/VerticalDatumOfData.adoc[]
+* If the complex attribute _information_ is present at least one of its sub-attributes must be populated.
+

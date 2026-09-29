@@ -1,0 +1,13 @@
+==== General
+
+The identifier or designator (e.g., bollard number) for a bollard must be encoded using the complex attribute _featureName_.
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to the corresponding S-101 Bollard feature.
+
+==== Safe working load
+
+The attribute _safeWorkingLoad_ must be used to encode the safe working load (SWL) of the bollard. The value must be encoded using the rated value
+of safe working load, which is a fraction of the rated breaking load.
+
+==== Remarks
+

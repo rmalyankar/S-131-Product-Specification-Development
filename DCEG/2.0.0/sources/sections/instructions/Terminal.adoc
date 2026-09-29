@@ -1,0 +1,17 @@
+==== General
+
+A terminal in S-131 may include water areas immediately adjacent to the shore installation.
+
+Data producers should endeavour to encode *Terminal* features as areas rather than points. Point spatial primitives may be used when the boundaries cannot be
+determined or in small-scale datasets.
+
+===== Notes on source materials
+
+Since port authorities sometimes designate terminals by their nominal point locations instead of providing precise coordinates, point terminal features may be located in water areas.
+
+Terminals are encoded in S-101 as S-101 *HarbourFacility* features with a _categoryOfHarbourFacility_ attribute. Such *HarbourFacility* features must not
+be repeated in S-131 as S-131 *HarbourFacility* features, instead an S-131 *Terminal* feature should be encoded. The _interoperabilityIdentifier_ attribute
+may be used to link an S-131 *Terminal* to a corresponding S-101 *HarbourFacility*.
+
+==== Remarks
+

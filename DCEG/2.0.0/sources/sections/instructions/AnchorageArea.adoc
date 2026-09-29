@@ -1,0 +1,37 @@
+==== General
+
+The *AnchorageArea* feature in S-131 omits several of the attributes of the S-101 equivalent.
+
+The complex attribute _featureName_, sub-attribute _name_ is used to encode the name and/or number of the *AnchorageArea*.
+
+The complex attribute _textContent_ may be used to provide information about the category of anchorage, where required.
+
+Individual recommended anchorages  without defined limits should be encoded as *AnchorageArea* features with point spatial primitives.
+
+Areas with numerous small craft moorings may be encoded as *AnchorageArea* features of type surface.
+
+====	Regulations, depth information, and general textual information
+
+General port regulations about anchorage areas in the port area may be encoded in an associated *Regulations* information type.
+
+The complex attribute _depthsDescription_ must be used for encoding information about the depth of the anchorage, including for example the nature of
+the seabed, shoaling, etc.
+
+Other general textual information may be encoded in an associated *NauticalInformation* information type, if pertaining to more than one feature, or in
+the _textContent_ attribute, if pertinent to a particular anchorage.
+
+====	Anchorages with limitations or restrictions on their use
+
+If it is required to encode an anchorage with conditions on its use related to the characteristics of a vessel or its cargo, it must be done using an
+associated *Applicability* information type. 
+
+If it is required to encode an anchorage with other types of limitations on its use (not pertaining to vessel or cargo characteristics), for example an
+anchorage which may be used for a limited period of time, it must be done using an associated *Restrictions* information type. The specific limitation must
+be encoded in one or more attributes of the *Restrictions* object.
+
+==== Remarks
+
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of the
+boundaries of an area.
+* If an anchorage area is designated or reserved for a particular type of cargo, the cargo should be encoded using the _categoryOfCargo_ attribute. 
+

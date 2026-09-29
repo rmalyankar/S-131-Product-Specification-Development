@@ -1,0 +1,12 @@
+==== General
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to the corresponding S-101 Gridiron feature.
+
+===== Notes on source materials
+
+Due to gridirons normally being located in intertidal areas, S-101 encoding instructions only require encoding Gridiron on the largest
+optimum display scale ENC data.
+
+==== Remarks
+
+

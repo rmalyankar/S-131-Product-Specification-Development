@@ -1,0 +1,38 @@
+==== General
+
+A *FenderLine* feature is an imaginary line that touches the seaward face of the fenders. A fender line is distinct from the physical fenders.
+A *FenderLine* features is useful during berthing as it indicates where and when the vessel will touch the physical fenders and can also provide the
+orientation of the berth.
+
+When a *Berth* is encoded as a curve spatial primitive, the *Berth* itself may coincide with the *FenderLine*. However, ENC encoding guidance may require the
+*Berth* feature in S-101 to be encoded offset from a Shoreline Construction or Coastline feature, S-131 data producers should take this possibility into
+account when drawing on ENCs for fender line information.
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to related S-101 fender features if any.
+
+The _orientation_ attribute should be used to encode the orientation of the fender line. Uncertainty in orientation should be encoded in the _orientationUncertainty_
+sub-attribute.
+
+A *SpatialQuality* associated to the curve primitive for the *FenderLine* should be used to indicate the accuracy of fender line positioning (see
+clauses <<sec_2.4.6.1,droploc%>> and <<ftable_SpatialQuality,droploc%>>). Potential decay of accuracy over time may need to be taken into account when encoding
+accuracy information.
+
+Accurate location and orientation information is of the utmost importance in encoding *FenderLine* features.
+
+===== Notes on source materials
+
+The fender line is distinct from the physical fenders which can be encoded in S-57 / S-101 but in most cases are not included in the ENC.
+The figures below depict hypothetical *FenderLine* features in relation to fenders.
+
+[[fig_FenderLine1]]
+.Fender line
+image::FenderLine-1.png[]
+
+[[fig_FenderLine2]]
+.Example of fenders which are not encoded in the ENC
+image::FenderLine-2.png[]
+
+Data producers should use the most accurate and up-to-date source of information for fenderline information. This will generally be the port authority.
+
+==== Remarks
+

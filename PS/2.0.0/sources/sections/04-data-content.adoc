@@ -137,7 +137,7 @@ geographic feature classes in the application schema are derived.
 (Meta- and cartographic feature classes do not derive from it.) *FeatureType*
 has attributes for fixed and periodic date ranges indicating the effective
 dates of the feature, name of the feature, source information, types
-of regulations, and a *textContent* attribute that allows text notes
+of regulations, and a _textContent_ attribute that allows text notes
 or references to be provided for individual feature instances where
 appropriate. The attributes defined in *FeatureType* are inherited
 by all S-131 geographic feature types. All the attributes in *FeatureType*
@@ -153,7 +153,7 @@ The abstract class *InformationType* is an abstract class from which
 all the information type classes in the S-131 domain model
 (except *SpatialQuality*) are derived. *InformationType* has attributes
 for fixed and periodic date ranges, name associated with the individual
-information object if any, source information, and a *textContent*
+information object if any, source information, and a _textContent_
 attribute that allows text notes or references to be provided for
 individual instances where appropriate. The attributes defined in
 *InformationType* are inherited by all S-131 information type classes.
@@ -175,10 +175,6 @@ designation of the positioning of specific berths along a wharf or
 quay, dock areas, and a *HarbourAreaSection* feature for subdividing
 harbour areas into sub-sections.
 
-Note that the current model includes some features which would ideally
-be merged into "categoryOfPortSection" attributes of other features,
-due to GI Registry conceptual limitations on re-use of concepts.
-
 [[fig_4.7]]
 .Layout features
 image::S-131&#32;Layout.png[]
@@ -186,12 +182,8 @@ image::S-131&#32;Layout.png[]
 [[sec_4.2.1.3]]
 ===== Physical Infrastructure
 
-Physical infrastructure features include drydock and floating dock
-facilities, ship lifts, gridirons, and straddle carriers. The features
-are depicted in <<fig_4.8>>. Note that "ship lift" and "straddle carrier"
-are modelled as *HarbourFacility* features with a category attribute,
-due to current GI Registry conceptual limitations on the use of these
-concepts.
+Physical infrastructure features include drydock and floating dock facilities, locks, bollards, dolphins, ship lifts, gridirons, and straddle
+carriers. The features are depicted in <<fig_4.8>>.
 
 [[fig_4.8]]
 .Physical Infrastructure features
@@ -240,25 +232,21 @@ notes or other information that cannot be categorized as one of the
 other three classes.
 
 These information types all inherit the attributes of their immediate
-abstract superclass **AbstractRxN**, which provides attributes *textContent*
-and *graphic* for textual and pictorial material respectively.
-The sub-attributes of its complex attribute *rxnCode* allow optional
-classification of the material encoded in *textContent*/*graphic*
+abstract superclass **AbstractRxN**, which provides attributes _textContent_
+and _graphic_ for textual and pictorial material respectively.
+The sub-attributes of its complex attribute _rxnCode_ allow optional
+classification of the material encoded in _textContent_/_graphic_
 according to the type of material and the kind of nautical activity
 affected by it. They also inherit the attributes of abstract superclass
 **InformationType**, which allows encoding of the effective and expiry
-dates, if any, and the source of information
-footnote:[Source information is currently broken out into three attributes:
-source, sourceType, and reportedDate, due to GI Registry issues with
-the complex attribute sourceIndication.],
-if it is necessary to encode that data.
+dates, if any, and the source of information, if it is necessary to encode that data.
 
 These classes are intended primarily for encoding textual information,
 such as that which derives from textual source material such as port
 handbooks, national or local laws or official publications.
 
 The use of these information types to associate regulatory and other
-information to individual features is described elsewhere (<<sec_4.2.1.8>>).
+information to individual features is described elsewhere (clause <<sec_4.2.1.8,droploc%>>).
 <<fig_4.11>> depicts the *Regulations*, *Restrictions*, *Recommendations*,
 and *NauticalInformation* classes, their class hierarchy, and the
 attributes of their generalizations *AbstractRxN* and *InformationType*
@@ -298,7 +286,7 @@ or supervision over the area.
 Operating schedules and business hours of organizations are modelled
 by associating the *ServiceHours* class to an *Authority*. The *ServiceHours*
 class is a container for the complex attribute describing daily schedules
-for different weekdays (*scheduleByDayOfWeek*). This complex attribute
+for different weekdays (_scheduleByDayOfWeek_). This complex attribute
 contains another complex attribute for time intervals and the days
 to which they apply, and category sub-attribute to model whether the
 schedule describes opening hours, closures, etc. Exceptions to the
@@ -318,7 +306,7 @@ Working times of 24 hours/day may be explicitly encoded
 (from 00:00:00 to 24:00:00 hrs., in accordance with ISO 8601 conventions
 for midnight at the beginning and end of a day).
 
-The model for both kinds of schedules is shown in <<fig_4.13>>.
+The model for both kinds of schedules is shown in <<fig_4.14>>.
 
 [[fig_4.14]]
 .Working times and schedules
@@ -339,7 +327,7 @@ duplication. It may be done in situations where contact details for
 an operating authority are different from contact details for the
 service it operates.
 
-<<fig_4.13>> also shows associations between service features and
+<<fig_4.14>> also shows associations between service features and
 *Authority*. *Authority*-*ContactDetails* associations are omitted
 to reduce clutter.
 
@@ -348,7 +336,7 @@ to reduce clutter.
 
 The *AssociatedRxN* association between a feature type and a *Regulations*,
 *Restrictions*, *Recommendations*, or *NauticalInformation* object
-(see <<fig_4.14>>) indicates that the Regulation, etc., is applicable
+(see <<fig_4.15>>) indicates that the Regulation, etc., is applicable
 within the associated feature. If it is necessary to identify an authority
 or organization related to a particular regulation (restriction, etc.)
 object, this may be done using the *RelatedOrganisation* association
@@ -379,34 +367,34 @@ which contains attributes for the most common vessel characteristics
 used in nautical publications. These include measurements
 (length, beam, draught), type of cargo, displacement, etc. Constraints
 which cannot be modelled using the attributes of *Applicability* can
-be described in plain text in its *information* attribute.
+be described in plain text in its _information_ attribute.
 
 Conditions relating to vessel dimensions are modelled by the complex
-attribute **vesselsMeasurements**, which has sub-attributes for naming
+attribute _vesselsMeasurements_, which has sub-attributes for naming
 the dimension and indicating the limit (whether the condition applies
 to a vessel which exceeds or falls below the limit). For example,
 the combinations below describe the condition
 "length overall > 50 m" (Condition 1) and "length overall < 90 m"
 (Condition 2):
 
-[[table_4.1]]
+[[table_dimensions_example]]
 .Conditions relating to vessel dimensions
 [cols="181,118,118,117"]
 |===
 | h| Condition 1 h| Condition 2 h| Condition 3
 
-| *vesselsCharacteristics*      | length overall | length overall | breadth
-| *comparisonOperator*          | greater than   | less than      | greater than
-| *vesselsCharacteristicsValue* | 50             | 90             | 20
-| *vesselsCharacteristicsUnit*  | metre          | metre          | metre
+| vesselsCharacteristics      | length overall | length overall | breadth
+| comparisonOperator          | greater than   | less than      | greater than
+| vesselsCharacteristicsValue | 50             | 90             | 20
+| vesselsCharacteristicsUnit  | metre          | metre          | metre
 |===
 
-The *logicalConnectives* attribute is used to indicate how to interpret
+The _logicalConnectives_ attribute is used to indicate how to interpret
 the case where multiple conditions are encoded using attributes of
 measurements - whether the conditions described by condition attributes
 are cumulative (conjunctive, AND) or alternatives (disjunctive, OR).
-A *logicalConnectives*=AND combined with Conditions 1 and 2 above
-describes a vessel of length between 50 and 90 metres; *logicalConnectives*=OR
+A _logicalConnectives_=AND combined with Conditions 1 and 2 above
+describes a vessel of length between 50 and 90 metres; _logicalConnectives_=OR
 combined with conditions 1 and 3 describes a vessel of length greater
 than 50 metres or beam greater than 20 metres.
 
@@ -415,10 +403,10 @@ combinations of conditions, but it is always possible to convert such
 complex conditions into multiple combinations each using only AND
 ('conjunctive normal form') or OR ('disjunctive normal form'), and
 model the subset using more than one *Applicability* object. Multiple
-instances of Applicability associated to the same feature or information
+instances of *Applicability* associated to the same feature or information
 type are interpreted as alternatives (inclusive OR).
 
-<<fig_4.15>> depicts the classes and attributes that can be used to
+<<fig_4.16>> depicts the classes and attributes that can be used to
 define subsets of vessels according to specified characteristics.
 
 [[fig_4.16]]
@@ -429,7 +417,7 @@ Given the relevant subset of vessels, it can be associated to the
 appropriate feature, regulation, or report by a *PermissionType*,
 or *InclusionType* association. These are association classes, whose
 single attribute models the nature of the relationship between the
-vessel subset and feature or information type. <<fig_4.16>> depicts
+vessel subset and feature or information type. <<fig_4.17>> depicts
 the use of vessel subsets in *PermissionType* or *InclusionType* associations.
 
 The association classes *PermissionType* and *InclusionType* basically
@@ -457,31 +445,30 @@ image::S-131&#32;ApplicabilityAssociations.png[]
 a requirement, recommendation or prohibition on entry into a feature,
 by the specified subset of vessels.
 
-*Inclusion* links a *Regulation*, *Recommendation*, *Restriction*,
-or *NauticalInformation* instance to a subset defined by an Applicability
+*InclusionType* links a *Regulation*, *Recommendation*, *Restriction*,
+or *NauticalInformation* instance to a subset defined by an *Applicability*
 object, and indicates whether the content of the *Regulation*, etc.,
-applies to the vessels (membership=included), or whether it explicitly
-does not apply (membership=excluded).
+applies to the vessels (_membership_=included), or whether it explicitly
+does not apply (_membership_=excluded).
 
 Informally:
 
-. *Applicability* describes the set of vessels: i.e., who
+. *Applicability* describes the set of vessels: i.e., _who_
 
-. *Regulations* provides the text of the regulation: i.e., what
+. *Regulations* provides the text of the regulation: i.e., _what_
 
 . The association class *InclusionType* describes the relationship
-between who and what. That is, who "must (or can)" / "need not" do
-what.
+between _who_ and _what_. That is, _who_ "must (or can)" / "need not"
+do _what._
 
 And:-
 
 [start=4]
-. A geographic feature defines a location or physical facility: i.e.,
-where
+. A geographic feature defines a location or physical facility: i.e., _where_
 
-. The association class PermissionType describes the relationship
-between who and where. That is, who can / must / should / need not
-use (or sail) where.
+. The association class *PermissionType* describes the relationship
+between _who_ and _where_. That is, _who_ can / must / should / need not
+use (or sail) _where_.
 
 [[sec_4.2.1.10]]
 ===== Other uncategorized supplementary information
@@ -508,7 +495,7 @@ image::S-131&#32;SupplementaryInformation.png[]
 
 S-131 provides a general method for encoding some kinds of information
 using "wrapper" attributes that are basically a named type of text
-content. The information is encoded in narrative form in a *textContent*
+content. The information is encoded in narrative form in a _textContent_
 sub-attribute, which provides a general way to encode textual information.
 <<fig_4.19>> depicts the wrapper attributes.
 
@@ -519,7 +506,7 @@ image::S-131&#32;Wrapper&#32;Attributes.png[]
 [[sec_4.2.1.12]]
 ===== Feature relationships
 
-Feature relationships in S-131 are depicted in <<fig_4.19>>. The feature
+Feature relationships in S-131 are depicted in <<fig_4.20>>. The feature
 relationships can be generally characterized as follows:
 
 *HarbourAreaAdministrative* is the main feature that covers the whole

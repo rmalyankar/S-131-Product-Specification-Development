@@ -1,0 +1,18 @@
+==== General
+
+A dry dock (or graving dock) is an artificial basin into which a ship can be floated for cleaning and repairs. The entrance can be closed by gate or caisson and the water pumped out to expose the vessel’s bottom.
+
+The attribute _interoperabilityIdentifier_ may be used to link this feature to the corresponding S-101 features.
+
+===== Notes on source materials
+
+In S-101, a dry dock must also be covered by the S-101 LandArea feature. The boundary of a dry dock is not encoded as a separate Coastline or Shoreline Construction feature, except for the gate feature (Gate), which may be encoded.
+S-131 dry docks may therefore be superimposed on ENC LandArea features.
+The boundary of a *DryDock* in S-131 may be derived from the S-101 *DryDock* geometry. Data producers should note that S-101 Gate features may be encoded as separate features in the underlying S-101 ENC.
+
+The S-131 spatial primitive should conform to to the *DryDock* spatial coordinates in the largest-scale underlying harbour ENC. An enclosing feature such as
+*HarbourAreaSection* may also be encoded if there is a need for depicting adjunct features like Gates which are adjacent to the S-101 geometry for *DryDock* but
+not included within the S-101 spatial primitive for the main feature. 
+
+==== Remarks
+

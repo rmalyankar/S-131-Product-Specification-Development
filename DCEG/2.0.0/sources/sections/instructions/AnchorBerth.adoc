@@ -1,0 +1,23 @@
+==== General
+
+The *AnchorBerth* feature in S-131 omits several of the attributes of the S-101 equivalent.
+
+The positions or limits of anchor berths may be defined by a regulatory authority (for example harbour authority).
+
+====	Anchor berths with limitations or restrictions on their use
+
+If it is required to encode an anchorage with conditions on its use related to the characteristics of a vessel or its cargo, it must be done using an
+associated *Applicability* information type. 
+
+If it is required to encode an anchorage with other types of limitations on its use (not pertaining to vessel or cargo characteristics), for example an
+anchorage which may be used for a limited period of time, it must be done using an associated *Restrictions* information type. The specific limitation must be
+encoded in one or more attributes of the *Restrictions* object.
+
+==== Remarks
+
+* The inherited complex attribute _featureName_, sub-attribute _name_ is used to encode the name and/or number of the anchor berth.
+* Unlike S-101, S-131 does not include Sea Area/Named Water Area feature types, so the name of a group of anchor berths known by a single common name, must
+be encoded in each *AnchorBerth*.
+* If an anchor berth is defined by a centre point and a swinging circle, it should be encoded as a point spatial primitive, with the radius  of the swinging
+circle encoded using the attribute _radius_.
+* If an anchor berth is designated or reserved for a particular type of cargo, the cargo should be encoded using the _categoryOfCargo_ attribute.  

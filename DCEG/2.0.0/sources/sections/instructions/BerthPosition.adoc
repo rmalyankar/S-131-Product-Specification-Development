@@ -1,0 +1,12 @@
+==== General
+
+The *BerthPosition* feature is used to designate a position along a line of a *Berth*.
+
+==== Centre position for manifolds
+
+The jetty manifold centre position is the designated location on a jetty where a ship's manifold aligns with the shore-based loading arms or pipelines
+for cargo transfer. The "centre position" of the manifold on the jetty is the point of reference for connecting the loading equipment and ensuring proper
+alignment with the various ship manifolds that the jetty is designed to accommodate.
+
+==== Remarks
+

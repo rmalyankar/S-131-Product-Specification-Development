@@ -1,0 +1,13 @@
+==== General
+
+If it is required to encode a seaplane landing area, it must be done using the feature *SeaplaneLandingArea*. 
+
+If it is required to encode an area where seaplanes draw water for fire fighting activities, this must be done  using *SeaplaneLandingArea*. 
+
+If it is required to encode an anchorage for seaplanes, it must be done using an *AnchorageArea* feature, with attribute _categoryOfAnchorage_ = 6 (seaplane anchorage).  
+
+This feature should be linked to the corresponding S-101 ENC feature if any using an _interoperabilityIdentifier_ attribute.
+
+==== Remarks
+
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of the boundaries of an area.

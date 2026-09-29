@@ -1,0 +1,10 @@
+==== General
+
+In S-131, only mooring/warping facilities that are in use are encoded as features.
+
+The identifying number of the mooring/warping facility, if any, must be encoded in the _iDCode_ attribute.
+
+The feature should be linked to corresponding S-101 features using the _interoperabilityIdentifier_ attribute if this attribute is populated in the S-101 ENC feature.
+
+==== Remarks
+

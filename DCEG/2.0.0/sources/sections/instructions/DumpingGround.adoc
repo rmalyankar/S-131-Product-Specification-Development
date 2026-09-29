@@ -1,0 +1,50 @@
+==== General
+
+As an overlay to S-101 ENCs, S-131 does not include the full S-101 model of dumping ground features, but assumes that there will be an underlying S-101 ENC
+with fuller information on the dumping ground than S-131 contains.
+
+S-101 guidance states that dumping of harmful materials is unlikely to affect depths substantially and such dumping grounds are encoded primarily as a warning against anchoring, trawling
+or other submarine operations. However, dumping grounds within or intersecting the extent of an MHI dataset should be included in the MHI dataset.
+
+Disused dumping grounds for harmful materials are considered dangerous for an indefinite period and must therefore be encoded.
+
+The attribute _interoperabilityIdentifier_ should be used to link S-131 *DumpingGround* features to the corresponding S-101 features.
+
+The complex attribute _depthsDescription_ should be populated with information about depths within the *DumpingGround*. Since such information may change frequently
+for dumping grounds that are in active use or have been revived for use, and cautionary language about volatility that is appropriate to the particular
+circumstances of the port area should be included.
+
+==== Spoil grounds and dredging areas
+
+The S-101 DCEG states that spoil grounds are significant in that "very large quantities of material may be dumped, decreasing the depth of water available"
+and that such spoil grounds should be updated in S-101 ENCs in a timely manner. Producers of S-131 data should monitor updates to relevant S-101 ENCs for
+such updates and update S-131 datasets accordingly. Further, port authority information should be pro-actively monitored for changes to dumping ground locations,
+extents, and depths which may still be in the ENC update process.
+
+The S-101 DCEG also states that "Extraction (or dredging) areas are those areas where a concentration of dredging vessels may be encountered, taking up sand
+or shingle to be brought ashore (for example for construction purposes). Their significance is primarily as a collision hazard, although they also indicate
+the likelihood of finding a greater depth of water than charted."
+
+Encoders should note that channels dredged to provide an adequate depth of water for navigation are “dredged areas”, not to be confused with “dredging areas”. 
+
+===== Sources
+
+S-131 data producers should note the following (from S-101 Edition 2.0.0 DCEG clause 16.7):
+
+* The S-101 DCEG directs S-101 encoders to encode spoil grounds using a Dumping Ground feature, with (S-101) attribute category of dumping ground = 5 (spoil ground).
+* The S-101 DCEG directs S-101 encoders to encode dredging areas as Restricted Area feature with attribute category of restricted area = 21 (dredging area).
+** An area in which seabed material (for example sand, shingle) is being extracted for purposes such as construction must be encoded, where required, using the 
+(S-101) feature Offshore Production Area (see clause 14.6 - S-101 DCEG), with attribute category of production area = 13 (seabed material extraction area).
+
+Since depths in dumping grounds are liable to be less than charted, S-101 may use Quality of Bathymetric Data features to degrade quality over relevant areas.
+S-131 data producers should include S-101 quality features in monitoring and adopt similar strategies in S-131 quality features, creating if necessary a distinct
+quality feature or features to cover such areas.
+
+==== Remarks
+
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of the
+boundaries of an area.
+* Within a spoil ground; if the depths within the area are liable to be very much less than charted after the discharge of spoil and post-dumping surveys are
+not available, they may be treated as unsurveyed areas in S-101 ENCs, in which case soundings and depth contours may be omitted. Alternatively, an indication
+of the discrepancy between charted depth information and the actual depths within the spoil ground may be provided by downgrading the information included in
+the underlying S-101 Quality of Bathymetric Data feature. S-131 data producers should consider similar methods for S-131 quality over the area.
