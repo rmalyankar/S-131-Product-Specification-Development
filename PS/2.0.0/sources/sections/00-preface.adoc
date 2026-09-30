@@ -24,8 +24,7 @@ and file naming; version date updated to sync. with other artefacts.
 | 2.0.0 | 2025-12-24 | RM | Draft Edition 2.0.0; Added S-401 reference; UML diagrams updated for legibility and GI registry activity
 | 2.0.0 | 2026-03-14 | RM | Updated with feedback received as of Jan. 14, 2026
 | 2.0.0 | 2026-03-23 | NIPWG | Applied NIPWG review comments
-| 2.0.0 | 2026-08-06 | IHO | Display scales in discovery metadata may be omitted if unvailable in dataset 
-| | | |
+| 2.0.0 | 2026-09-01  | NIPWG | Display scales in discovery metadata may be omitted if unvailable in dataset; Finalization of Edition 2.0.0
 | | | |
 |===
 
