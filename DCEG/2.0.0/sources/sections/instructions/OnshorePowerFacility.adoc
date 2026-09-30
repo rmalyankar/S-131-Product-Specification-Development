@@ -1,0 +1,16 @@
+==== General
+
+Incorporating shore power in S-131 datasets will:
+
+* Enable ship management systems to plan berthing arrangements in advance based on onshore power availability;
+* Allow port authorities to track shore power coverage rates and assess emission reduction progress;
+* Provide key decision-making data for emission reduction strategies.
+
+The connection type and rating may be encoded using attribute _categoryOfPlug_. The value encoded in this attribute
+should include a specification of the standard(s) to which the connection conforms. Low-voltage shore connection
+(LVSC) systems generally use IEEE 80005-3 for operability and IEC 60309-5 for dimensions while high-voltage shore
+connection (HVSC) systems generally use IEEE 80005-1 for operability and IEC 62613-2 for dimensions, but connections
+conforming to other specifications are sometimes used.
+
+==== Remarks
+

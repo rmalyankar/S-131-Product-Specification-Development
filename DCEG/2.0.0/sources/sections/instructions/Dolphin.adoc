@@ -1,0 +1,11 @@
+==== General
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to the corresponding S-101 Dolphin feature.
+
+===== Notes on source materials
+
+Dolphins that are disused and/or have fallen into disrepair may be encoded in ENCs using *Obstruction* or *Pile* features. Disused dolphins
+should not be encoded in S-131 datasets.
+
+==== Remarks
+

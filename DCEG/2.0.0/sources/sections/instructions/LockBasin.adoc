@@ -1,0 +1,33 @@
+==== General
+
+A lock is an enclosure at the entrance to a canal or non-tidal basin. Its ends are closed by lock gates. 
+
+Locks in MHI harbour areas should be encoded using the features *LockBasin* and *LockBasinPart* (clause <<ftable_LockBasinPart,droploc%>>).
+*LockBasinPart* is used if and only if a lock is divided into more than one parts by gates, and the parts have different characteristics or
+associations, otherwise a single *LockBasin* feature must be encoded.
+
+Locks in MHI data may be derived from various S-101 or S-401 features (see S-101 Edition 2.0.0 and S-401 Edition 1.2.0) depending on whether they 
+are navigable or non-navigable at the optimum display scale of the ENC. The summary in
+clause <<sec_LockBasinInstructions_SourceNotes,droploc%>> below is derived from S-101. S-131 datasets may encode both types of lock features according to their primary use as a lock in harbour areas, using the S-131 feature type *LockBasin*.
+
+Working schedules can be encoded using the working times model in S-131 (see clauses <<sec_2.4.10.4,droploc%>> and <<sec_WorkSchedules,droploc%>>).
+
+The attribute _interoperabilityIdentifier_ should be used to link an S-131 *LockBasin* feature to the corresponding S-101 or S-401 features if any.
+
+[[sec_LockBasinInstructions_SourceNotes]]
+===== Notes on source materials
+
+In S-101 Edition 2.0.0 only locks that are not navigable at the optimum display scale of the ENC data are supposed to be encoded as S-101 Lock Basin features,
+covered by a Land Area or Unsurveyed Area feature. The name of the lock is encoded using the complex attribute _featureName_ on the S-101 Lock Basin feature.
+
+In S-101 Edition 2.0.0 a lock that is navigable at the optimum display scale of the ENC data, is encoded using the S-101 features Depth Area or Dredged Area. The
+geographic features making up the limits of the lock are encoded using appropriate features such as Coastline, Shoreline Construction or Gate. Such locks are 
+not encoded as LockBasin. Additionally, the name of the lock, may be encoded using the feature Sea Area/Named Water Area. 
+
+Lock gates are encoded as an S-101 Gate feature with attribute category of gate = 4 (lock gate) or 3 (caisson). For smaller optimum display scale ENC data,
+a lock may be encoded using Gate only, without using Lock Basin.
+
+S-401 adopts similar criteria to S-101.
+
+==== Remarks
+

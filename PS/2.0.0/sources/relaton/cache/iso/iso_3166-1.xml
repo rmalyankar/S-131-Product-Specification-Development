@@ -1,5 +1,5 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2025-11-17</fetched>
+  <fetched>2026-08-06</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Codes for the representation of names of countries and their subdivisions</title>
   <title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Country code</title>
   <title type="main" format="text/plain" language="en" script="Latn">Codes for the representation of names of countries and their subdivisions - Part 1: Country code</title>
@@ -45,7 +45,7 @@
   </relation>
   <relation type="instanceOf">
     <bibitem type="standard">
-      <fetched>2025-11-17</fetched>
+      <fetched>2026-08-06</fetched>
       <title type="title-main" format="text/plain" language="en" script="Latn">Codes for the representation of names of countries and their subdivisions</title>
       <title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Country code</title>
       <title type="main" format="text/plain" language="en" script="Latn">Codes for the representation of names of countries and their subdivisions - Part 1: Country code</title>
@@ -96,10 +96,14 @@ Ces codes sont destinés à toute application nécessitant l'expression des noms
           <docidentifier type="ISO" primary="true">ISO 3166-1:2013</docidentifier>
         </bibitem>
       </relation>
-      <place>Geneva</place>
+      <place>
+        <city>Geneva</city>
+      </place>
     </bibitem>
   </relation>
-  <place>Geneva</place>
+  <place>
+    <city>Geneva</city>
+  </place>
   <ext schema-version="v1.0.3">
     <doctype>international-standard</doctype>
     <editorialgroup>

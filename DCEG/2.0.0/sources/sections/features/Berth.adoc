@@ -1,0 +1,183 @@
+[[ftable_Berth]]
+=== Berth
+
+[cols="a,a,a,a,a,a,a,a",options="headers,unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A place, generally named or numbered, where a vessel may moor or anchor.
+8+h| [underline]#S-131 Geo Feature:# Berth
+8+h| [underline]#Super Type:# Layout
+8+h| [underline]#Primitives:# point curve surface
+3+| _Real World_ 2+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+3+h|S-131 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+3+| Available Berthing Length |
+2+| |RE | 0,1
+
+3+| Bollard Description |
+2+| |TE | 0,1
+
+3+| Safe Working Load |
+2+| |RE | 0,1
+
+3+| Minimum Berth Depth |
+2+| |RE | 0,1
+
+3+| Elevation |
+2+| |RE | 0,1
+
+3+| Cathodic Protection System |
+2+| |BO | 0,1
+
+3+| Category of Berth Location |
+2+|1: Wharf Reference Metre Mark +
+2: Wharf Reference Position +
+3: Pier (Jetty) +
+4: Multi-Buoy Mooring Berth +
+ |EN | 0,1
+
+3+| Heaving Lines From Shore |
+2+| |BO | 0,1
+
+3+| Port Facility Number |
+2+| |TE | 0,1
+
+3+| Bollard Number |
+2+| |TE | 0,2 (ordered)
+
+3+| GLN Extension |
+2+| |TE | 0,1
+
+3+| Metre Mark Number |
+2+| |TE | 0,2 (ordered)
+
+3+| Manifold Number |
+2+| |TE | 0,2 (ordered)
+
+3+| Ramp Number |
+2+| |TE | 0,1
+
+3+| Location by Text |
+2+| |TE | 0,1
+
+3+| Method of Securing |
+2+|1: Bow to Seaward +
+2: Stern to Seaward +
+3: Mediterranean Mooring +
+4: Baltic Mooring +
+5: Running Mooring +
+6: Standing Mooring +
+7: Single Point Mooring +
+8: Multi-Buoy Mooring +
+9: Ship-to-Ship Mooring +
+10: Spider Buoy Mooring +
+ |EN | 0,1
+
+3+| UN Location Code |
+2+| |TE | 1,1
+
+3+| Terminal Identifier |
+2+| |TE | 0,1
+
+3+| Shore Power Description |
+2+| |TE | 0,1
+
+3+| Category of Frequency |
+2+|1: 50Hz +
+2: 60Hz +
+ |EN | 0,*
+
+3+| Category of Voltage |
+2+|1: 230V +
+2: 400V +
+3: 120V +
+4: 120V or 240V +
+5: 208V +
+6: 440V +
+7: 440V or 690V +
+8: 480V +
+9: 690V +
+10: 6600V +
+11: 6600V or 11000V +
+12: 11000V +
+13: 22000V +
+14: 380V +
+15: 11000V or 22000V +
+ |EN | 0,*
+
+3+| Category of Plug |
+2+| |TE | 0,*
+
+3+| Category of Cargo |
+2+|1: Bulk +
+2: Container +
+3: General +
+4: Liquid +
+5: Passenger +
+6: Livestock +
+7: Dangerous or Hazardous +
+8: Heavy Lift +
+9: Ballast +
+10: Dry Bulk Cargo +
+11: Liquid Bulk Cargo +
+12: Reefer Container Cargo +
+13: Ro-Ro Cargo +
+14: Project Cargo +
+15: Break Bulk Cargo +
+ |EN | 0,*
+
+8+h| Inherited Attributes
+
+3+h|S-131Attribute 3+h| Inherited From h| Type h| Multiplicity
+
+3+| Location Maritime Resource Name 3+| FeatureType | URN | 0,1
+3+| Global Location Number 3+| FeatureType | TE | 0,1
+3+| Interoperability Identifier 3+| FeatureType | URN | 0,*
+3+| Feature Name 3+| FeatureType | C | 0,*
+3+| Fixed Date Range 3+| FeatureType | C | 0,1
+3+| Periodic Date Range 3+| FeatureType | C | 0,*
+3+| RxN Code 3+| FeatureType | C | 0,*
+3+| Graphic 3+| FeatureType | C | 0,*
+3+| Source Indication 3+| FeatureType | C | 0,*
+3+| Text Content 3+| FeatureType | C | 0,*
+3+| Scale Minimum 3+| FeatureType | IN | 0,1
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+5+h| *Information associations*
+
+h|S-131 Role	h|S-131 Association Name h| Associated to h| Type	h| Mult.
+
+|serviceDescriptionReference|ServiceAvailability|AvailablePortServices|association|0,1
+|facilityOperatingHours|LocationHours|ServiceHours|association|0,1
+|controlAuthority|ServiceControl + 
+(inherited from SupervisedArea) |Authority|association|0,1
+|theContactDetails|ServiceContact + 
+(inherited from OrganizationContactArea) |ContactDetails|association|0,*
+|permission|PermissionType + 
+(inherited from FeatureType) |Applicability|association|0,*
+|theRxN|AssociatedRxN + 
+(inherited from FeatureType) |AbstractRxN|association|0,*
+|theInformation|AdditionalInformation + 
+(inherited from FeatureType) |NauticalInformation|association|0,*
+|===
+
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+5+h| *Feature associations*
+
+h|S-131 Role	h|S-131 Association Name h| Associated to h| Type	h| Mult.
+|demarcationIndicator|Demarcation|BerthPosition|association|0,*
+|componentOf|LayoutDivision|HarbourAreaSection Terminal|aggregation|1,1
+|theCartographicText|TextAssociation + 
+(inherited from FeatureType) |TextPlacement|association|0,1
+|===
+
+
+include::../instructions/Berth.adoc[]
+* If the complex attribute _fixedDateRange_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _rxNCode_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _sourceIndication_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _textContent_ is present at least one of its sub-attributes must be populated.
+** If the _textContent_ sub-attribute _information_ is present at least one of its sub-attributes must be populated.
+

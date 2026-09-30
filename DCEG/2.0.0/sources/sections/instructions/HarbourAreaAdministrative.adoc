@@ -1,0 +1,45 @@
+==== General
+
+The *HarbourAreaAdministrative* feature is used for encoding the location and extent of individual ports or harbours.
+
+A *HarbourAreaAdministrative* feature may be subdivided into *HarbourAreaSection* features to represent subdivisions of the harbour or port area
+(see clause <<ftable_HarbourAreaSection,droploc%>>). *HarbourAreaAdministrative* features should be thus subdivided if the source material includes
+such subdivisions, or if it is necessary to distinguish portions of the harbour or port area (for example, if different sections have different names
+or designations for administrative jurisdiction purposes).
+
+While *Terminal* features and other layout features will be physically within a *HarbourAreaAdministrative* feature, there is no provision for encoding
+an association representing such physical containment between *HarbourAreaAdministrative* and any layout feature other than *HarbourAreaSection*.
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to the corresponding S-101 features.
+
+===== Notes on source materials
+
+The ENC feature for *HarbourAreaAdministrative* covers only the navigable water areas of a harbour. Since most port installations are on land, data producers
+will find it necessary to create a larger spatial primitive that includes areas of shore installations. Information about port area extents may be available
+from port authorities, however such information may need to be reconciled with ENC data prior to use in S-131 datasets.
+
+==== Spatial primitives
+
+*HarbourAreaAdministrative* should be encoded with surface spatial primitives except in small-scale MHI datasets where internal features are omitted.
+
+Simplified primitives approximating the actual port area may be created to encompass both shore and water areas of a port, where accurate information about
+port areas and extents is difficult to determine. In this case a *NauticalInformation* indicating that the boundaries are approximate should be attached to
+the *HarbourAreaAdministrativeArea* feature with approximate boundaries. Conversely, a *HarbourAreaAdministrativeArea* feature with boundaries conforming to
+only water areas should have an attached *NauticalInformation* indicating that its boundaries include only the water areas portion of the harbour.
+
+If it is necessary to depict the  water portions of the harbour area as well as the whole extent (covering shore installations as well as
+navigable waters) two or more *HarbourAreaAdministrativeArea* features may be used, which may overlap as necessary. A *NauticalInformation* information object
+should be attached to each feature as described in the previous paragraph.
+
+==== Remarks
+
+* Services for import and export cargoes should be described in separate instances of _cargoServicesDescription.textContent_. When this is done, the _headline_ sub-attribute of _textContent_ should indicate whether the _textContent_ instance pertains to import or export cargoes.
+* In the complex attribute _constructionInformation_, the _textContent_ sub-atttribute is used for encoding a textual and/or graphical description of the development. The mandatory _development_ sub-attribute is used for encoding a brief description of the type of development.
+* In the complex attribute _weatherResource_, at least one of _onlineResource_ or _textContent_ must be populated. If _onlineResource_ is populated _dynamicResource_ must be populated. If the information is to be obtained from an external source, the external source must be indicated in _onlineResource_, 
+* Links to online resources for weather information should be provided in complex attribute _weatherResource_ and not in a linked *ContactDetails* information type.
+* Note also that _weatherResource_ binds the generic textual attribute _textContent_ and therefore information about accessing the online weather resource which cannot be encoded in other sub-attributes of _weatherResource_ should be provided in that _textContent_ attribute instead of creating a separate *ContactDetails* object.
+* The attributes _categoryOfHarbourFacility_ and _generalHarbourInformation_ should be populated so that together the provide a complete overview of port/harbour type and function. For example, if a large commercial harbour area includes a marina in its jurisdiction, _categoryOfHarbourFacility_ should include the listed value 5 (Yacht Harbour/Marina). However, it is not necessary to mention every single port service or facility in these attributes.
+* There is no requirement for a dataset to contain only one *HarbourAreaAdministrative* feature, even if the dataset covers only one port.
+* If it is necessary to use feature associations to represent physical containment of layout features in a *HarbourAreaAdministrative* feature, a *HarbourAreaSection*
+feature with appropriate geometry should be created and associated to the *HarbourAreaAdministrative* feature and layout feature(s) in question by means of (different) *LayoutDivision* associations.
+

@@ -1,0 +1,11 @@
+==== General
+
+The *Entrance* information type should be used to encode descriptive information about harbour entrances.
+
+==== Remarks
+
+* Aids to navigation should not be encoded in the attribute _landmarkDescription_. Instead, they should be encoded in the appropriate attribute for
+describing marks (_offshoreMarkDescription_, _majorLightsDescription_, or _usefulMarksDescription_).
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one
+of the boundaries of an area.
+

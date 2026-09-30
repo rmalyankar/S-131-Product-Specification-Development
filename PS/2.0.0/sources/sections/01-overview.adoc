@@ -69,14 +69,14 @@ Catalogue, Portrayal Catalogue, and metadata.
 [bibliography]
 ==== Informative
 
-EDITOR: FIPS 186 has undergone multiple updates, the latest is 186-5 - any reason to keep citing FIPS 186?
-
 * [[[NIST_FIPS_186,nofetch(NIST FIPS 186)]]] FIPS 186-5: Federal Information Processing Standards -- Digital Signature Standard, National Institute of Standards and Technology (NIST) (https://csrc.nist.gov/pubs/fips/186-5/final).
 
 * [[[IALA_G1143,nofetch((G1143)IALA G1143)]]] IALA G1143: Unique Identifiers for Maritime Resources.
 International Association of Marine Aids to Navigation and Lighthouse Authorities, Edition 3.1, June 2021 (https://www.iala.int/product/g1143/).
 
 * [[[ISO_8601_2004,ISO 8601:2004]]] Data Elements and Interchange Formats -- Information Interchange -- Representation of Dates and Times
+
+* [[[ISO_10646,ISO/IEC 10646]]] Information technology -- Universal coded character set. ISO, Edition 6, 2020.
 
 * [[[ISO_19101_2003,ISO 19101:2002]]] Geographic Information -- Reference Model
 
@@ -106,12 +106,16 @@ International Association of Marine Aids to Navigation and Lighthouse Authoritie
 
 * [[[IHO_S_44,IHO S-44]]] S-44: IHO Standards for Hydrographic Surveys, Edition 6.0.0, September 2020.
 
-* [[[IHO_S_101,IHO S-101]]] S-101: Electronic Navigational Chart Product Specification Edition 2.0.0, December 2024.
+* [[[IHO_S_101_2_0_0,IHO S-101 Edition 2.0.0]]] S-101: Electronic Navigational Chart Product Specification Edition 2.0.0, December 2024.
+
+* [[[IHO_S_401_1_2_0,IHO S-401 Edition 1.2.0]]] S-401: IEHG Inland Electronic Navigational Chart Product Specification Edition 1.2.0, October 2025.
 
 * [[[ITPCO,nofetch((PIM)ITPCO)]]] ITPCO: Port Information Manual, Edition 3.02, Industry Partners, Standards Partners and Endorsers of the ITPCO, IHMA, 
 IAPH and UKHO. International Taskforce Port Call Optimization (ITPCO), January 2021 (https://portcalloptimization.org/images/Port%20Information%20Manual%203.02.pdf).
 
-* [[[ISO_10646_1,ISO/IEC 10646-1:2000]]] 
+* [[[W3C_XMLSchema_1,nofetch(W3C XML Schema Part 1)]]] XML Schema Part 1 -- W3C XML Schema Part 1, Structures, Second Edition. W3C Recommendation. (https://www.w3.org/TR/xmlschema-1/)
+
+* [[[XML_Catalogs,nofetch(OASIS XML Catalogs)]]] XML Catalogs: XML Catalogs -- OASIS Standard V1.1, Organization for the Advancement of Structured Information Standards (OASIS), 7 October 2005. (URL: https://groups.oasis-open.org/higherlogic/ws/public/document?document_id=14810 retrieved 14 January 2026).
 
 [[sec_1.4]]
 === Terms, definitions and abbreviations
@@ -286,8 +290,6 @@ the scale, and the orientation of a *coordinate* system.
 
 Hierarchy to determine which *feature* is to be displayed when two
 features overlap. Priority 2 overwrites 1.
-
-EDITOR: Removed "ecdis" and "enc" from Terms, they are defined as Abbreviations, and the definition of ECDIS references the obsolete "SENC"
 
 ===== enumeration
 
@@ -486,6 +488,7 @@ conditions which are not immediately hazardous, but may become so
 if no action is taken.
 
 [[sec_1.4.2]]
+[heading="Abbreviations"]
 ==== Abbreviations
 
 This product specification adopts the following convention for symbols
@@ -507,6 +510,8 @@ GML:: Geography Markup Language
 
 IEC:: International Electrotechnical Commission
 
+IEHG:: Inland ENC Harmonization Group
+
 IHO:: International Hydrographic Organization
 
 IMO:: International Maritime Organization
@@ -515,11 +520,15 @@ ISO:: International Organization for Standardization
 
 JPEG:: Joint Photographic Experts Group
 
+KiB:: IEC 80000-13 unit corresponding to stem:[2^10] bytes
+
+MHI:: Marine Harbour Infrastructure
+
+MiB:: IEC 80000-13 unit corresponding to stem:[2^20] bytes
+
 MRN:: Maritime Resource Name
 
 MSVS:: Mariners Selected Viewing Scale
-
-MHI:: Marine Harbour Infrastructure
 
 NIPWG:: Nautical Information Provision Working Group
 
@@ -555,10 +564,7 @@ XSLT:: eXtensible Stylesheet Language Transformations
 Within this document:
 
 * "Must" indicates a mandatory requirement.
-
-* "Should" indicates an optional requirement, that is the recommended
-process to be followed, but is not mandatory.
-
+* "Should" indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.
 * "May" means "allowed to" or "could possibly", and is not mandatory.
 
 
@@ -608,7 +614,7 @@ metadata is described in a separate clause.
 
 *S-131 Version:*:: 2.0.0
 
-*Date:*:: December 2025
+*Date:*:: 1 September 2026
 
 *Language:*:: English
 
@@ -626,11 +632,11 @@ Fax: + 377 93 10 81 40 +
 Email: mailto:info@iho.int[info@iho.int]
 --
 
-*URL:*:: https://iho.int/[iho.int]
+*URL:*:: https://iho.int/[https://iho.int]
 
 *Identifier:*:: S-131
 
-*Maintenance:*:: Changes to the Product Specification S-131 are coordinated
+*Maintenance:*:: Changes to the S-131 Product Specification are coordinated
 by the Nautical Information Provision Working Group, a technical group
 established by the International Hydrographic Organization, and are
 made available via the IHO web site. Maintenance of the Product Specification

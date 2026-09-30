@@ -1,0 +1,12 @@
+==== General
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to the corresponding S-101 features if any.
+
+Limitations on vessels which may be permitted to use the facility can be encoded with an associated *Applicability* information type.
+
+===== Notes on source materials
+
+Ship lifts may be encoded in S-101 ENC datasets as *HarbourFacility* features with _categoryOfHarbourFacility_ = 12 (ship lift).
+
+==== Remarks
+

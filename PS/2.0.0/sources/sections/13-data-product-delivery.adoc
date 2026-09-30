@@ -1,39 +1,34 @@
-
+[data2text,PROD=config/product.json]
+----
 [[sec_13]]
 == Data Product Delivery
 
 Data which conforms to this Product Specification must be delivered
 by means of an Exchange Set.
 
-[[sec_13.1]]
+[[sec_ExchangeSetComponents]]
 === Exchange set components
 
-S-131 uses the same exchange set components and metadata as S-100.
+{{PROD.id}} uses the same exchange set components and metadata as S-100.
 <<fig_13.1>> depicts the exchange set components (datasets and feature/portrayal
 catalogues) and exchange set metadata. This figure is derived from
-Figure 17-2 in S-100 Edition 5.0.0. Note also that the link between
+Figure 17-2 in S-100. Note also that the link between
 S100_Dataset and S100_CatalogueMetadata is implicit by means of the
-S-131 version to which the feature catalogue, portrayal catalogue,
-and dataset conform, which must have the same edition and revision
-components.
+{{PROD.id}} version to which the feature catalogue, portrayal catalogue,
+and dataset conform, which must have the same edition and revision components.
 
 [[fig_13.1]]
-.Components and associated metadata for the S-131 exchange set (S-100 Figure 17-2)
+.Components and associated metadata for the {{PROD.id}} exchange set (S-100 Figure 17-2)
 image::S-131&#32;ExchangeSet.png[]
 
 The rules governing the presence and roles of the exchange set components
 depicted in <<fig_13.1>> are given below.
 
-. Every exchange set must contain an Exchange Catalogue, represented
-by *S100_ExchangeCatalogue* in <<fig_13.1>>.
-. Dataset discovery metadata (*S100_DatasetDiscoveryMetadata*) must
-be provided in the exchange catalogue for each S-131 dataset in the
-exchange set.
-. Catalogue metadata (*S100_CatalogueDiscoveryMetadata*) must be provided
-in the exchange catalogue for any feature and portrayal catalogues
-included in the exchange set.
-. S-131 allows exchange sets to include the following types of support
-files:
+. Every exchange set must contain an Exchange Catalogue, represented by *S100_ExchangeCatalogue* in <<fig_13.1>>.
+. Dataset discovery metadata (*S100_DatasetDiscoveryMetadata*) must be provided in the exchange catalogue for each {{PROD.id}} dataset in the exchange set.
+. Support file discovery metadata (*S100_SupportFileDiscoveryMetadata*) must be provided in the exchange catalogue for each {{PROD.id}} support file in the exchange set.
+. Catalogue metadata (*S100_CatalogueDiscoveryMetadata*) must be provided in the exchange catalogue for any feature and portrayal catalogues included in the exchange set.
+. {{PROD.id}} allows exchange sets to include the following types of support files:
 
 .. Text and picture support files referenced by datasets (*S100_SupportFile*).
 .. Language packs (*S100_SupportFile*).
@@ -55,14 +50,12 @@ set. Documentation tables for the structure classes are not provided
 since the exchange set structure is described in this clause.
 
 The metadata classes in <<fig_13.1>> are represented by XML files
-or XML blocks and are documented in <<sec_14.2>>.
+or XML blocks and are documented in clause <<sec_14.2,droploc%>>.
 
-Each Exchange Set consists of one or more MHI datasets and a single Exchange Catalogue XML file containing
-metadata. It may also include one or more support files (or no support
-files). The Exchange Set structure is the same as that described in
-S-100 Clause 17-4.2.
+Each Exchange Set consists of one or more {{PROD.abbrev}} datasets and a single Exchange Catalogue XML file containing metadata. It may also include
+one or more support files (or no support files). The Exchange Set structure is the same as that described in S-100 Clause 17-4.2.
 
-[[sec_13.2]]
+[[sec_Encapsulation]]
 === Encapsulation
 
 Each dataset must be contained in a physically separate, uniquely
@@ -82,93 +75,72 @@ The contents of an Exchange Set are :
 of the Exchange Set (discovery metadata).
 
 * Optional elements
-** S-131 datasets -- Since it is possible for an exchange set to contain
+** {{PROD.id}} datasets -- Since it is possible for an exchange set to contain
 only a feature or portrayal catalogue, or only a support file which
 is being updated or delivered as a new file, datasets are an optional
-component of S-131 exchange sets.
+component of {{PROD.id}} exchange sets.
 ** Supplementary files -- These are contained within the Exchange
 Set as files. If the exchange set contains a dataset, the support
 files referenced in the dataset must be included.
-** S-131 Feature Catalogue -- If it is necessary to deliver the latest
-Feature Catalogue to the end user it may be done using the S-131 Exchange
-Set mechanism for datasets.
-** S-131 Portrayal Catalogue -- If it is necessary to deliver the
+** {{PROD.id}} Feature Catalogue -- If it is necessary to deliver the latest
+Feature Catalogue to the end user it may be done using the {{PROD.id}} Exchange
+Set mechanism.
+** {{PROD.id}} Portrayal Catalogue -- If it is necessary to deliver the
 latest Portrayal Catalogue to the end user it may be done using the
-S-131 Exchange Set mechanism for datasets.
+{{PROD.id}} Exchange Set mechanism.
 
-[[sec_13.3]]
+[[sec_PackagingCatalogues]]
+==== Packaging of catalogues and language packs
+
+Since feature and portrayal catalogues apply to all datasets for a single version of a Product Specification, a common practice is for the IHO Secretariat to
+create special exchange sets containing feature and portrayal catalogues (and no datasets). These special exchange sets are generally made available by the
+IHO Secretariat in the IHO Geospatial Information Registry. It is recommended that this practice be followed for {{PROD.id}} Edition 2.0.0 too.  It is therefore
+not necessary to include feature and portrayal catalogues in each exchange {{PROD.id}} set.
+
+Similar practice is recommended for language packs, allowing for the possibility that language packs may be developed and distributed by national
+hydrographic offices or equivalent agencies instead. Data producers desirous of developing language packs should contact the NIPWG Chair
+and IHO Secretariat to discuss arrangements.
+
+[[sec_DatasetInExchangeSet]]
 === Dataset
 
-[[sec_13.3.1]]
-==== Types of Datasets
+[[sec_DatasetDiscoveryMetadataValues]]
+==== Metadata for different types of datasets
 
-EDITOR: Revisit cancellation depending on PT decision.
-
-<<table_13.1>> lists the types of datasets which may be produced and
-contained within an exchange set. The corresponding value of the dataset
-discovery metadata "purpose" field and the format are also described.
+<<table_13.1>> describes the encoding format and  required values of dataset
+discovery metadata for the types of datasets and exchange sets permitted by {{PROD.id}}.
+Detailed explanations of each type are provided in clause <<sec_TypesOfDatasets,droploc%>>.
 
 [[table_13.1]]
 .Types of datasets
-[cols="88,311,108,80"]
+[cols="a,2a,a"]
 |===
-h| Dataset Type h| Explanation h| Encoding Format h| "purpose" field
+h| Dataset Type h| Encoding Format h| Discovery metadata _purpose_ field
 
-| New dataset | Data for an area different (in coverage and/or extent)
-from existing datasets.
-| <<sec_12>> | _newDataset_
-
-| Re-issue
-| Includes all the updates applied to the original dataset up to the
-date of the reissue. A Re-issue is intended to avoid unnecessary loading
-of the Base cell and all applicable updates individually for new users
-of the dataset, and therefore does not contain any new information
-additional to that previously distributed by updates. A reissue dataset
-can be issued at any time.
-| As for new dataset | _reissue_
-
-| New Edition of a dataset
-| A re-issue plus new information which has not been previously distributed
-by Updates. Each New Edition of a dataset must have the same name
-as the dataset that it replaces and should have the same spatial extents.
-The edition number in the dataset discovery metadata must increment
-up by one from the previous edition.
-| As for new dataset | _newEdition_
-
-| Update dataset
-| A delta change of the latest edition of a dataset. If there is more
-than one update dataset, the subsequent update will be a delta of
-the base dataset + earlier update datasets.
-| As for new dataset. See <<sec_12.14>>. | _update_
-
-| Cancellation
-| Used to cancel dataset and any related update datasets.
-The dataset is cancelled and is deleted from the system.
-
-A cancellation dataset must be a pro-forma dataset containing only
-header information (no instances of spatial objects, information types,
-or feature types).
-| As for new dataset, but containing only header information. | _cancellation_
-
+| New dataset | Clause <<sec_DataProductFormat,droploc%>> | _newDataset_
+| Re-issue | As for new dataset | _reissue_
+| New Edition of a dataset | As for new dataset | _newEdition_
+| Update dataset | As for new dataset. See clause <<sec_FormatUpdateDatasets,droploc%>>. | _update_
+| Cancellation | Not applicable | _cancellation_
 |===
 
-[[sec_13.3.2]]
+[[sec_DatasetFileName]]
 ==== Dataset file naming
 
 All dataset files will have unique world-wide file identifiers.
 The file identifier of the dataset should not be used to describe
 the physical content of the file. The dataset file metadata that accompanies
 the file will inform the user of the name and purpose of the file
-(<<sec_13.3.1>>).
+(clause <<sec_DatasetDiscoveryMetadataValues,droploc%>>).
 
-S-131 dataset files for new, reissue, new editions, and cancellation
+{{PROD.id}} dataset files for new, reissue, new editions, and cancellation
 datasets are named according to the specifications given below:
 
-131CCCCXXXXXXXXXX.GML
+{{PROD.productnumber}}CCCCXXXXXXXXXX.GML
 
 The main part forms an identifier where:
 
-* The first three characters are always "131" and identify the dataset as an S-131 dataset.
+* The first three characters are always "{{PROD.productnumber}}" and identify the dataset as an {{PROD.id}} dataset.
 
 * The next four characters identify the issuing agency by its four-character alphanumeric
 agency code in the IHO producer code register in the IHO GI Registry.
@@ -191,32 +163,32 @@ datasets must follow the same rule, allowing for updates lowers this
 limit (e.g., allowing for 999 updates reduces the limit for base datasets
 by 4 characters).
 
-[[sec_13.3.3]]
+[[sec_UpdateDatasetFileName]]
 ==== Update dataset naming convention
 
 All update dataset files will have an identical name to the base dataset,
 aside from the separator and update number sequence.
 
-S-131 update dataset files are named according to the specifications
+{{PROD.id}} update dataset files are named according to the specifications
 given below:
 
-131CCCCXXXXXXXXXX_XXX.GML
+{{PROD.productnumber}}CCCCXXXXXXXXXX_XXX.GML
 
 The main part forms an identifier where:
 
 * The first character up to the final underscore characters are the
 same as the dataset being updated and therefore conform to the rules
-described in <<sec_13.3.2>>.
+described in clause <<sec_DatasetFileName,droploc%>>.
 * The next character must be an underscore "++_++".
 * The next three characters must be numerical (0-9) characters to
 indicate the place of the update dataset in the update sequence.
 * The maximum length of the name must be 64 characters including the
 extension and its preceding "." character.
 
-[[sec_13.3.4]]
+[[sec_DatasetUpdateSequencing]]
 ==== New Editions, re-issues, updates and cancellations
 
-This section defines the sequencing of S-131 datasets for New Editions,
+This section defines the sequencing of {{PROD.id}} datasets for New Editions,
 updates and re-issues. In order to ensure that feature type updates
 are incorporated into an end user system in the correct sequence without
 any omission, a number of parameters encoded in the data are used
@@ -229,8 +201,7 @@ by 1 at each New Edition.
 *Update number*:: Update number 0 is assigned to a new dataset and
 a New Edition. The first update dataset file associated with this
 new dataset must have update number 1. The update number must be increased
-by one for each subsequent update, until a New Edition is released.
-
+by one for each subsequent update, until a New Edition is released. +
 A re-issue of a dataset must have the update number of the last update
 applied to the dataset, and use the same Edition number.
 
@@ -241,45 +212,46 @@ an update.
 all applicable changes. The issue date must be greater than the previous
 issue date of the dataset.
 
-In order to cancel a dataset, an update dataset file is created for
-which the Edition number must be set to 0. This message is only used
-to cancel a dataset. Where a dataset is cancelled and its name is
-reused at a later date, the issue date must be greater than the issue
-date of the cancelled dataset. When the dataset is cancelled it must
-be removed from the system.
+In order to cancel a dataset, a dataset discovery metadata record must
+be created in an exchange catalogue with _purpose = cancellation_ and the filename and original digital signature specifying 
+the dataset to be cancelled, and with all other mandatory metadata fields also set to the same values 
+as the original base dataset, with the exception of the issueDate, which must be set to the issue date of the fileless 
+cancellation itself (S-100 Edition 5.2.0 Part 17 clause 17-4.4.1). Where a dataset is cancelled and its name is
+reused at a later date, the issue date must be greater than the issue date of the cancelled dataset. When the dataset is cancelled
+it must be removed from the system.
 
 An Exchange Set may contain Base dataset files and update dataset
 files for the same datasets. Under these circumstances the update
 dataset files must follow on in the correct sequential order from
 the last update applied to the Base dataset file.
 
-[[sec_13.3.5]]
-==== Exchange set structure
+[[sec_ExchangeSetStructure]]
+=== Exchange set structure
 
-The structure of an S-131 exchange set must be according to the structure
+The structure of an {{PROD.id}} exchange set must be according to the structure
 described below, which is based on S-100 Clause 17-4.2.
-The S-131 exchange set structure is depicted in <<fig_13.2>>.
+The {{PROD.id}} exchange set structure is depicted in <<fig_ExchangeSetStructure>>.
 
 . All content must be placed inside a top root folder named S100_ROOT.
 This is the only top level root folder in an exchange set containing
 only S-100 products.
 
-. The S100_ROOT folder must contain a subfolder for S-131 which holds
-content specific to S-131.
+. The S100_ROOT folder must contain a subfolder for {{PROD.id}} which holds
+content specific to {{PROD.id}}.
 
-. An S-131 exchange set must contain an exchange set catalogue, CATALOG.XML,
-its digital signature CATALOG.SIGN and may contain any number of S-131
+. An {{PROD.id}} exchange set must contain an exchange set catalogue, CATALOG.XML,
+its digital signature CATALOG.SIGN and may contain any number of {{PROD.id}}
 conformant dataset files and catalogue files.
 
-. The S-131 subfolder must contain subfolders for the component dataset
+. The {{PROD.id}} subfolder must contain subfolders for the component dataset
 files (DATASET_FILES), support files (SUPPORT_FILES), and catalogues
 (CATALOGUES) as required:
 .. The DATASET_FILES subfolder is required if and only if the exchange
-set contains an S-131 dataset.
+set contains an {{PROD.id}} dataset.
 .. The CATALOGUES subfolder is required if and only if the exchange
 set contains a feature, interoperability, or portrayal catalogue.
 .. The SUPPORT_FILES folder is required if and only if the exchange
-set contains at least one S-131 support file.
+set contains at least one {{PROD.id}} support file.
 
 . The DATASET_FILES folder must contain a subfolder named according
 to the producer code.
@@ -305,19 +277,19 @@ within their corresponding resource metadata records in CATALOG.XML.
 to avoid inadvertent overwriting of files.
 
 . Digital signatures for exchange sets conforming to Edition 1.0.0
-of S-131 may be dummy values (values that conform to the format requirements
+of {{PROD.id}} may be dummy values (values that conform to the format requirements
 but are not actual signatures). Proper digital signatures will be
-mandatory when S-131 reaches Readiness Level 3 (cf. S-97 1.1.0 Clause A-5).
+mandatory when {{PROD.id}} reaches Readiness Level 3 (cf. S-97 1.1.0 Clause A-5).
 
-[[fig_13.2]]
+[[fig_ExchangeSetStructure]]
 .Typical Exchange Set structure
-image::figure-26.png[]
+image::TypicalExchangeSetStructure.png[]
 
-[[sec_13.4]]
+[[sec_SupportFiles]]
 === Support files
 
 Dataset support files offer supplementary information that can be
-included in an MHI Exchange Set.
+included in an {{PROD.abbrev}} Exchange Set.
 
 * Plain text files must contain only general text as defined by this
 standard (text consisting only of printable characters and without
@@ -328,18 +300,17 @@ set encoding. References in datasets to HTML or text support files
 must treat them as text files (i.e., they should not be referenced
 using attributes intended for picture files). The extension must be
 HTM for HTML files and TXT for text files.
-* Picture files must be in TIFF (6.0 specification) and use the extension
-TIF.
+* Picture files must be in TIFF (6.0 specification) and use the extension TIF.
 * XML files are allowed only for language packs and dictionaries such as the languages list included in the S-100 schema distribution
-footnote:[The languages list, other dictionaries, language packs, and portrayal catalogue files are expected to be distributed separately in special exchange sets and should not be included in ordinary MHI exchange sets.]
+footnote:[The languages list, other dictionaries, language packs, and portrayal catalogue files are expected to be distributed separately in special exchange sets and should not be included in ordinary {{PROD.abbrev}} exchange sets.]
 
-[[table_.2]]
+[[table_SupportFileFormats]]
 .Support file formats and extensions
 [cols="3"]
 |===
 h| File Types h| Extensions h| Comment
 
-.3+| *Text* | TXT | Plain-text files
+.2+| *Text* | TXT | Plain-text files
 
 | HTM | HTML files must only include inline or embedded Cascading Style
 Sheet (CSS) information and must not contain embedded Javascript or
@@ -348,7 +319,7 @@ other dynamic content, for example DHTML, Flash etc.
 | *Picture* | TIF | Baseline TIFF 6.0.
 |===
 
-[[sec_13.4.1]]
+[[sec_SupportFileNaming]]
 ==== Support File Naming
 
 All support files must have unique file identifiers. The support file
@@ -358,11 +329,11 @@ and purpose of the file (that is new, replacement and deletion).
 In this encoding the support files are named according to the specifications
 given below:
 
-131CCCCØØØØØØØØØØ.EEE
+{{PROD.productnumber}}CCCCØØØØØØØØØØ.EEE
 
 The main part forms an identifier where:
 
-* 131 -- the first 3 characters identify the support file as applicable
+* {{PROD.productnumber}} -- the first 3 characters identify the support file as applicable
 to an S-101 dataset (mandatory).
 
 * CCCC -- the fourth to seventh characters identify the Producer Code
@@ -382,7 +353,7 @@ name: A to Z, 0 to 9 and the special character ++_++ (underscore).
 * The maximum length of the file name (including the extension and
 preceding ".") is 64 characters.
 
-[[sec_13.4.2]]
+[[sec_SupportFileManagement]]
 ==== Support file management
 
 When a support file is created or a subsequent version is issued it
@@ -390,7 +361,7 @@ must carry its own issue date and be supported with a digital signature
 which authenticates it against the Producer's public key included
 in the Exchange Set metadata.
 
-The type of support file is indicated in the "purpose" field of the
+The type of support file is indicated in the "revisionStatus" field of the
 discovery metadata. Three types: new, replacement and deletion are
 defined. Support files carrying the "deletion" flag must be removed
 from the system. When a feature pointing to a text, picture or application
@@ -402,7 +373,7 @@ Each support file required must be included only once in the Exchange
 Set.
 
 Support files must be stored in a separate folder within the Exchange
-Set, refer to <<fig_13.2>> -- Typical Exchange Set structure.
+Set, refer to <<fig_ExchangeSetStructure>> -- Typical Exchange Set structure.
 
 Re-use of a support file name after a deletion period is possible
 only if the support file edition number is higher than the previous
@@ -468,15 +439,15 @@ both datasets and support files, especially in connection with removal
 of obsolete information from the system as a whole as well as the
 removal of obsolete sections within support files.
 
-[[sec_13.5]]
+[[sec_ExchangeCatalog]]
 === Exchange Catalogue
 
 The Exchange Catalogue acts as the table of contents for the Exchange
 Set. The Catalogue file of the Exchange Set must be named CATALOG.XML.
 No other file in the Exchange Set may be named CATALOG.XML. The contents
-of the S-131 Exchange Catalogue are described in <<sec_14>>.
+of the {{PROD.id}} Exchange Catalogue are described in clause <<sec_14,droploc%>>.
 
-[[sec_13.6]]
+[[sec_DatasetLoading]]
 === Dataset loading
 
 Datasets must always be loaded in the order of base dataset first,
@@ -484,7 +455,7 @@ then update datasets in the corrected sequential order. Systems are
 not to load updates out of order, for example if update 1-5 is present,
 then 6 is missing, update 7 must not be loaded.
 
-[[sec_13.6.1]]
+[[sec_NewEditionDisposition]]
 ==== New editions
 
 When a new edition of a dataset is received, the system must replace
@@ -492,14 +463,8 @@ the previous edition, along with any updates with the new edition
 of the dataset. Loading of subsequent updates follows the same rule
 as above.
 
-[[sec_13.7]]
-=== Dataset size
-
-MHI datasets must not exceed 20MB.
-
-Update datasets must not exceed 500KB.
-
-[[sec_13.8]]
+[[sec_DataIntegrity]]
 === Data integrity and encryption
 
 Signatures are required for datasets and exchange sets intended for use on ECDIS, as described in S-100 Parts 15 and 17. Datasets may be encrypted or unencrypted as determined by producer policy.
+----

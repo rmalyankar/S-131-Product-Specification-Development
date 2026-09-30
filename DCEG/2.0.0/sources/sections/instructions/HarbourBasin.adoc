@@ -1,0 +1,11 @@
+==== General
+
+This feature may be used in S-131 to encode basins not marked by quay walls or specifically designated for cargo transfer.
+
+Depths in the basin should be described using the complex attribute _depthsDescription_. Significant differences in depth characteristics or values
+between the basin and adjacent areas or channels should be described using this complex attribute.
+
+==== Remarks
+
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of the
+boundaries of an area. 

@@ -1,5 +1,5 @@
 <bibdata type="standard" schema-version="v1.2.9">
-  <fetched>2025-11-17</fetched>
+  <fetched>2026-08-06</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Codes for the representation of names of languages</title>
   <title type="title-part" format="text/plain" language="en" script="Latn">Part 2: Alpha-3 code</title>
   <title type="main" format="text/plain" language="en" script="Latn">Codes for the representation of names of languages - Part 2: Alpha-3 code</title>
@@ -47,7 +47,7 @@
   </relation>
   <relation type="instanceOf">
     <bibitem type="standard">
-      <fetched>2025-11-17</fetched>
+      <fetched>2026-08-06</fetched>
       <title type="title-main" format="text/plain" language="en" script="Latn">Codes for the representation of names of languages</title>
       <title type="title-part" format="text/plain" language="en" script="Latn">Part 2: Alpha-3 code</title>
       <title type="main" format="text/plain" language="en" script="Latn">Codes for the representation of names of languages - Part 2: Alpha-3 code</title>
@@ -99,10 +99,14 @@ La présente partie de l'ISO 639 fournit deux jeux de codets à trois caractère
           </date>
         </bibitem>
       </relation>
-      <place>Geneva</place>
+      <place>
+        <city>Geneva</city>
+      </place>
     </bibitem>
   </relation>
-  <place>Geneva</place>
+  <place>
+    <city>Geneva</city>
+  </place>
   <ext schema-version="v1.0.3">
     <doctype>international-standard</doctype>
     <editorialgroup>

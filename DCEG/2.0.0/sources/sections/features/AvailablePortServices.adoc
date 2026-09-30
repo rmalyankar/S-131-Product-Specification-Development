@@ -1,0 +1,168 @@
+[[ftable_AvailablePortServices]]
+=== Available Port Services
+
+[cols="a,a,a,a,a,a,a,a",options="headers,unnumbered"]
+|===
+8+| [underline]#IHO Definition:# Services that are available for a given port.
+8+h| [underline]#S-131 Information Type:# AvailablePortServices
+8+h| [underline]#Super Type:# InformationType
+3+h| S-131 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+            
+3+| Firefighting Service |
+2+|1: Shore-Based Firefighting +
+2: Onboard Firefighting +
+3: Firefighting Boat +
+ |EN | 0,*
+
+3+| Medical Service |
+2+|1: Ambulance +
+2: Fumigation +
+3: Doctor +
+4: Quarantine +
+5: Vaccination Centre +
+ |EN | 0,*
+
+3+| Repair Service |
+2+|1: Compensation of Magnetic Compass +
+2: Diver Service +
+3: Bridge Equipment Repair +
+4: Engine Repair +
+5: Electronic Equipment Repair +
+6: Hull Repair +
+7: Navigational Equipment Repair +
+8: Propeller Repair +
+9: Salvage Gear Repair +
+10: Shaft Repair +
+ |EN | 0,*
+
+3+| Technical Port Service |
+2+|1: Compensation of Magnetic Compass +
+2: Degaussing +
+3: Cargo Surveying +
+4: Vetting +
+ |EN | 0,*
+
+3+| Ship Sanitation Control |
+2+|1: Sanitation Measures Only +
+2: Issue SSCC +
+3: Issue SSCEC +
+ |EN | 0,*
+
+3+| Transport Connection |
+2+|2: Heliport +
+3: Helipad +
+4: Hired Boat +
+5: Bus Station +
+6: Ferry +
+8: Motorway +
+9: Launch +
+11: Inland Waterway Transport +
+12: Short Sea Transportation +
+13: Marine Highway +
+ |CL | 0,*
+
+3+| Berthing Assistance |
+2+|1: Berthing Information +
+2: Line Personnel +
+3: Mooring Boat +
+4: Mule +
+5: Tugboat +
+6: Icebreaking Ship +
+ |EN | 0,*
+
+3+| Cargo Service |
+2+|1: Stevedoring +
+2: Cargo Surveying +
+3: Cargo Lashing +
+4: Draught Survey +
+ |EN | 0,*
+
+3+| Security-Safety-Emergency Service |
+2+|1: Coast Guard +
+2: Customs +
+3: Environmental Emergency Information Centre +
+4: Emergency Coordination Centre +
+5: Guard and/or Security Service +
+6: Immigration +
+7: Police +
+8: Sea Rescue Control +
+ |CL | 0,*
+
+3+| Waste Disposal Service |
+2+|1: MARPOL Annex I Oily Bilge Water +
+2: MARPOL Annex I Oily Residues +
+3: MARPOL Annex I Oily Tank Washings +
+4: MARPOL Annex I Dirty Ballast Water +
+5: MARPOL Annex I Scale and Sludge from Tank Cleaning +
+6: MARPOL Annex I Other Oily Waste +
+7: MARPOL Annex II Category X +
+8: MARPOL Annex II Category Y +
+9: MARPOL Annex II Category Z +
+10: MARPOL Annex II Category OS +
+11: MARPOL Annex IV Sewage +
+12: MARPOL Annex V Plastics +
+13: MARPOL Annex V Food Wastes +
+14: MARPOL Annex V Domestic Wastes +
+15: MARPOL Annex V Cooking Oil +
+16: MARPOL Annex V Incinerator Ashes +
+17: MARPOL Annex V Operational Wastes +
+18: MARPOL Annex V Animal Carcasses +
+19: MARPOL Annex V Fishing Gear +
+20: MARPOL Annex V E-Waste +
+21: MARPOL Annex V Cargo Residues - non-HME +
+22: MARPOL Annex V Cargo Residues - HME +
+23: MARPOL Annex VI Ozone-Depleting Substances +
+24: MARPOL Annex VI Exhaust Gas-Cleaning Residues +
+ |EN | 0,*
+
+3+| Supply Service |
+2+|1: Shore Power +
+2: Fuel Oil Bunkering +
+3: LNG Bunkering +
+4: Lubricants +
+5: Steam +
+6: Potable Water +
+7: International Shore Connection +
+8: Provisions +
+9: Chandler +
+10: Mechanics Workshop +
+ |EN | 0,*
+
+3+| Tug Information |
+2+| |TE | 0,1
+
+3+| Text Content | 2+| |  C | 0,*
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Category of Text |
+2+|1: Abstract or Summary +
+2: Extract +
+3: Full Text +
+ |(S) EN | 0,1
+
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Information | 2+| | (S)  C | 0,*
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Online Resource | 2+| | (S)  C | 0,1
+3+| &nbsp;&nbsp;&nbsp;&nbsp;Source Indication | 2+| | (S)  C | 0,*
+8+h| Inherited Attributes
+
+3+h| S-131 Attribute 3+h| Inherited From h| Type h| Multiplicity
+            
+3+| Feature Name 3+| InformationType | C | 0,*
+3+| Fixed Date Range 3+| InformationType | C | 0,1
+3+| Periodic Date Range 3+| InformationType | C | 0,*
+3+| Graphic 3+| InformationType | C | 0,*
+3+| Source Indication 3+| InformationType | C | 0,*
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+5+h| *Information associations*
+
+h|S-131 Role	h|S-131 Association Name h| Associated to h| Type	h| Mult.
+|===
+
+
+include::../instructions/AvailablePortServices.adoc[]
+* If the complex attribute _textContent_ is present at least one of its sub-attributes must be populated.
+** If the _textContent_ sub-attribute _information_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _fixedDateRange_ is present at least one of its sub-attributes must be populated.
+* If the complex attribute _sourceIndication_ is present at least one of its sub-attributes must be populated.
+

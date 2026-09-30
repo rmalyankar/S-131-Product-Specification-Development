@@ -1,0 +1,228 @@
+<bibdata type="standard" schema-version="v1.2.9">
+  <fetched>2026-08-06</fetched>
+  <title type="title-intro" format="text/plain" language="en" script="Latn">Information technology</title>
+  <title type="title-main" format="text/plain" language="en" script="Latn">Universal coded character set (UCS)</title>
+  <title type="main" format="text/plain" language="en" script="Latn">Information technology - Universal coded character set (UCS)</title>
+  <title type="title-intro" format="text/plain" language="fr" script="Latn">Technologies de l'information</title>
+  <title type="title-main" format="text/plain" language="fr" script="Latn">Jeu universel de caractères codés (JUC)</title>
+  <title type="main" format="text/plain" language="fr" script="Latn">Technologies de l'information - Jeu universel de caractères codés (JUC)</title>
+  <uri type="src">https://www.iso.org/standard/76835.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:76835:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/07/68/76835.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO/IEC 10646</docidentifier>
+  <docidentifier type="iso-reference">ISO/IEC 10646(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso-iec:10646:stage-90.92</docidentifier>
+  <docnumber>10646</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Organization for Standardization</name>
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>International Electrotechnical Commission</name>
+      <abbreviation>IEC</abbreviation>
+      <uri>www.iec.ch</uri>
+    </organization>
+  </contributor>
+  <edition>6</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>90</stage>
+    <substage>92</substage>
+  </status>
+  <copyright>
+    <from>2020</from>
+    <owner>
+      <organization>
+        <name>ISO/IEC</name>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/IEC 10646:2017</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646:2017</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/IEC 10646:2017/Amd 1:2019</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646:2017/Amd 1:2019</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/IEC 10646:2017/Amd 2:2019</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646:2017/Amd 2:2019</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="obsoletes">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/IEC CD 10646.2</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC CD 10646.2</docidentifier>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/IEC 10646:2020/Amd 1:2023</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646:2020/Amd 1:2023</docidentifier>
+      <date type="circulated">
+        <on>2024-06-14</on>
+      </date>
+    </bibitem>
+  </relation>
+  <relation type="updates">
+    <bibitem type="standard">
+      <formattedref format="text/plain">ISO/IEC 10646:2020/Amd 2</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646:2020/Amd 2</docidentifier>
+      <date type="circulated">
+        <on>2024-06-14</on>
+      </date>
+    </bibitem>
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      <fetched>2026-08-06</fetched>
+      <title type="title-intro" format="text/plain" language="en" script="Latn">Information technology</title>
+      <title type="title-main" format="text/plain" language="en" script="Latn">Universal coded character set (UCS)</title>
+      <title type="main" format="text/plain" language="en" script="Latn">Information technology - Universal coded character set (UCS)</title>
+      <title type="title-intro" format="text/plain" language="fr" script="Latn">Technologies de l'information</title>
+      <title type="title-main" format="text/plain" language="fr" script="Latn">Jeu universel de caractères codés (JUC)</title>
+      <title type="main" format="text/plain" language="fr" script="Latn">Technologies de l'information - Jeu universel de caractères codés (JUC)</title>
+      <uri type="src">https://www.iso.org/standard/76835.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:76835:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/07/68/76835.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646:2020</docidentifier>
+      <docidentifier type="iso-reference">ISO/IEC 10646:2020(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso-iec:10646:stage-90.92</docidentifier>
+      <docnumber>10646</docnumber>
+      <date type="published">
+        <on>2020-12</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          <name>International Organization for Standardization</name>
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          <name>International Electrotechnical Commission</name>
+          <abbreviation>IEC</abbreviation>
+          <uri>www.iec.ch</uri>
+        </organization>
+      </contributor>
+      <edition>6</edition>
+      <language>en</language>
+      <language>fr</language>
+      <script>Latn</script>
+      <abstract format="text/plain" language="en" script="Latn">This document
+- specifies the architecture of the UCS;
+- defines terms used for the UCS;
+- describes the general structure of the UCS codespace;
+- specifies the assigned planes of the UCS: the Basic Multilingual Plane (BMP) of the UCS, the Supplementary Multilingual Plane (SMP), the Supplementary Ideographic Plane (SIP), the Tertiary Ideographic Plane (TIP), and the Supplementary Special-purpose Plane (SSP);
+- defines a set of graphic characters used in scripts and the written form of languages on a world-wide scale;
+- specifies the names for the graphic characters and format characters of the BMP, SMP, SIP, TIP, SSP and their coded representations within the UCS codespace;
+- specifies the coded representations for control characters and private use characters;
+- specifies three encoding forms of the UCS: UTF-8, UTF-16, and UTF-32;
+- specifies seven encoding schemes of the UCS: UTF-8, UTF-16, UTF-16BE, UTF-16LE, UTF-32, UTF-32BE, and UTF-32LE;
+- specifies the management of future additions to this coded character set.
+NOTE The determination of suitability of these characters for use as identifiers in programming languages is not specified by this document but can be found in an external reference. See Annex U.</abstract>
+      <abstract format="text/plain" language="fr" script="Latn">This document
+- specifies the architecture of the UCS;
+- defines terms used for the UCS;
+- describes the general structure of the UCS codespace;
+- specifies the assigned planes of the UCS: the Basic Multilingual Plane (BMP) of the UCS, the Supplementary Multilingual Plane (SMP), the Supplementary Ideographic Plane (SIP), the Tertiary Ideographic Plane (TIP), and the Supplementary Special-purpose Plane (SSP);
+- defines a set of graphic characters used in scripts and the written form of languages on a world-wide scale;
+- specifies the names for the graphic characters and format characters of the BMP, SMP, SIP, TIP, SSP and their coded representations within the UCS codespace;
+- specifies the coded representations for control characters and private use characters;
+- specifies three encoding forms of the UCS: UTF-8, UTF-16, and UTF-32;
+- specifies seven encoding schemes of the UCS: UTF-8, UTF-16, UTF-16BE, UTF-16LE, UTF-32, UTF-32BE, and UTF-32LE;
+- specifies the management of future additions to this coded character set.
+NOTE The determination of suitability of these characters for use as identifiers in programming languages is not specified by this document but can be found in an external reference. See Annex U.</abstract>
+      <status>
+        <stage>90</stage>
+        <substage>92</substage>
+      </status>
+      <copyright>
+        <from>2020</from>
+        <owner>
+          <organization>
+            <name>ISO/IEC</name>
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletes">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/IEC 10646:2017</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/IEC 10646:2017</docidentifier>
+        </bibitem>
+      </relation>
+      <relation type="obsoletes">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/IEC 10646:2017/Amd 1:2019</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/IEC 10646:2017/Amd 1:2019</docidentifier>
+        </bibitem>
+      </relation>
+      <relation type="obsoletes">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/IEC 10646:2017/Amd 2:2019</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/IEC 10646:2017/Amd 2:2019</docidentifier>
+        </bibitem>
+      </relation>
+      <relation type="obsoletes">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/IEC CD 10646.2</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/IEC CD 10646.2</docidentifier>
+        </bibitem>
+      </relation>
+      <relation type="updates">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/IEC 10646:2020/Amd 1:2023</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/IEC 10646:2020/Amd 1:2023</docidentifier>
+          <date type="circulated">
+            <on>2024-06-14</on>
+          </date>
+        </bibitem>
+      </relation>
+      <relation type="updates">
+        <bibitem type="standard">
+          <formattedref format="text/plain">ISO/IEC 10646:2020/Amd 2</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/IEC 10646:2020/Amd 2</docidentifier>
+          <date type="circulated">
+            <on>2024-06-14</on>
+          </date>
+        </bibitem>
+      </relation>
+      <place>
+        <city>Geneva</city>
+      </place>
+    </bibitem>
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+  <ext schema-version="v1.0.3">
+    <doctype>international-standard</doctype>
+    <editorialgroup>
+      <technical-committee number="1" type="IEC" identifier="ISO/IEC JTC 1/SC 2">Coded character sets</technical-committee>
+    </editorialgroup>
+    <ics>
+      <code>35.040.10</code>
+      <text>Coding of character sets</text>
+    </ics>
+    <structuredidentifier type="ISO">
+      <project-number>76835</project-number>
+    </structuredidentifier>
+  </ext>
+</bibdata>

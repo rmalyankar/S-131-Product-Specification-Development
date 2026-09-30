@@ -1,0 +1,30 @@
+==== General
+
+*HarbourAreaSection* features must be used when it is necessary to represent subdivisions of a port or harbour area, or group harbour facilities under a common designation. A *HarbourAreaSection* feature may contain specialized features such as Terminals, Berths, etc., and/or smaller *HarbourAreaSection* features.
+
+The geometry of a *HarbourAreaSection* feature should be within or coincide with the geometry of any *HarbourAreaAdministrative* feature to which it is associated by a *LayoutDivision* association. 
+
+[[sec_Layout_Linking]]
+===== HarbourAreaSection as an intermediate layout feature
+
+If it necessary to use feature associations to represent physical containment of other layout features to a *HarbourAreaAdministrative* feature, an intermediate
+*HarbourAreaSection* feature must be created. The *HarbourAreaSection* feature must:
+
+* Have a spatial primitive that coincides with or contains the spatial union of the geometries of all the layout features in question.
+* Reference the *HarbourAreaAdministrative* feature using a _componentOf_ role in a *LayoutDivision* feature association.
+* Reference the layout features using _layoutUnit_ roles in *LayoutDivision* feature associations.
+
+The appropriate reverse links for the *LayoutDivision* associations should be encoded in the features thus referenced from *HarbourAreaSection*.
+
+[[sec_UnclassifiableSections]]
+===== Unclassifiable subdivisions of features
+
+If it is necessary to represent a situation where services are associated to only part of a feature and there is no appropriate geo feature to describe only that part, a *HarbourAreaSection* feature should be created covering that part and linked to an *AvailablePortServices* information type using a *ServiceAvailability* association.
+
+==== Remarks
+
+* If a *HarbourAreaSection* feature contains other *HarbourAreaSection* features (i.e., is associated to other *HarbourAreaSection* features via _subUnit_ roles), the _categoryOfPortSection_ and _categoryOfHarbourFacility_ attributes on the containing feature must be either (a) the union or superset of the values of those attributes on its subdivisions, or (b) not encoded in the containing feature.
+* A *HarbourAreaSection* feature may have both _subUnit_ and _layoutUnit_ roles, i.e., it may contain other *HarbourAreaSection* feature as well as specialized features such as *Terminal*, *Berth*, etc. Generally, a *HarbourAreaSection* will have both types of roles only when it contains subdivision *HarbourAreaSection* features that do not cover the whole spatial extent of the container. 
+* If there is a subdivision hierarchy of *HarbourAreaSection* features, specialized features (*Terminal*, *Berth*, etc.) or infrastructure features should be associated to the *HarbourAreaSection* feature at the lowest level possible (i.e., the lowest level that contains the entire specialized or infrastructure feature).
+* There is no requirement for *HarbourAreaSection* features to cover the entire extent of a *HarbourAreaAdministrative* feature. For example, larger ports may have areas which are spatially within the harbour area (or adjacent to its navigable waters as legally defined) but which are not controlled by the port authority, for example naval bases or civic waterfronts.
+

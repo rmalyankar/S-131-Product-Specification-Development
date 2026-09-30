@@ -1,20 +1,20 @@
-
-
+[data2text,PROD=config/product.json]
+----
 [[sec_11]]
 == Portrayal
 
 [[sec_11.1]]
 === Introduction
 
-S-131 portrayal is intended to provide a way to visualize the contents
-of S-131 information either in isolation or in combination with an
+{{PROD.id}} portrayal is intended to provide a way to visualize the contents
+of {{PROD.id}} information either in isolation or in combination with an
 S-101 ENC.
 
-S-131 portrayal is covered by the portrayal model as defined in S-100.
+{{PROD.id}} portrayal is covered by the portrayal model as defined in S-100.
 The Portrayal Catalogue defines symbology and the portrayal rules
 for each feature/attribute combination contained in the Feature Catalogue.
 
-S-131 uses the portrayal process defined in S-100 Part 9A.
+{{PROD.id}} uses the portrayal process defined in S-100 Part 9.
 
 [[sec_11.2]]
 === Portrayal Catalogue
@@ -23,13 +23,13 @@ Citation information for the Portrayal Catalogue is provided in <<table_11-1>>
 below.
 
 [[table_11-1]]
-.S-131 Portrayal Catalogue
+.{{PROD.id}} Portrayal Catalogue
 [cols="4"]
 |===
 h| No. h| ISO class or attribute h| Type h| Value
 
 | --    | CI_Citation           | Class                          | --
-| 1     | title                 | CharacterString                | S-131 Portrayal Catalogue
+| 1     | title                 | CharacterString                | {{PROD.id}} Portrayal Catalogue
 | 2     | date                  | CI_Date (class)                | --
 | 2.1   | date                  | DateTime                       | 2025-12-31 (or later - see note)
 | 2.2   | dateType              | CI_DateTypeCode (ISO codelist) | publication
@@ -42,9 +42,8 @@ h| No. h| ISO class or attribute h| Type h| Value
 | 6     | otherCitationDetails  | CharacterString                | (reserved)
 | 7     | onlineResource        | CI_OnlineResource (class)      | --
 | 7.1   | linkage               | CharacterString (URL)          | https://registry.iho.int/
-| 7.2   | name                  | CharacterString                | S-131 Portrayal Catalogue
-| 7.3 | description | CharacterString
-| XML Portrayal Catalogue accompanied by related files for symbols, colour profiles, rules, etc
+| 7.2   | name                  | CharacterString                | {{PROD.id}} Portrayal Catalogue
+| 7.3   | description           | CharacterString                | XML Portrayal Catalogue accompanied by related files for symbols, colour profiles, rules, etc
 
 |===
 
@@ -92,7 +91,7 @@ respectively.].
 
 Sailing directions may provide information in structured form
 (tables, bulleted or numbered lists, etc.), which may be taken as
-guidance for online display of the S-131 equivalents, since mariners
+guidance for online display of the {{PROD.id}} equivalents, since mariners
 may be familiar with the structure of similar information in printed
 or digital publications.
 
@@ -205,7 +204,7 @@ Text form means natural language phrases generated from the attributes
 and their values. The suggested method is to generate a text phrase
 from each attribute (except _logicalConnectives_) and its value, and
 use _logicalConnectives_ to add connectives. For example, a single
-*Applicability* object encoding all the three conditions in <<table_4.1>>
+*Applicability* object encoding all the three conditions in <<table_dimensions_example>>
 and _logicalConnectives_=AND can be converted as the condition:
 
 "length overall greater than 50 metres AND less than 90 metres, AND
@@ -230,3 +229,4 @@ Tabular display or mixed tabular/text display of conditions is also
 allowable. The design of tabular forms is left to implementers in
 this edition since S-100 portrayal in Edition 5.2.0 does not provide
 for the specification of table templates.
+----

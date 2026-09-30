@@ -1,0 +1,19 @@
+==== General
+
+For a pilot boarding place, the pilot vessel may either cruise in the area or come out on request. Off some large ports pilots on outgoing ships may be
+disembarked at a different location. Pilots may board from a helicopter; it is then less important for a ship to reach the exact position of the boarding
+place but an approximate position should still be encoded. Some pilot stations are used solely for long-distance (deep-sea) pilots. Pilots may be in constant
+attendance, in regular attendance at certain limited times, or available by previous arrangement only. The primary purpose of encoded pilotage information is
+to show the position of the facility. Because of the many variations in the service provided, the main source of information on pilotage must be in an associated
+publication or product.
+
+If it is required to encode a pilot boarding place, it must be done using the feature *PilotBoardingPlace*.
+
+For general information about the representation of pilot boarding places on charts, see S-4 – B-491 and S-101 DCEG.
+
+The attribute _interoperabilityIdentifier_ may be used to link this feature to the corresponding S-101 features.
+
+==== Remarks
+
+* If it is required to encode the ship to shore or shore to ship contact information in addition to contact information for the pilot service, it must be done using the information class *ContactDetails* (see clause <<ftable_ContactDetails,droploc%>>). The *ContactDetails* must be associated to the *PilotBoardingPlace* feature using the association *AdditionalInformation*.
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of the boundaries of an area. 

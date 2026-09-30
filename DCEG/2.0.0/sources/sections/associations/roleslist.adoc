@@ -1,0 +1,288 @@
+
+[[role_theAuthority]]
+=== Authority
+
+*Definition* : A pointer to an Authority object
+
+*CamelCase* : theAuthority
+
+*Remarks* : 
+
+[[role_theAuthority_srvHrs]]
+=== Authority Service Hours
+
+*Definition* : The authority for which service hours are given
+
+*CamelCase* : theAuthority_srvHrs
+
+*Remarks* : 
+
+[[role_auxiliaryFacility]]
+=== Auxiliary Facility
+
+*Definition* : A reference to a feature that supplements or supports the use of the primary feature in an AuxiliaryFacility relationship.
+
+*CamelCase* : auxiliaryFacility
+
+*Remarks* : 
+
+[[role_componentOf]]
+=== Component Of
+
+*Definition* : A pointer to the aggregate in a whole-part relationship.
+
+*CamelCase* : componentOf
+
+*Remarks* : 
+
+[[role_constitute]]
+=== Constitute
+
+*Definition* : Reference to a whole of the same type as the part feature in the relationship.
+
+*CamelCase* : constitute
+
+*Remarks* : 
+
+[[role_theContactDetails]]
+=== Contact Details
+
+*Definition* : A pointer to an Contact Details object
+
+*CamelCase* : theContactDetails
+
+*Remarks* : 
+
+[[role_controlAuthority]]
+=== Control Authority
+
+*Definition* : The controlling organization or authority for a geographically located service
+
+*CamelCase* : controlAuthority
+
+*Remarks* : 
+
+[[role_demarcatedFeature]]
+=== Demarcated Feature
+
+*Definition* : Reference to the feature within which locations are demarcated.
+
+*CamelCase* : demarcatedFeature
+
+*Remarks* : 
+
+[[role_demarcationIndicator]]
+=== Demarcation Indicator
+
+*Definition* : Reference to a feature demarcating a location within another feature.
+
+*CamelCase* : demarcationIndicator
+
+*Remarks* : 
+
+[[role_entranceReference]]
+=== Entrance Reference
+
+*Definition* : Reference to an information type describing the entrance to a limit area.
+
+*CamelCase* : entranceReference
+
+*Remarks* : 
+
+[[role_facilityOperatingHours]]
+=== Facility Operating Hours
+
+*Definition* : Reference to information about the days and times during which a facility operates or may be used.
+
+*CamelCase* : facilityOperatingHours
+
+*Remarks* : 
+
+[[role_hasInfrastructure]]
+=== Has Infrastructure
+
+*Definition* : Reference to the feature describing a particular instance of physical infrastructure.
+
+*CamelCase* : hasInfrastructure
+
+*Remarks* : 
+
+[[role_infrastructureLocation]]
+=== Infrastructure Location
+
+*Definition* : Reference to the feature within which the infrastructure is located.
+
+*CamelCase* : infrastructureLocation
+
+*Remarks* : 
+
+[[role_isApplicableTo]]
+=== Is Applicable To
+
+*Definition* : The object or class of objects to which the regulation, restriction, recommendation, or nautical information applies
+
+*CamelCase* : isApplicableTo
+
+*Remarks* : 
+
+[[role_layoutUnit]]
+=== Layout Unit
+
+*Definition* : A reference to the diverse units comprising a feature of a different type.
+
+*CamelCase* : layoutUnit
+
+*Remarks* : 
+
+[[role_limitExtent]]
+=== Limit Extent
+
+*Definition* : Reference to a feature demarcating the extent to which a coastal State claims or may claim a specific jurisdiction.
+
+*CamelCase* : limitExtent
+
+*Remarks* : 
+
+[[role_limitReference]]
+=== Limit Reference
+
+*Definition* : Reference to the feature for which a coastal State claims a specific jurisdiction different from the feature's geographic boundary.
+
+*CamelCase* : limitReference
+
+*Remarks* : 
+
+[[role_organisationRelatedRxN]]
+=== Organisation-Related RxN
+
+*Definition* : Reference to regulation, recommendation, restriction or general information related to an organisation
+
+*CamelCase* : organisationRelatedRxN
+
+*Remarks* : 
+
+[[role_permission]]
+=== Permission
+
+*Definition* : Association class for associations describing whether the subsets of vessels determined by the ship characteristics specified in APPLIC may (or must, etc.) transit, enter, or use a feature.
+
+*CamelCase* : permission
+
+*Remarks* : 
+
+[[role_primaryFacility]]
+=== Primary Facility
+
+*Definition* : A reference to the primary feature in an Auxiliaryfacility relationship.
+
+*CamelCase* : primaryFacility
+
+*Remarks* : 
+
+[[role_partialWorkingDay]]
+=== Partial Working Day
+
+*Definition* : The work hours for a non-standard workday
+
+*CamelCase* : partialWorkingDay
+
+*Remarks* : 
+
+[[role_serviceDescriptionReference]]
+=== Service Description Reference
+
+*Definition* : Reference to an information object describing services.
+
+*CamelCase* : serviceDescriptionReference
+
+*Remarks* : 
+
+[[role_theServiceHours]]
+=== Service Hours (reference)
+
+*Definition* : Service hours for an authority or service provider
+
+*CamelCase* : theServiceHours
+
+*Remarks* : 
+
+[[role_subUnit]]
+=== Sub-Unit
+
+*Definition* : Reference to a part of the same type as the whole feature in the relationship.
+
+*CamelCase* : subUnit
+
+*Remarks* : 
+
+[[role_theInformation]]
+=== The Information
+
+*Definition* : A pointer to an object that provides more information about the referencing feature or information type.
+
+*CamelCase* : theInformation
+
+*Remarks* : Registry definition "The information" merely repeats the name.
+
+[[role_theOrganisation]]
+=== The Organisation
+
+*Definition* : The organisation to which information relates
+
+*CamelCase* : theOrganisation
+
+*Remarks* : 
+
+[[role_theQualityInformation]]
+=== The Quality Information
+
+*Definition* : A pointer to an information type providing spatial quality information.
+
+*CamelCase* : theQualityInformation
+
+*Remarks* : 
+
+[[role_theRxN]]
+=== The RxN
+
+*Definition* : The regulation, restriction, recommendation, or nautical information
+
+*CamelCase* : theRxN
+
+*Remarks* : 
+
+[[role_theApplicableRxN]]
+=== The Applicable RxN
+
+*Definition* : The applicable regulation, restriction, recommendation or nautical information
+
+*CamelCase* : theApplicableRxN
+
+*Remarks* : 
+
+[[role_theCartographicText]]
+=== The Cartographic Text
+
+*Definition* : A pointer to a specific cartographically positioned location for text.
+
+*CamelCase* : theCartographicText
+
+*Remarks* : 
+
+[[role_thePositionProvider]]
+=== The Position Provider
+
+*Definition* : A pointer to a specific feature(s).
+
+*CamelCase* : thePositionProvider
+
+*Remarks* : 
+
+[[role_theServiceHours_nsdy]]
+=== The service hours for a non-standard workday
+
+*Definition* : The usual service hours to which an exception applies
+
+*CamelCase* : theServiceHours_nsdy
+
+*Remarks* : 

@@ -1,0 +1,20 @@
+==== General
+
+In S-131 the *HarbourFacility* feature is used only for encoding the locations of port facilities for which no suitable S-131 feature type is defined.
+The kind of facility must be described in attribute _textContent_.
+
+The attribute _interoperabilityIdentifier_ should be used to link this feature to the corresponding S-101 features if any.
+
+==== Example of *HarbourFacility* use
+
+In the absence of a more specific feature for encoding cranes, they may be encoded using a *HarbourFacility* feature with attribute _textContent.headline_ value
+"Crane" or "Cranes" and information about lifting capacity, vertical clearance, etc., indicated using sub-attributes of _textContent_ and/or its complex sub-attribute
+ _information_. Requirements about vessel characteristics, cargo, etc., can be encoded in an associated *Applicability* information type. Photographs may
+optionally be added using the complex attribute _graphic_.
+
+==== Remarks
+
+* An S-131 *HarbourFacility* must not be encoded to coincide with a more specific S-131 harbour facility such as a *ShipLift* except when it
+describes a distinctly different type of facility not captured in the S-131 Application Schema.
+* Since there are no category attributes attached to *HarbourFacility* in Edition 2.0.0, the attribute _textContent_ is mandatory and must be
+used to describe the type of facility.

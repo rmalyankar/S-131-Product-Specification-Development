@@ -1,8 +1,11 @@
-
-[[sec_9]]
+[data2text,PROD=config/product.json]
+----
+[[sec_DCEG]]
 == Data Capture and Classification
 
-The S-131 MHI Data Classification and Encoding Guide (DCEG) describes
+The {{PROD.id}} {{PROD.abbrev}} Data Classification and Encoding Guide (DCEG) describes
 how data describing the real world should be captured using the types
 defined in the S-131 Feature Catalogue. This Guide is provided as
 Annex A.
+
+----

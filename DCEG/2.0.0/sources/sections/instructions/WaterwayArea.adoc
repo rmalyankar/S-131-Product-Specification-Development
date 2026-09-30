@@ -1,0 +1,12 @@
+==== General
+
+Waterways can be encoded to indicate how specific sections of water have been divided for various administrative purposes such as for organizing traffic
+and managing the available water column. When it is required to encode a section of water as one of the types mentioned in the _categoryOfPortSection_
+attribute, this must be done using the feature *WaterwayArea* with _categoryOfPortSection_ set to the appropriate value.
+
+The attribute _interoperabilityIdentifier_ may be used to link this feature to related S-101 features.
+
+==== Remarks
+
+* The attribute _markedBy_ should be used to describe aids to navigation used to demarcate the location, for example, by marking a limit line, or one of
+the boundaries of an area.

@@ -1,0 +1,10 @@
+==== General
+
+In S-101, a Floating Dock feature must also be covered by Depth Area, Dredged Area or Unsurveyed Area features.  The boundary of a Floating Dock feature of type surface is not be encoded as a separate feature (Coastline or Shoreline Construction). S-131 encoders should therefore verify that an S-131 *FloatingDock* is covered by an S-101 feature of the appropriate type in an underlying S-101 ENC. If a discrepancy is detected an attempt should be made to reconcile it. 
+
+The S-131 *FloatingDock* feature allows encoding of the sill depth for the dock as a real attribute.
+
+The attribute _interoperabilityIdentifier_ may be used to link this feature to the corresponding S-101 Floating Dock feature.
+
+==== Remarks
+
